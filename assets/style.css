@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@layer base {
+    html {
+        font-family: Poppins, system-ui, sans-serif;
+    }
+}
+
+@layer components {
+    .body-linear {
+        background: linear-gradient(107deg, #CDDBEF 0.79%, #F9E6C1 100%);
+    }
+    .bg-section-one {
+        /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+        background: url("/assets/img/bg-section-1.png"), linear-gradient(107.16deg, #CDDBEF 0.79%, #F9E6C1 100%);
+        background-size: cover;
+        mix-blend-mode: normal;
+    }
+    .bg-section-two {
+        background: linear-gradient(106.76deg, #DB9C7E -8.86%, rgba(255, 221, 85, 0.18) 100%);
+    }
+    .bg-section-three {
+        background: url("/assets/img/bg-section-3.png"), linear-gradient(107deg, #F9E6C1 0.79%, #CDDBEF 100%);
+        background-size: cover;
+        mix-blend-mode: normal;
+        background-repeat: no-repeat;
+    }
+    .bg-evolution {
+        background: url("/assets/img/img-section-2.png"), lightgray 50%;
+        mix-blend-mode: darken;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .bg-section-four {
+        background: url("/assets/img/bg-section-4.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .bg-section-five {
+        background: linear-gradient(107deg, #CDDBEF 0.79%, #F9E6C1 100%);
+        /* background-size: cover;
+        mix-blend-mode: normal;
+        background-repeat: no-repeat; */
+    }
+}

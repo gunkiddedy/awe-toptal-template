@@ -98,7 +98,7 @@
         <!-- section 3 -->
         <section class="section-three h-screen bg-section-three relative flex items-center justify-between w-full pr-10">
             <!-- left content -->
-            <div class="left-content-section-three relative w-[55%] h-full overflow-hidden">
+            <div class="left-content-section-three relative w-[55%] h-full">
                 <img 
                     src="/assets/img/img-section-3-1.png" 
                     alt="" 
@@ -114,7 +114,7 @@
                     alt="" 
                     class="w-[374px] h-auto bg-cover mix-blend-darken absolute left-[430px] top-36"
                 >
-                
+
                 <!-- placeholder -->
                 <div class="placeholder w-[340px] absolute left-32 top-[400px]">
                     <p class="place-holder-title text-[#FD1C1C] text-[30px] leading-[60px]">
@@ -124,7 +124,7 @@
             </div><!-- left content -->
 
             <!-- right content -->
-            <div class="right-content-section-three h-[750px] flex flex-col justify-between w-[45%] pl-16">
+            <div class="right-content-section-three h-[750px] flex flex-col justify-between w-max pl-16">
                 <!-- top -->
                 <div class="top-content-three flex flex-col space-y-6 w-[541px]">
                     <h1 class="text-[60px] leading-[60px] capitalize text-black">
@@ -175,7 +175,7 @@
                     </h2>
                 </div><!-- title -->
                 <!-- description -->
-                <div class="desc-section-four flex flex-col space-y-8 text-[26px] lg:w-[767px] h-[155px] md:px-6 capitalize leading-normal">
+                <div class="desc-section-four flex flex-col space-y-8 text-[26px] w-full h-[155px] md:px-6 capitalize leading-normal">
                     <p>
                         The Average American Checks their phone 96 times a day, 
                         every 10 to 12 minutes. And forgets it immediately
@@ -196,9 +196,105 @@
         </section><!-- section 4 -->
 
         <!-- section 5 -->
-        <section class="section-five h-[744px] bg-section-five w-full">
-
+        <section class="section-five h-[744px] bg-section-five w-full relative">
+            <div class="content-section-five w-full xl:px-36 px-12 xl:pt-36 pt-12 flex flex-col items-center">
+                <!-- grid cards -->
+                <div class="cards grid xl:grid-cols-3 grid-cols-2 gap-6 xl:pb-14 pb-3 xl:w-[1146px] max-w-max">
+                    <!-- card -->
+                    <div class="card w-[366px] h-[186px] shrink-0 rounded-[15px] bg-transparent border-[3px] border-[#60709A00] flex items-center justify-center">
+                        <p class="content-card-custom text-5xl text-black capitalize leading-[55px]">
+                            Current information options
+                        </p>
+                    </div><!-- card -->
+                    <!-- card -->
+                    <div class="card w-[366px] h-[186px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center">
+                        <div class="content-card flex flex-col space-y-2">
+                            <div class="title-card">
+                                <h3 class="title-card text-black text-[30px] leading-[60px] text-center">
+                                    AIR QUALITY
+                                </h3>
+                            </div>
+                            <div class="desc-card max-w-[336px] mx-auto">
+                                <p class="desc-card text-black text-[22px] capitalize text-center leading-normal">
+                                    Current and expected <br>particle pollution
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- card -->
+                    <!-- card -->
+                    <div class="card w-[366px] h-[186px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center">
+                        <div class="content-card flex flex-col space-y-2">
+                            <div class="title-card">
+                                <h3 class="title-card text-black text-[30px] leading-[60px] text-center">
+                                    POLLEN
+                                </h3>
+                            </div>
+                            <div class="desc-card max-w-[336px] mx-auto">
+                                <p class="desc-card text-black text-[22px] capitalize text-center leading-normal">
+                                    Current and expected <br>pollen pollution
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- card -->
+                    <!-- card -->
+                    <div class="card w-[366px] h-[186px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center">
+                        <div class="content-card flex flex-col space-y-2">
+                            <div class="title-card">
+                                <h3 class="title-card text-black text-[30px] leading-[60px] text-center">
+                                    WEATHER
+                                </h3>
+                            </div>
+                            <div class="desc-card max-w-[336px] mx-auto">
+                                <p class="desc-card text-black text-[22px] capitalize text-center leading-normal">
+                                    Current and expected weather: Rain, Temperatures
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- card -->
+                    <!-- card -->
+                    <div class="card w-[366px] h-[186px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center">
+                        <div class="content-card flex flex-col space-y-2 h-[134px]">
+                            <div class="title-card">
+                                <h3 class="title-card text-black text-[30px] leading-[60px] text-center">
+                                    FINANCIAL MARKETS
+                                </h3>
+                            </div>
+                            <div class="desc-card max-w-[336px] mx-auto">
+                                <p class="desc-card text-black text-[22px] capitalize text-center leading-normal">
+                                    stock prices,
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- card -->
+                    <!-- card -->
+                    <div class="card w-[366px] h-[186px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center py-3">
+                        <div class="content-card flex flex-col space-y-2 h-[134px]">
+                            <div class="title-card">
+                                <h3 class="title-card text-black text-[30px] leading-[60px] text-center">
+                                    CALENDAR
+                                </h3>
+                            </div>
+                            <div class="desc-card max-w-[336px] mx-auto">
+                                <p class="desc-card text-black text-[22px] capitalize text-center leading-normal">
+                                    Your outlook or gmail <br>calender for the day
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- card -->
+                </div><!-- grid cards -->
+                <!-- comming soon -->
+                <div class="comming-soon xl:w-[1146px] w-max">
+                    <p class="text-[#4E5369] text-[30px] leading-[60px] capitalize text-right">
+                        Much More Coming Soon...
+                    </p>
+                </div>
+            </div>
         </section><!-- section 5 -->
+
+        <!-- section 6 -->
+        <section class="section-six h-[818px] bg-section-six w-full relative">
+
+        </section><!-- section 6 -->
     </main>
 </body>
 </html>

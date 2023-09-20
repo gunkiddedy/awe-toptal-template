@@ -40,9 +40,15 @@
         background-repeat: no-repeat;
     }
     .bg-section-five {
-        background: linear-gradient(107deg, #CDDBEF 0.79%, #F9E6C1 100%);
-        /* background-size: cover;
+        background: url("/assets/img/bg-section-5.png"), linear-gradient(107deg, #CDDBEF 0.79%, #F9E6C1 100%);
+        background-size: cover;
         mix-blend-mode: normal;
-        background-repeat: no-repeat; */
+        background-repeat: no-repeat;
+    }
+    .bg-section-six {
+        background: url("/assets/img/bg-section-6.png"), linear-gradient(105deg, #384B66 -0.06%, #CDDBEF 66.62%, rgba(255, 221, 85, 0.42) 97.12%);
+        background-size: cover;
+        mix-blend-mode: normal;
+        background-repeat: no-repeat;
     }
 }

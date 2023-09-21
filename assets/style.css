@@ -47,8 +47,9 @@
     }
     .bg-section-six {
         background: url("/assets/img/bg-section-6.png"), linear-gradient(105deg, #384B66 -0.06%, #CDDBEF 66.62%, rgba(255, 221, 85, 0.42) 97.12%);
-        background-size: cover;
+        background-size: contain;
         mix-blend-mode: normal;
         background-repeat: no-repeat;
+        background-position-y: 56%;
     }
 }

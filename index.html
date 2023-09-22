@@ -7,40 +7,41 @@
     <link href="./assets/tailwind.css" rel="stylesheet">
 </head>
 <body>
-    <main class="w-full bg-white max-w-[1440px] flex flex-col items-center mx-auto shadow-md overflow-x-hidden pb-6 relative">
+    <main class="w-full max-w-[1440px] flex flex-col items-center mx-auto shadow-md overflow-x-hidden pb-6 relative">
+
+        <!-- navigation -->
+        <nav id="navbar" role="navigation" class="navigation-menus w-full max-w-[1440px] flex items-center justify-between py-8 px-10 fixed z-30 transition-[top] duration-500 bg-transparent">
+            <!-- logo -->
+            <div class="logo">
+                <img 
+                    src="/assets/img/AWE.svg"   
+                    alt="awe logo" 
+                    class="w-[116px] h-auto"
+                >
+            </div><!-- logo -->
+            <!-- menus -->
+            <ul class="flex items-center space-x-12 text-lg">
+                <li class="font-semibold">
+                    <a href="#">My tiles</a>
+                </li>
+                <li>
+                    <a href="#">Data sources</a> 
+                <li>
+                    <a href="#">Backgrounds</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <button role="button" class="w-[165px] h-[44px] bg-black text-white rounded-full">
+                        Order Now
+                    </button>
+                </li>
+            </ul><!-- menus -->
+        </nav><!-- navigation -->
 
         <!-- section 1 -->
         <section class="section-one h-[828px] bg-section-one relative w-full">
-            <!-- navigation -->
-            <nav role="navigation" class="navigation-menus w-full flex items-center justify-between bg-transparent py-8 px-10 shadow-sm bg-blue-300">
-                <!-- logo -->
-                <div class="logo">
-                    <img 
-                        src="/assets/img/AWE.svg"   
-                        alt="awe logo" 
-                        class="w-[116px] h-auto"
-                    >
-                </div><!-- logo -->
-                <!-- menus -->
-                <ul class="flex items-center space-x-12 text-lg">
-                    <li class="font-semibold">
-                        <a href="#">My tiles</a>
-                    </li>
-                    <li>
-                        <a href="#">Data sources</a> 
-                    <li>
-                        <a href="#">Backgrounds</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <button role="button" class="w-[165px] h-[44px] bg-black text-white rounded-full">
-                            Order Now
-                        </button>
-                    </li>
-                </ul><!-- menus -->
-            </nav><!-- navigation -->
             <!-- right content -->
             <div class="right-content-section-one absolute left-[58%] xl:top-[44%] lg:top-1/3 md:top-1/4">
                 <div class="top flex flex-col space-y-4">
@@ -466,5 +467,25 @@
         </footer><!-- footer -->
         
     </main>
+
+    <script>
+        let prevScrollpos = window.pageYOffset
+        const navbar = document.getElementById('navbar')
+        window.onscroll = function() {
+            const currentScrollPos = window.pageYOffset
+            if (prevScrollpos > currentScrollPos) {
+                navbar.style.top = '0'
+                navbar.classList.add('bg-nav', 'opacity-90')
+            } 
+            else {
+                navbar.classList.remove('bg-nav', 'opacity-90')
+                navbar.style.top = "-108px"
+            }
+            if (currentScrollPos === 0) {
+                navbar.classList.remove('bg-nav', 'opacity-90')
+            }
+            prevScrollpos = currentScrollPos
+        }
+    </script>
 </body>
 </html>

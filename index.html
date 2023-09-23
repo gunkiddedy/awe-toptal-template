@@ -549,6 +549,17 @@
         }
 
         window.onscroll = function() {
+            
+            // if section 2 has passed the section 1
+            if (window.scrollY > (section1.offsetTop + section1.offsetHeight)) {
+                section2.classList.remove('bg-section-two-no-gradient', 'sticky', 'top-0')
+                section2.classList.add('bg-section-two')
+            } else {
+                section2.classList.add('bg-section-two-no-gradient', 'sticky', 'top-0')
+                section2.classList.remove('bg-section-two')
+                section1.classList.add('sticky', 'top-0')
+            }
+
             const currentScrollPos = window.pageYOffset
             if (prevScrollpos > currentScrollPos) {
                 navbar.style.top = '0'
@@ -564,16 +575,6 @@
 
                 section2.classList.remove('bg-section-two-no-gradient' , 'sticky', 'top-0')
                 section2.classList.add('bg-section-two')
-            }
-
-            // if section 2 has passed the section 1
-            if (window.scrollY > (section1.offsetTop + section1.offsetHeight)) {
-                section2.classList.remove('bg-section-two-no-gradient', 'sticky', 'top-0')
-                section2.classList.add('bg-section-two')
-            } else {
-                section2.classList.add('bg-section-two-no-gradient', 'sticky', 'top-0')
-                section2.classList.remove('bg-section-two')
-                section1.classList.add('sticky', 'top-0')
             }
 
             prevScrollpos = currentScrollPos

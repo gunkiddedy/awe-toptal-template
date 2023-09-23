@@ -337,7 +337,7 @@
             </section><!-- section 5 -->
     
             <!-- section 6 (to Paralax style) -->
-            <section class="section-six h-[818px] bg-section-six w-full relative pl-11">
+            <section class="section-six h-[818px] bg-section-six w-full relative pl-11 overflow-hidden">
 
                 <!-- left title -->
                 <div class="left-title w-[331px] text-white mt-[62px]">
@@ -418,31 +418,13 @@
                 </svg><!-- gray arrow -->
                 
                 <!-- content-section-seven -->
-                <div class="content-section-seven absolute insety w-full px-[37px] h-auto flex justify-between z-20 pt-[200px]">
+                <div class="content-section-seven absolute w-full pl-[97px] pr-[112px] mt-[171px] h-auto flex items-start justify-between z-20">
 
                     <!-- left -->
-                    <div class="left-side">
-                        <ul class="left-menus flex flex-col space-y-8 text-white text-[30px] leading-none capitalize">
-                            <li>
-                                <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <a href="#">Careers</a>
-                            </li>
-                            <li>
-                                <a href="#">Help</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div><!-- left -->
-
-                    <!-- right -->
-                    <div class="right-side flex flex-col justify-between">
+                    <div class="left-side flex flex-col justify-between">
 
                         <!-- Enter your mail -->
-                        <div class="email-field bg-red-400 relative flex items-center">
+                        <div class="email-field bg-[#1D1D1D] relative flex items-center mt-2">
                             <input 
                                 type="text" 
                                 class="w-[623px] h-[76px] shrink-0 text-white text-[30px] font-normal capitalize leading-[60px] pl-8 border border-white bg-[#1D1D1D] placeholder-white focus:outline-none focus:ring-2 focus:ring-white" 
@@ -452,56 +434,50 @@
                                 SUBSCRIBE
                             </button>
                         </div><!-- Enter your mail -->
-    
-                        <!-- social media -->
-                        <div class="social-media">
 
-                            <ul class="media flex items-center space-x-7">
-                                <!-- facebook -->
-                                <li>
-                                    <a href="#">
-                                        <img 
-                                            src="/assets/img/facebook.png" 
-                                            alt="facebook"
-                                            class="w-[51px] h-auto object-cover"
-                                        >
-                                    </a>
+                    </div><!-- left -->
+
+                    <!-- right -->
+                    <div class="right-side flex space-x-36">
+
+                        <!-- company -->
+                        <div class="company">
+                            <ul class="right-menus flex flex-col space-y-8 text-white text-[30px] leading-none capitalize">
+                                <li class="font-semibold">
+                                    <a href="#">Company</a>
                                 </li>
-
-                                <!-- twitter -->
                                 <li>
-                                    <a href="#">
-                                        <img 
-                                            src="/assets/img/twitter.png" 
-                                            alt="facebook"
-                                            class="w-[51px] h-auto object-cover"
-                                        >
-                                    </a>
+                                    <a href="#">About us</a>
                                 </li>
-
-                                <!-- linkedin -->
                                 <li>
-                                    <a href="#">
-                                        <img 
-                                            src="/assets/img/linkedin.png" 
-                                            alt="facebook"
-                                            class="w-[51px] h-auto object-cover"
-                                        >
-                                    </a>
+                                    <a href="#">Careers</a>
                                 </li>
-
-                                <!-- instagram -->
                                 <li>
-                                    <a href="#">
-                                        <img 
-                                            src="/assets/img/instagram.png" 
-                                            alt="facebook"
-                                            class="w-[51px] h-auto object-cover"
-                                        >
-                                    </a>
-                                </li><!-- instagram -->
+                                    <a href="#"> Resources</a>
+                                </li>
                             </ul>
-                        </div><!-- social media -->
+                        </div><!-- company -->
+
+                        <!-- support -->
+                        <div class="support">
+                            <ul class="right-menus flex flex-col space-y-8 text-white text-[30px] leading-none capitalize">
+                                <li class="font-semibold">
+                                    <a href="#">Support</a>
+                                </li>
+                                <li>
+                                    <a href="#">My Account</a>
+                                </li>
+                                <li>
+                                    <a href="#">FAQ</a>
+                                </li>
+                                <li>
+                                    <a href="#">Help</a>
+                                </li>
+                                <li>
+                                    <a href="#"> Contact</a>
+                                </li>
+                            </ul>
+                        </div><!-- support -->
 
                     </div><!-- right -->
 
@@ -512,21 +488,36 @@
         </main><!-- main-content -->
 
         <!-- footer -->
-        <footer class="section-footer h-[103px] bg-[#1D1D1D] w-full pl-[150px]">
-            <!-- footer-menus -->
-            <nav role="navigation" class="h-full flex items-center">
-                <ul class="menus flex items-center space-x-24 text-white capitalize leading-[60px] text-lg text-opacity-70">
-                    <li>
-                        <a href="#">Terms of Use</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy policy</a>
-                    </li>
-                    <li>
-                        <a href="#">© 2023 AWE</a>
-                    </li>
-                </ul>
-            </nav>
+        <footer class="section-footer h-[103px] bg-[#1D1D1D] w-full pl-[97px] pr-[71px]">
+
+            <!-- footer content -->
+            <div class="footer-content flex items-center justify-between h-full">
+
+                <!-- left-side-footer -->
+                <div class="left-side-footer text-white capitalize leading-[60px] text-lg text-opacity-70">
+                    © 2023 AWE, All rights Reserved 
+                </div><!-- left-side-footer -->
+
+                <!-- footer-menus -->
+                <nav role="navigation" class="h-full flex items-center">
+                    <ul class="menus flex items-center space-x-[65px] text-white capitalize leading-[60px] text-lg text-opacity-70">
+                        <li>
+                            <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Regulatory Notice</a>
+                        </li>
+                        <li>
+                            <a href="#">Security</a>
+                        </li>
+                    </ul>
+                </nav><!-- footer-menus -->
+
+            </div><!-- footer content -->
+
         </footer><!-- footer -->
         
     </div><!-- page-wraper -->

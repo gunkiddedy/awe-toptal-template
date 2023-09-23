@@ -61,7 +61,7 @@
         mix-blend-mode: normal;
         background-repeat: no-repeat;
         background-position-y: 56%;
-        background-attachment: fixed;
+        /* background-attachment: fixed; */
     }
     .reveal {
         position: relative;

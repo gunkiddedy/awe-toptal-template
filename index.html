@@ -10,13 +10,12 @@
     <!-- page-wraper -->
     <div class="page-wraper max-w-[1440px] mx-auto">
 
-        <!-- main-content -->
-        <main class="main-content w-full flex flex-col items-center">
-
+        <!-- header -->
+        <header>
             <!-- navigation -->
-            <nav id="navbar" role="navigation" class="navigation-menus w-full max-w-[1440px] flex items-center justify-between py-8 px-10 fixed top-0 z-50 transition-[top] duration-500 bg-transparent">
-
-                <!-- logo -->
+            <nav id="navbar" role="navigation" class="navigation-menus w-full max-w-[1440px] flex items-center justify-between py-6 px-10 fixed top-0 z-50 transition-opacity duration-500">
+    
+                <!-- logo -->   
                 <div class="logo">
                     <a href="">
                         <img 
@@ -26,37 +25,41 @@
                         >
                     </a>
                 </div><!-- logo -->
-
+    
                 <!-- menus -->
-                <ul class="flex items-center space-x-12 text-lg">
-                    <li class="font-semibold">
+                <ul class="flex items-center space-x-6 text-lg">
+                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
                         <a href="#">My tiles</a>
                     </li>
-                    <li>
+                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
                         <a href="#">Data sources</a> 
-                    <li>
+                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
                         <a href="#">Backgrounds</a>
                     </li>
-                    <li>
+                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
                         <a href="#">Contact</a>
                     </li>
                     <li>
-                        <button role="button" class="w-[165px] h-[44px] bg-black text-white rounded-full">
+                        <button role="button" class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300">
                             Order Now
                         </button>
                     </li>
                 </ul><!-- menus -->
-
+    
             </nav><!-- navigation -->
+        </header>
 
-            <!-- section 1 -->
-            <section id="section-one" class="section-one w-full h-[828px]">
+        <!-- main-content -->
+        <main class="main-content w-full flex flex-col items-center">
+
+            <!-- section 1 h-[1129px]-->
+            <section id="section-one" class="section-one w-full h-[1129px]">
                 
                 <!-- content div -->
                 <div class="content-div bg-section-one relative w-full h-full">
     
                     <!-- right content -->
-                    <div class="right-content-section-one absolute left-[58%] xl:top-[44%] lg:top-1/3 md:top-1/4">
+                    <div class="right-content-section-one absolute left-[58%] xl:top-[47%] lg:top-1/3 md:top-1/4">
 
                         <div class="top flex flex-col space-y-4">
                             <h1 class="font-bold text-[50px] text-black">
@@ -71,7 +74,7 @@
                             </p>
                         </div>
 
-                        <button class="w-[129px] h-[44px] bg-black text-white rounded-full capitalize mt-10">
+                        <button class="w-[129px] h-[44px] bg-black text-white rounded-full capitalize mt-16">
                             Explore
                         </button>
 
@@ -533,8 +536,8 @@
         let prevScrollpos = window.pageYOffset
         const navbar = document.getElementById('navbar')
 
-        const section1 = document.getElementById('section-one')
-        const section2 = document.getElementById('section-two')
+        // const section1 = document.getElementById('section-one')
+        // const section2 = document.getElementById('section-two')
 
         function reveal() {
             const reveals = document.querySelectorAll(".reveal")
@@ -558,27 +561,37 @@
         window.onscroll = function() {
 
             // if section 2 has passed the section 1
-            if (window.scrollY > (section1.offsetTop + section1.offsetHeight)) {
-                section2.classList.remove('bg-section-two-no-gradient', 'sticky', 'top-0')
-                section2.classList.add('bg-section-two')
-            } else {
-                section2.classList.add('bg-section-two-no-gradient', 'sticky', 'top-0')
-                section2.classList.remove('bg-section-two')
-                section1.classList.add('sticky', 'top-0')
-            }
+            // if (window.scrollY > (section1.offsetTop + section1.offsetHeight)) {
+            //     section2.classList.remove('bg-section-two-no-gradient', 'sticky', 'top-0')
+            //     section2.classList.add('bg-section-two')
+            // } else {
+            //     section2.classList.add('bg-section-two-no-gradient', 'sticky', 'top-0')
+            //     section2.classList.remove('bg-section-two')
+            //     section1.classList.add('sticky', 'top-0')
+            // }
 
             const currentScrollPos = window.pageYOffset
+
+            // scroll up
             if (prevScrollpos > currentScrollPos) {
-                navbar.style.top = '0'
-                navbar.classList.add('bg-nav', 'opacity-90')
+                // console.log('scroll up');
+                // navbar.style.top = '50px'
+                // navbar.style.top = '0'
+                navbar.classList.remove('opacity-60')
+                navbar.classList.add('bg-nav')
             }  
+            // scroll down
             else {
-                navbar.classList.remove('bg-nav', 'opacity-90')
-                navbar.style.top = "-108px"
+                // console.log('scroll down');
+                navbar.classList.add('bg-nav', 'opacity-60')
+                // navbar.classList.remove('bg-nav', 'opacity-90')
+                // navbar.style.top = "-108px"
+                // navbar.style.top = "-54px"
             }
 
             if (currentScrollPos === 0) {
-                navbar.classList.remove('bg-nav', 'opacity-90')
+                navbar.classList.remove('bg-nav','opacity-60')
+                // navbar.classList.remove('bg-nav', 'opacity-90')
 
                 section2.classList.remove('bg-section-two-no-gradient' , 'sticky', 'top-0')
                 section2.classList.add('bg-section-two')

@@ -29,7 +29,7 @@
         background-position-y: 15%;
     }
     .bg-section-two {
-        background: linear-gradient(106.76deg, #DB9C7E -8.86%, rgba(255, 221, 85, 0.18) 100%);
+        background: linear-gradient(107deg, #DB9C7E -8.86%, rgba(255, 221, 85, 0.18) 100%);
     }
     .bg-section-two-reduce-gradient {
         background: linear-gradient(138deg, #DB9C7E 88%, rgba(255, 221, 85, 0.18) 100%);

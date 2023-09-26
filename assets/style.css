@@ -68,6 +68,13 @@
         background-position-y: 40%;
         /* background-attachment: fixed; */
     }
+    .bg-parallax {
+        background: url("/assets/img/bg-parallax.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-position-y: 1%;
+        background-attachment: fixed;
+    }
     .reveal {
         position: relative;
         opacity: 0;
@@ -78,6 +85,17 @@
     .reveal.inactive {
         opacity: 0;
         @apply transition-all duration-300
+    }
+    .unreveal {
+        position: relative;
+        opacity: 1;
+    }
+    .unreveal.inactive {
+        opacity: 0;
+        @apply transition-all duration-[2500ms]
+    }
+    .inactive.fade-left-out {
+        animation: fade-left-out 3s ease-in;
     }
     .active.fade-bottom {
         animation: fade-bottom 1s ease-in;
@@ -116,6 +134,19 @@
         100% {
             transform: translateY(0);
             opacity: 1;
+        }
+    }
+    @keyframes fade-left-out {
+        0% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        50% {
+            opacity: .5;
+        }
+        100% {
+            transform: translateX(100px);
+            opacity: 0;
         }
     }
     @keyframes fade-left {

@@ -53,7 +53,7 @@
         <main class="main-content w-full flex flex-col items-center">
 
             <!-- section 1 h-[1129px]-->
-            <section id="section-one" class="section-one w-full h-[1129px]">
+            <section id="section-one" class="section-one w-full h-[1129px] transition-opacity duration-500">
                 
                 <!-- content div -->
                 <div class="content-div bg-section-one relative w-full h-full">
@@ -120,20 +120,53 @@
                 </svg>
 
                 <!-- image evolution -->
-                <div class="img-evolution h-auto flex items-center justify-end absolute top-[610px] right-[30px]">
-                    <div class="h-full">
-                        <img src="/assets/img/img-evolution1.png" alt="" class="w-[998.856px] h-auto mix-blend-darken">
+                <div class="img-evolution h-auto flex items-center justify-end absolute top-[610px] right-0">
+                    <div class="h-full mr-5">
+                        <img src="/assets/img/img-evolution1.png" alt="" class="w-[998.856px] h-auto mix-blend-darken reveal fade-left">
                     </div>
                     <div class="h-full">
-                        <img src="/assets/img/img-evolution2.png" alt="" class="w-[370px] h-auto mix-blend-darken">
+                        <img src="/assets/img/img-evolution2.png" alt="" class="w-[370px] h-auto mix-blend-darken reveal fade-right">
                     </div>
                 </div><!-- image evolution -->
+
+                <!-- placeholder image screen TOP -->
+                <div class="placeholder-screens absolute left-0 top-[1250px] w-[55%] h-auto">
+                    <div class="placeholder-contents relative">
+                        <div class="img1 via-fuchsia-200 w-[151px] h-[173px]">
+                            <img 
+                                src="/assets/img/img-section-3-1.png" 
+                                alt="" 
+                                class="w-auto h-auto object-cover mix-blend-darken absolute -left-4 top-12 reveal fade-left"
+                            >
+                        </div>
+                        <div class="img2 via-fuchsia-200 w-[262px] h-[288px]">
+                            <img 
+                                src="/assets/img/img-section-3-2.png" 
+                                alt="" 
+                                class="w-auto h-auto object-cover mix-blend-darken absolute left-20 top-16 reveal fade-left"
+                            >
+                        </div>
+                        <div class="img3 via-fuchsia-200 w-[374px] h-[426px]">
+                            <img 
+                                src="/assets/img/img-section-3-3.png" 
+                                alt="" 
+                                class="w-auto h-auto object-cover mix-blend-darken absolute left-[350px] top-24 reveal fade-left"
+                            >
+                        </div>
+                        <!-- placeholder -->
+                        <div class="placeholder w-[340px] absolute left-32 top-[400px]">
+                            <p class="place-holder-title text-[#FD1C1C] text-[30px] leading-[60px]">
+                                PLACEHOLDER UNTIL FINAL 3D DESIGNS
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Beautiful, simple distinctive panels -->
                 <div class="right-content-section-three h-[600px] flex flex-col justify-between w-max absolute right-[90px] top-[1300px]">
 
                     <!-- top content -->
-                    <div class="top-content-three flex flex-col space-y-6 w-[541px]">
+                    <div class="top-content-three flex flex-col space-y-6 w-[541px] reveal fade-right">
                         <h1 class="text-[60px] leading-[60px] capitalize text-black">
                             Beautiful, simple distinctive panels
                         </h1>
@@ -143,7 +176,7 @@
                     </div><!-- top content -->
     
                     <!-- bottom content -->
-                    <div class="bottom-content-three flex items-center space-x-10">
+                    <div class="bottom-content-three flex items-center space-x-10 reveal fade-right">
                         <div class="left-content flex flex-col">
                             <p class="title text-lg capitalize text-black leading-normal">
                                 Placement
@@ -207,7 +240,40 @@
 
                 </div><!-- eye background (parallax)-->
 
-                <!-- grid cards -->
+                <!-- placeholder image screen BOTTOM -->
+                <div class="placeholder-screens absolute left-0 -bottom-32 w-[55%] h-auto">
+                    <div class="placeholder-contents relative">
+                        <div class="img1 via-fuchsia-200 w-[151px] h-[173px]">
+                            <img 
+                                src="/assets/img/img-section-3-1.png" 
+                                alt="" 
+                                class="w-auto h-auto object-cover mix-blend-darken absolute -left-4 top-12 reveal fade-left"
+                            >
+                        </div>
+                        <div class="img2 via-fuchsia-200 w-[262px] h-[288px]">
+                            <img 
+                                src="/assets/img/img-section-3-2.png" 
+                                alt="" 
+                                class="w-auto h-auto object-cover mix-blend-darken absolute left-20 top-16 reveal fade-left"
+                            >
+                        </div>
+                        <div class="img3 via-fuchsia-200 w-[374px] h-[426px]">
+                            <img 
+                                src="/assets/img/img-section-3-3.png" 
+                                alt="" 
+                                class="w-auto h-auto object-cover mix-blend-darken absolute left-[350px] top-24 reveal fade-left"
+                            >
+                        </div>
+                        <!-- placeholder -->
+                        <div class="placeholder w-[340px] absolute left-32 top-[400px]">
+                            <p class="place-holder-title text-[#FD1C1C] text-[30px] leading-[60px]">
+                                PLACEHOLDER UNTIL FINAL 3D DESIGNS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- grid cards (Current information options) -->
                 <div class="content-section-five w-[600px] h-[902px] flex flex-col absolute bottom-0 right-[68px]">
 
                     <!-- card title -->
@@ -333,7 +399,7 @@
             <section class="section-six h-[1107px] bg-section-six w-full relative pl-11 overflow-hidden">
 
                 <!-- left title -->
-                <div class="left-title text-white mt-[62px] flex flex-col space-y-5">
+                <div class="left-title text-white mt-[62px] flex flex-col space-y-5 reveal fade-left">
                     <p class="less-screen xl:text-[50px] lg:text-3xl capitalize">
                         Less screen 
                     </p>
@@ -343,62 +409,62 @@
                 </div><!-- left title -->
     
                 <!-- photos -->
-                <div class="photos absolute top-0 right-0 xl:w-[90%] w-[75%] h-full">
+                <div class="photos absolute top-0 right-0 w-full h-full">
 
                     <!-- wrap-photos-1 -->
-                    <div class="wrap-photos-1 xl:absolute relative xl:bottom-12 xl:left-6">
-                        <div class="first-photos flex xl:space-x-0 space-x-5 relative max-w-max bottom-0 p-4 h-full">
+                    <div class="wrap-photos-1 absolute bottom-[355px] left-40">
+                        <div class="first-photos relative max-w-max bottom-0 p-4 h-full">
                             <img 
                                 src="/assets/img/img-section-6-1.png" 
                                 alt="img-section-6-1" 
-                                class="object-contain xl:w-[339px] w-[299px] h-auto reveal xl:fade-left fade-bottom"
+                                class="object-contain w-[339px] h-auto reveal fade-left"
                             >
                             <img 
                                 src="/assets/img/img-section-6-2.png" 
                                 alt="img-section-6-2" 
-                                class="object-contain xl:w-[289px] lg:w-[249px] h-auto xl:absolute relative xl:-top-[230px] xl:-right-40 reveal fade-bottom"
+                                class="object-contain w-[289px] h-auto absolute -top-[230px] -right-40 reveal fade-bottom"
                             >
                         </div>
                     </div><!-- wrap-photos-1 -->
 
                     <!-- wrap-photos-2 -->
-                    <div class="wrap-photos-2 xl:absolute relative xl:top-36 xl:right-[376px]">
-                        <div class="second-photos flex xl:space-x-0 space-x-5 relative max-w-max bottom-0 p-4 h-full">
+                    <div class="wrap-photos-2 absolute top-56 right-80">
+                        <div class="second-photos relative max-w-max bottom-0 p-4 h-full">
                             <img 
                                 src="/assets/img/img-section-6-3.png" 
                                 alt="img-section-6-1" 
-                                class="object-contain xl:w-[288px] w-[248px] h-auto z-20 reveal fade-bottom"
+                                class="object-contain w-[316px] h-auto z-20 reveal fade-bottom"
                             >
                             <img 
                                 src="/assets/img/img-section-6-4.png" 
                                 alt="img-section-6-2" 
-                                class="object-contain xl:w-[227px] w-[187px] h-auto xl:absolute relative xl:-top-28 xl:-right-[190px] z-10 reveal xl:fade-right fade-bottom"
+                                class="object-contain w-[323px] h-auto absolute -top-48 -right-60 z-10 reveal fade-right"
                             >
-                            <img 
+                            <!-- <img 
                                 src="/assets/img/img-section-6-7.png" 
                                 alt="img-section-6-2" 
                                 class="object-contain xl:w-[219px] w-[179px] h-auto xl:absolute relative xl:-right-[220px] xl:-bottom-8 reveal fade-bottom xl:hidden block"
-                            >
+                            > -->
                         </div>
                     </div><!-- wrap-photos-2 -->
 
                     <!-- wrap-photos-3 -->
-                    <div class="wrap-photos-3 xl:absolute relative xl:bottom-16 xl:right-[236px]">
-                        <div class="third-photos flex xl:space-x-0 space-x-5 relative max-w-max bottom-0 p-4 h-full">
+                    <div class="wrap-photos-3 absolute bottom-52 right-80">
+                        <div class="third-photos relative max-w-max bottom-0 p-4 h-full">
                             <img 
                                 src="/assets/img/img-section-6-5.png" 
                                 alt="img-section-6-1" 
-                                class="object-contain xl:w-[479px] w-[439px] h-auto z-20 reveal fade-bottom"
+                                class="object-contain w-[479px] h-auto z-20 reveal fade-bottom"
                             >
                             <img 
                                 src="/assets/img/img-section-6-6.png" 
                                 alt="img-section-6-2" 
-                                class="object-contain xl:w-[308px] w-[268px] h-auto xl:absolute relative xl:-top-32 xl:-right-[220px] z-10 reveal xl:fade-right fade-bottom"
+                                class="object-contain w-[308px] h-auto absolute -bottom-[104px] -right-60 z-10 reveal fade-right"
                             >
                             <img 
                                 src="/assets/img/img-section-6-7.png" 
                                 alt="img-section-6-2" 
-                                class="object-contain xl:w-[219px] w-[179px] h-auto xl:absolute relative xl:-right-[220px] xl:-bottom-8 reveal fade-bottom xl:block hidden"
+                                class="object-contain w-[219px] h-auto z-20 absolute -right-80 bottom-20 reveal fade-bottom"
                             >
                         </div>
                     </div><!-- wrap-photos-3 -->
@@ -527,7 +593,8 @@
         const section1 = document.getElementById('section-one')
         const section2 = document.getElementById('section-two')
 
-        function reveal() {
+        // set animations fade out from left, right or bottom
+        function setAnimations() {
             const reveals = document.querySelectorAll(".reveal")
 
             for (let i = 0; i < reveals.length; i++) {
@@ -549,46 +616,38 @@
         window.onscroll = function() {
 
             // if section 2 has passed the section 1
-            if (window.scrollY > (section1.offsetTop + section1.offsetHeight)) {
-                // section2.classList.remove('bg-section-two-no-gradient', 'sticky', 'top-0')
-                // section2.classList.add('bg-section-two')
+            if ((section2.offsetTop + section2.offsetHeight) > window.scrollY) {
+                section1.classList.add('sticky', 'top-0')
+            }
+
+            // if scroll y has reachead the height value of (1100px), then make the section 1 dissappear
+            if (window.scrollY >= 1100) {
+                section1.classList.add('opacity-0')
             } else {
-                // section2.classList.add('bg-section-two-no-gradient', 'sticky', 'top-0')
-                // section2.classList.remove('bg-section-two')
-                // section1.classList.add('sticky', 'top-0')
+                section1.classList.remove('opacity-0')
             }
 
             const currentScrollPos = window.pageYOffset
 
             // scroll up
             if (prevScrollpos > currentScrollPos) {
-                // console.log('scroll up');
-                // navbar.style.top = '50px'
-                // navbar.style.top = '0'
                 navbar.classList.remove('opacity-60')
                 navbar.classList.add('bg-nav')
             }  
             // scroll down
             else {
-                // console.log('scroll down');
                 navbar.classList.add('bg-nav', 'opacity-60')
-                // navbar.classList.remove('bg-nav', 'opacity-90')
-                // navbar.style.top = "-108px"
-                // navbar.style.top = "-54px"
             }
 
+            // not scrolled yet / on the top position
             if (currentScrollPos === 0) {
                 navbar.classList.remove('bg-nav','opacity-60')
-                // navbar.classList.remove('bg-nav', 'opacity-90')
-
-                // section2.classList.remove('bg-section-two-no-gradient' , 'sticky', 'top-0')
-                // section2.classList.add('bg-section-two')
             }
 
             prevScrollpos = currentScrollPos
         }
 
-        window.addEventListener("scroll", reveal)
+        window.addEventListener("scroll", setAnimations)
     </script>
 </body>
 </html>

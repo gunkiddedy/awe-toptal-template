@@ -6,14 +6,14 @@
     <title>Awe Toptal</title>
     <link href="./assets/tailwind.css" rel="stylesheet">
 </head>
-<body class="body-linear">
+<body class="body-linear max-w-[1440px] mx-auto">
     <!-- page-wraper -->
-    <div class="page-wraper max-w-[1440px] mx-auto">
+    <div class="page-wraper">
 
         <!-- header -->
         <header>
             <!-- navigation -->
-            <nav id="navbar" role="navigation" class="navigation-menus w-full max-w-[1440px] flex items-center justify-between py-5 px-10 fixed top-0 z-50 transition-opacity duration-500">
+            <nav id="navbar" role="navigation" class="navigation-menus w-full max-w-[1440px] flex items-center justify-between py-5 px-10 fixed top-0 z-50 transition-[top] duration-500">
     
                 <!-- logo -->   
                 <div class="logo">
@@ -121,51 +121,31 @@
 
                 <!-- image evolution -->
                 <div class="img-evolution h-auto flex items-center justify-end absolute top-[610px] right-0">
-                    <div class="h-full mr-5">
-                        <!-- unreveal fade-left-out  -->
-                        <img src="/assets/img/img-evolution1.png" alt="" class="w-[998.856px] h-auto mix-blend-darken reveal fade-left">
+                    <div class="w-[998.856px] h-[357px] mr-5 relative aspect-video">
+                        <img id="wiper1" src="/assets/img/img-evolution1.png" alt="img-evolution1" class="w-full h-full wiper">
                     </div>
+
                     <div class="h-full">
-                        <!-- unreveal fade-left-out -->
-                        <img src="/assets/img/img-evolution2.png" alt="" class="w-[370px] h-auto mix-blend-darken reveal fade-right">
+                        <img id="wiper2" src="/assets/img/img-evolution2.png" alt="img-evolution2" class="w-[370px] h-auto mix-blend-darken wiper">
                     </div>
                 </div><!-- image evolution -->
 
                 <!-- placeholder image screen TOP -->
-                <div class="placeholder-screens absolute left-0 top-[1250px] w-[55%] h-auto">
-                    <div class="placeholder-contents relative">
-                        <div class="img1 via-fuchsia-200 w-[151px] h-[173px]">
+                <div class="placeholder-image absolute left-0 top-[1310px] w-[50%] h-auto">
+                    <div class="placeholder-contents relative flex justify-center">
+                        <div class="img-placeholder w-auto h-auto">
                             <img 
-                                src="/assets/img/img-section-3-1.png" 
-                                alt="" 
-                                class="w-auto h-auto object-cover mix-blend-darken absolute -left-4 top-12 reveal fade-left"
+                                id="img-placeholder"
+                                src="/assets/img/img-placeholder.png" 
+                                alt="img-placeholder" 
+                                class="w-[507px] h-[454px] object-cover mix-blend-darken z-0 fixed left-[107px] top-40 opacity-0"
                             >
-                        </div>
-                        <div class="img2 via-fuchsia-200 w-[262px] h-[288px]">
-                            <img 
-                                src="/assets/img/img-section-3-2.png" 
-                                alt="" 
-                                class="w-auto h-auto object-cover mix-blend-darken absolute left-20 top-16 reveal fade-left"
-                            >
-                        </div>
-                        <div class="img3 via-fuchsia-200 w-[374px] h-[426px]">
-                            <img 
-                                src="/assets/img/img-section-3-3.png" 
-                                alt="" 
-                                class="w-auto h-auto object-cover mix-blend-darken absolute left-[350px] top-24 reveal fade-left"
-                            >
-                        </div>
-                        <!-- placeholder -->
-                        <div class="placeholder w-[340px] absolute left-32 top-[400px]">
-                            <p class="place-holder-title text-[#FD1C1C] text-[30px] leading-[60px]">
-                                PLACEHOLDER UNTIL FINAL 3D DESIGNS
-                            </p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Beautiful, simple distinctive panels -->
-                <div class="right-content-section-three h-[600px] flex flex-col justify-between w-max absolute right-[90px] top-[1300px]">
+                <div class="right-content-section-three h-[600px] flex flex-col justify-between w-max absolute right-[86px] top-[1300px]">
 
                     <!-- top content -->
                     <div class="top-content-three flex flex-col space-y-6 w-[541px] reveal fade-right">
@@ -183,7 +163,7 @@
                             <p class="title text-lg capitalize text-black leading-normal">
                                 Placement
                             </p>
-                            <p class="desc ml-9 text-[26px] capitalize text-black leading-normal">
+                            <p class="desc text-[26px] capitalize text-black leading-normal">
                                 Anywhere
                             </p>
                         </div>
@@ -191,7 +171,7 @@
                             <p class="title text-lg capitalize text-black leading-normal">
                                 Set-up
                             </p>
-                            <p class="desc ml-9 text-[26px] capitalize text-black leading-normal">
+                            <p class="desc text-[26px] capitalize text-black leading-normal">
                                 3 minutes
                             </p>
                         </div>
@@ -199,7 +179,7 @@
                             <p class="title text-lg capitalize text-black leading-normal">
                                 Posibilities
                             </p>
-                            <p class="desc ml-9 text-[26px] capitalize text-black leading-normal">
+                            <p class="desc text-[26px] capitalize text-black leading-normal">
                                 Endless
                             </p>
                         </div>
@@ -243,37 +223,17 @@
                 </div><!-- eye background (parallax)-->
 
                 <!-- placeholder image screen BOTTOM -->
-                <div class="placeholder-screens absolute left-0 -bottom-32 w-[55%] h-auto">
-                    <div class="placeholder-contents relative">
-                        <div class="img1 via-fuchsia-200 w-[151px] h-[173px]">
+                <!-- <div class="placeholder-image absolute left-0 bottom-[230px] w-[50%] h-auto">
+                    <div class="placeholder-contents relative flex justify-center">
+                        <div class="img-placeholder w-[507px] h-[454px]">
                             <img 
-                                src="/assets/img/img-section-3-1.png" 
-                                alt="" 
-                                class="w-auto h-auto object-cover mix-blend-darken absolute -left-4 top-12 reveal fade-left"
+                                src="/assets/img/img-placeholder.png" 
+                                alt="img-placeholder" 
+                                class="w-auto h-auto shadow-[0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25)] object-cover mix-blend-darken reveal fade-left"
                             >
-                        </div>
-                        <div class="img2 via-fuchsia-200 w-[262px] h-[288px]">
-                            <img 
-                                src="/assets/img/img-section-3-2.png" 
-                                alt="" 
-                                class="w-auto h-auto object-cover mix-blend-darken absolute left-20 top-16 reveal fade-left"
-                            >
-                        </div>
-                        <div class="img3 via-fuchsia-200 w-[374px] h-[426px]">
-                            <img 
-                                src="/assets/img/img-section-3-3.png" 
-                                alt="" 
-                                class="w-auto h-auto object-cover mix-blend-darken absolute left-[350px] top-24 reveal fade-left"
-                            >
-                        </div>
-                        <!-- placeholder -->
-                        <div class="placeholder w-[340px] absolute left-32 top-[400px]">
-                            <p class="place-holder-title text-[#FD1C1C] text-[30px] leading-[60px]">
-                                PLACEHOLDER UNTIL FINAL 3D DESIGNS
-                            </p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- grid cards (Current information options) -->
                 <div class="content-section-five w-[600px] h-[902px] flex flex-col absolute bottom-0 right-[68px]">
@@ -398,118 +358,120 @@
             </section><!-- section 2 -->
 
             <!-- parallax -->
-            <section class="parallax-section w-full h-[1107px] overflow-hidden">
+            <section class="parallax-section w-full h-[1107px] overflow-hidden z-10">
                 <div class="bg-parallax w-full h-[1107px]"></div>
             </section><!-- parallax -->
         
-            <!-- section 7 -->
-            <section class="section-seven h-[500px] bg-[#1D1D1D] w-full relative overflow-hidden">
-
-                <!-- gray arrow -->
-                <svg class="absolute -bottom-[105px] left-[150px] h-auto w-max z-10" xmlns="http://www.w3.org/2000/svg" width="935" height="604" viewBox="0 0 935 604" fill="none">
-                    <path d="M14.0933 -34.1134C-38.2111 -133.521 78.0516 -265.635 142.721 -319.266L282.864 -347.841C294.673 -265.495 358.738 -109.821 520.524 -145.893C722.756 -190.984 846.908 -189.768 881.292 -58.1493C915.676 73.4693 595.241 242.038 570.945 258.768C546.65 275.497 453.633 331.822 455.417 467.109C456.844 575.339 587.757 629.79 653.035 643.487L934.407 768.454L575.971 839.46C449.905 829.129 196.692 740.995 192.368 471.101C186.963 133.734 603.706 49.6159 644.062 35.5458C684.418 21.4757 800.649 2.44063 772.913 -51.3133C745.176 -105.067 625.973 -30.3114 403.104 64.1499C180.235 158.611 79.4739 90.146 14.0933 -34.1134Z" fill="rgba(255, 255, 255, 0.30)" fill-opacity="0.3"/>
-                </svg><!-- gray arrow -->
-                
-                <!-- content-section-seven -->
-                <div class="content-section-seven absolute w-full pl-[97px] pr-[112px] mt-[171px] h-auto flex items-start justify-between z-20">
-
-                    <!-- left -->
-                    <div class="left-side flex flex-col justify-between">
-
-                        <!-- Enter your mail -->
-                        <div class="email-field bg-[#1D1D1D] relative flex items-center mt-2">
-                            <input 
-                                type="text" 
-                                class="xl:w-[623px] lg:w-[500px] xl:h-[76px] lg:h-[60px] shrink-0 text-white xl:text-[30px] lg:text-[24px] font-normal capitalize leading-[60px] pl-8 border border-white bg-[#1D1D1D] placeholder-white focus:outline-none focus:ring-2 focus:ring-white" 
-                                placeholder="Enter your mail"
-                            >
-                            <button class="absolute right-[30px] text-white uppercase text-lg font-normal leading-[39.538px] focus:outline-none focus:font-medium hover:font-medium">
-                                SUBSCRIBE
-                            </button>
-                        </div><!-- Enter your mail -->
-
-                    </div><!-- left -->
-
-                    <!-- right -->
-                    <div class="right-side flex xl:space-x-36 lg:space-x-16 xl:pl-0 lg:pl-12">
-
-                        <!-- company -->
-                        <div class="company">
-                            <ul class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] lg:text-[20px] leading-none capitalize">
-                                <li class="font-semibold">
-                                    <a href="#">Company</a>
-                                </li>
-                                <li>
-                                    <a href="#">About us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Careers</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Resources</a>
-                                </li>
-                            </ul>
-                        </div><!-- company -->
-
-                        <!-- support -->
-                        <div class="support">
-                            <ul class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] lg:text-[20px] leading-none capitalize">
-                                <li class="font-semibold">
-                                    <a href="#">Support</a>
-                                </li>
-                                <li>
-                                    <a href="#">My Account</a>
-                                </li>
-                                <li>
-                                    <a href="#">FAQ</a>
-                                </li>
-                                <li>
-                                    <a href="#">Help</a>
-                                </li>
-                                <li>
-                                    <a href="#"> Contact</a>
-                                </li>
-                            </ul>
-                        </div><!-- support -->
-
-                    </div><!-- right -->
-
-                </div><!-- content-section-seven -->
-
-            </section><!-- section 7 -->
-
         </main><!-- main-content -->
 
         <!-- footer -->
-        <footer class="section-footer h-[103px] bg-[#1D1D1D] w-full pl-[97px] pr-[71px]">
+        <footer class="section-footer relative">
 
-            <!-- footer content -->
-            <div class="footer-content flex items-center justify-between h-full">
-
-                <!-- left-side-footer -->
-                <div class="left-side-footer text-white capitalize leading-[60px] text-lg text-opacity-70">
-                    © 2023 AWE, All rights Reserved 
-                </div><!-- left-side-footer -->
-
-                <!-- footer-menus -->
-                <nav role="navigation" class="h-full flex items-center">
-                    <ul class="menus flex items-center xl:space-x-[65px] lg:space-x-6 text-white capitalize leading-[60px] xl:text-lg lg:text-base text-opacity-70">
-                        <li>
-                            <a href="#">Terms of Service</a>
-                        </li>
-                        <li>
-                            <a href="#">Privacy policy</a>
-                        </li>
-                        <li>
-                            <a href="#">Regulatory Notice</a>
-                        </li>
-                        <li>
-                            <a href="#">Security</a>
-                        </li>
-                    </ul>
-                </nav><!-- footer-menus -->
-
-            </div><!-- footer content -->
+            <div class="wrap-footer sticky bottom-0 left-0 right-0">
+                <!-- big footer -->
+                <section class="big-footer bg-[#1D1D1D] w-full h-[500px] relative overflow-hidden">
+    
+                    <!-- gray arrow -->
+                    <svg class="absolute -bottom-[105px] left-[150px] w-max h-auto z-10" xmlns="http://www.w3.org/2000/svg" width="935" height="604" viewBox="0 0 935 604" fill="none">
+                        <path d="M14.0933 -34.1134C-38.2111 -133.521 78.0516 -265.635 142.721 -319.266L282.864 -347.841C294.673 -265.495 358.738 -109.821 520.524 -145.893C722.756 -190.984 846.908 -189.768 881.292 -58.1493C915.676 73.4693 595.241 242.038 570.945 258.768C546.65 275.497 453.633 331.822 455.417 467.109C456.844 575.339 587.757 629.79 653.035 643.487L934.407 768.454L575.971 839.46C449.905 829.129 196.692 740.995 192.368 471.101C186.963 133.734 603.706 49.6159 644.062 35.5458C684.418 21.4757 800.649 2.44063 772.913 -51.3133C745.176 -105.067 625.973 -30.3114 403.104 64.1499C180.235 158.611 79.4739 90.146 14.0933 -34.1134Z" fill="rgba(255, 255, 255, 0.30)" fill-opacity="0.3"/>
+                    </svg><!-- gray arrow -->
+                    
+                    <!-- content-section-seven -->
+                    <div class="content-section-seven absolute w-full pl-[97px] pr-[112px] mt-[171px] h-auto flex items-start justify-between z-20">
+    
+                        <!-- left -->
+                        <div class="left-side flex flex-col justify-between">
+    
+                            <!-- Enter your mail -->
+                            <div class="email-field bg-[#1D1D1D] relative flex items-center mt-2">
+                                <input 
+                                    type="text" 
+                                    class="xl:w-[623px] lg:w-[500px] xl:h-[76px] lg:h-[60px] shrink-0 text-white xl:text-[30px] lg:text-[24px] font-normal capitalize leading-[60px] pl-8 border border-white bg-[#1D1D1D] placeholder-white focus:outline-none focus:ring-2 focus:ring-white" 
+                                    placeholder="Enter your mail"
+                                >
+                                <button class="absolute right-[30px] text-white uppercase text-lg font-normal leading-[39.538px] focus:outline-none focus:font-medium hover:font-medium">
+                                    SUBSCRIBE
+                                </button>
+                            </div><!-- Enter your mail -->
+    
+                        </div><!-- left -->
+    
+                        <!-- right -->
+                        <div class="right-side flex xl:space-x-36 lg:space-x-16 xl:pl-0 lg:pl-12">
+    
+                            <!-- company -->
+                            <div class="company">
+                                <ul class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] lg:text-[20px] leading-none capitalize">
+                                    <li class="font-semibold">
+                                        <a href="#">Company</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Careers</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Resources</a>
+                                    </li>
+                                </ul>
+                            </div><!-- company -->
+    
+                            <!-- support -->
+                            <div class="support">
+                                <ul class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] lg:text-[20px] leading-none capitalize">
+                                    <li class="font-semibold">
+                                        <a href="#">Support</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">My Account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Help</a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> Contact</a>
+                                    </li>
+                                </ul>
+                            </div><!-- support -->
+    
+                        </div><!-- right -->
+    
+                    </div><!-- content-section-seven -->
+    
+                </section><!-- big footer -->
+    
+                <!-- small footer -->
+                <div class="small-footer h-[103px] bg-[#1D1D1D] flex items-center justify-between pl-[97px] pr-[71px] overflow-x-hidden z-30">
+    
+                    <!-- left-side-footer -->
+                    <div class="left-side-footer text-white capitalize leading-[60px] text-lg text-opacity-70">
+                        © 2023 AWE, All rights Reserved 
+                    </div><!-- left-side-footer -->
+    
+                    <!-- footer-menus -->
+                    <nav role="navigation" class="h-full flex items-center">
+                        <ul class="menus flex items-center xl:space-x-[65px] lg:space-x-6 text-white capitalize leading-[60px] xl:text-lg lg:text-base text-opacity-70">
+                            <li>
+                                <a href="#">Terms of Service</a>
+                            </li>
+                            <li>
+                                <a href="#">Privacy policy</a>
+                            </li>
+                            <li>
+                                <a href="#">Regulatory Notice</a>
+                            </li>
+                            <li>
+                                <a href="#">Security</a>
+                            </li>
+                        </ul>
+                    </nav><!-- footer-menus -->
+    
+                </div><!-- small footer -->
+            </div>
 
         </footer><!-- footer -->
         
@@ -570,28 +532,84 @@
 
             // console.log(window.scrollY);
 
-            // if scroll y has reachead the height value of (1100px), then make the section 1 dissappear
-            if (window.scrollY >= 1000) {
-                section1.classList.add('opacity-0', '-top-[1129px]')
+            const wiper1 = document.getElementById('wiper1')
+            const wiper2 = document.getElementById('wiper2')
+
+            /**
+             * if scroll y has reachead the height value of (1200px),
+             * then make the section 1 dissappear
+            */
+            if (window.scrollY >= 1200) {
+                section1.classList.remove('sticky', 'top-0')
+                section1.classList.add('-top-[2129px]')              
             } else {
-                section1.classList.remove('opacity-0', '-top-[1129px]')
+                section1.classList.remove('-top-[2129px]')
+            }
+
+            /**
+             * if scroll y has reachead the height value of (1000), 
+             * then run the wipe animations
+            */ 
+            if (window.scrollY >= 1000) {
+                wiper1.classList.remove('wipe-gone')
+                wiper2.classList.remove('wipe-gone')
+
+                wiper1.classList.add('wipe-left')
+                wiper2.classList.add('wipe-left')
+            } else {
+                wiper1.classList.remove('wipe-left')
+                wiper2.classList.remove('wipe-left')
+
+                wiper1.classList.add('wipe-gone')
+                wiper2.classList.add('wipe-gone')
+            }
+
+            // set the image placeholder fixed 
+            const imgPlaceholder = document.getElementById('img-placeholder')
+            if (window.scrollY >= 2200) {
+                // console.log('>= 2200')
+                imgPlaceholder.classList.remove( 
+                    'opacity-0',
+                    'transition-all',
+                    'duration-300'
+                )
+                imgPlaceholder.classList.add( 
+                    'opacity-100',
+                    'transition-all',
+                    'duration-700',
+                    'transform',
+                    'scale-105'
+                )
+            } else {
+                // console.log('< 2200')
+                imgPlaceholder.classList.remove( 
+                    'opacity-100',
+                    'transition-all',
+                    'duration-700',
+                    'transform',
+                    'scale-105'
+                )
+                imgPlaceholder.classList.add( 
+                    'opacity-0',
+                    'transition-all',
+                    'duration-300'
+                )
             }
 
             const currentScrollPos = window.pageYOffset
-
             // scroll up
             if (prevScrollpos > currentScrollPos) {
-                navbar.classList.remove('opacity-30')
-                navbar.classList.add('bg-nav')
+                navbar.style.top = '0'
+                navbar.classList.add('bg-nav', 'opacity-95')
             }  
             // scroll down
             else {
-                navbar.classList.add('bg-nav', 'opacity-30')
+                navbar.style.top = "-90px"
             }
 
             // not scrolled yet / on the top position
             if (currentScrollPos === 0) {
-                navbar.classList.remove('bg-nav','opacity-30')
+                navbar.classList.remove('bg-nav', 'opacity-95')
             }
 
             prevScrollpos = currentScrollPos
@@ -601,3 +619,17 @@
     </script>
 </body>
 </html>
+
+<!-- 
+    ---------WHAT I'VE DONE
+    1 set the image evolution to wipe-in like the ppt animations -- DONE
+    2. set the footer stay on bottom -- DONE (need discussion)
+    3. fix the alignment -- DONE
+    4. set the navbar hide and show depends on scrolling -- DONE
+    5. change the color (solid version) of section 2 -- DONE
+
+    ---------COUPLE OF QUESTIONS
+    1. the image placeholder will be back or front the parallax image (eye bg)?
+    2. the footer style
+    3. 
+ -->

@@ -29,7 +29,8 @@
         background-position-y: 15%;
     }
     .bg-section-two {
-        background: linear-gradient(107deg, #DB9C7E -8.86%, rgba(255, 221, 85, 0.18) 100%);
+        /* background: linear-gradient(107deg, #DB9C7E -8.86%, rgba(255, 221, 85, 0.18) 100%); */
+        background: linear-gradient(114deg, #DDB188 2.74%, #FBF4D1 93.53%);
     }
     .bg-section-two-reduce-gradient {
         background: linear-gradient(138deg, #DB9C7E 88%, rgba(255, 221, 85, 0.18) 100%);
@@ -72,7 +73,7 @@
         background: url("/assets/img/bg-parallax.png");
         background-position: center;
         background-repeat: no-repeat;
-        background-position-y: 1%;
+        background-position-y: 7%;
         background-attachment: fixed;
     }
     .reveal {
@@ -108,6 +109,36 @@
     }
     .active.fade-right {
         animation: fade-right 1s ease-in;
+    }
+    .wiper {
+        mix-blend-mode: darken;
+        /* background-image: url(assets/img/img-evolution1.png); */
+        background-repeat: no-repeat;
+        mask-image: linear-gradient(
+            to left,
+            transparent 47.5%,
+            #fff 52.5%
+        );
+        -webkit-mask-image: linear-gradient(
+            to left,
+            transparent 47.5%,
+            #fff 52.5%
+        );
+        mask-size: 210%;
+        -webkit-mask-size: 210%;
+        mask-position: right;
+        -webkit-mask-position: right;
+        opacity: 0;
+    }
+    .wipe-left {
+        opacity: 1;
+        mask-position: left;
+        -webkit-mask-position: left;
+        transition: -webkit-mask-position 4s linear;
+    }
+    .wipe-gone {
+        opacity: 0;
+        @apply transition-all duration-[2500ms]
     }
     @keyframes fade-in-out {
         0% {

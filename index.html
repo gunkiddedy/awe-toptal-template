@@ -121,9 +121,9 @@
                     </svg>
     
                     <!-- image evolution -->
-                    <div class="img-evolution h-auto absolute top-[610px] inset-x-0 w-full max-w-[1440px] mx-auto">
-                        <div class="w-full h-[357px] mr-5 relative aspect-video">
-                            <img id="wiper1" src="/assets/img/img-evolution.png" alt="img-evolution1" class="w-[1428px] h-ful mix-blend-darkenl wiper object-cover">
+                    <div class="img-evolution h-auto absolute top-[610px] inset-x-0 w-full mx-auto">
+                        <div class="h-[357px]">
+                            <img id="wiper1" src="/assets/img/img-evolution.png" alt="img-evolution1" class="w-full h-auto mix-blend-darkenl wiper object-cover">
                         </div>
                     </div><!-- image evolution -->
     
@@ -353,7 +353,6 @@
                     </div>
                 </div>
 
-
             </section><!-- section 2 -->
 
             <!-- parallax -->
@@ -533,40 +532,21 @@
 
             // console.log(window.scrollY);
 
-            const wiper1 = document.getElementById('wiper1')
-            // const wiper2 = document.getElementById('wiper2')
-
             /**
-             * if scroll y has reachead the height value of (1200px),
-             * then make the section 1 dissappear
-            */
-            if (window.scrollY >= 1200) {
-                section1.classList.remove('sticky', 'top-0')
-                section1.classList.add('-top-[2129px]')              
-            } else {
-                section1.classList.remove('-top-[2129px]')
-            }
-
-            /**
-             * if scroll y has reachead the height value of (1000), 
+             * if scroll y has reachead the minimum height value of 1000, 
              * then run the wipe animations
-            */ 
+             */ 
+            const wiper1 = document.getElementById('wiper1')
             if (window.scrollY >= 1000) {
                 wiper1.classList.remove('wipe-gone')
-                // wiper2.classList.remove('wipe-gone')
-
                 wiper1.classList.add('wipe-left')
-                // wiper2.classList.add('wipe-left')
             } else {
                 wiper1.classList.remove('wipe-left')
-                // wiper2.classList.remove('wipe-left')
-
                 wiper1.classList.add('wipe-gone')
-                // wiper2.classList.add('wipe-gone')
             }
 
             /**
-             * set the image placeholder to be fixed
+             * show/hide the image placeholder
             */
             const imgPlaceholder = document.getElementById('img-placeholder')
             if (window.scrollY >= 2200) {
@@ -579,7 +559,7 @@
                 imgPlaceholder.classList.add( 
                     'opacity-100',
                     'transition-all',
-                    'duration-700',
+                    'duration-150',
                     'transform',
                     'scale-105'
                 )
@@ -588,7 +568,7 @@
                 imgPlaceholder.classList.remove( 
                     'opacity-100',
                     'transition-all',
-                    'duration-700',
+                    'duration-150',
                     'transform',
                     'scale-105'
                 )
@@ -602,7 +582,7 @@
             /**
              * set the dinamically left position of placeholder image
             */
-            const screenWidth = screen.width
+            const screenWidth = window.innerWidth
             const pageWidth = 1440
             const leftPosition = (screenWidth / pageWidth) * (100 / 7)
             const leftImage = leftPosition + '%'

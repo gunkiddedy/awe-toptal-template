@@ -832,6 +832,14 @@ body {
   top: 650px;
 }
 
+.left-\[60\%\] {
+  left: 60%;
+}
+
+.-left-\[1000px\] {
+  left: -1000px;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -899,6 +907,10 @@ body {
 
 .grid {
   display: grid;
+}
+
+.hidden {
+  display: none;
 }
 
 .aspect-video {
@@ -971,6 +983,18 @@ body {
 
 .h-full {
   height: 100%;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.max-h-screen {
+  max-height: 100vh;
+}
+
+.min-h-\[1129px\] {
+  min-height: 1129px;
 }
 
 .w-\[116px\] {
@@ -1567,6 +1591,10 @@ body {
 
   .xl\:h-\[76px\] {
     height: 76px;
+  }
+
+  .xl\:h-screen {
+    height: 100vh;
   }
 
   .xl\:w-\[1146px\] {

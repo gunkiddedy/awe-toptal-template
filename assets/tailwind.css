@@ -800,10 +800,6 @@ body {
   right: 30px;
 }
 
-.right-\[68px\] {
-  right: 68px;
-}
-
 .top-0 {
   top: 0px;
 }
@@ -846,10 +842,6 @@ body {
 
 .z-20 {
   z-index: 20;
-}
-
-.z-30 {
-  z-index: 30;
 }
 
 .z-50 {
@@ -1009,10 +1001,6 @@ body {
   width: 541px;
 }
 
-.w-\[600px\] {
-  width: 600px;
-}
-
 .w-\[743px\] {
   width: 743px;
 }
@@ -1042,6 +1030,10 @@ body {
   max-width: 377px;
 }
 
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
 .max-w-\[767px\] {
   max-width: 767px;
 }
@@ -1049,10 +1041,6 @@ body {
 .max-w-max {
   max-width: -moz-max-content;
   max-width: max-content;
-}
-
-.max-w-\[600px\] {
-  max-width: 600px;
 }
 
 .shrink-0 {
@@ -1199,11 +1187,6 @@ body {
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-purple-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(233 213 255 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\/assets\/img\/bg-section-4\.png\)\] {

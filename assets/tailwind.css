@@ -791,12 +791,8 @@ body {
   bottom: 5rem;
 }
 
-.bottom-52 {
-  bottom: 13rem;
-}
-
-.bottom-\[355px\] {
-  bottom: 355px;
+.bottom-96 {
+  bottom: 24rem;
 }
 
 .left-0 {
@@ -827,16 +823,24 @@ body {
   top: 0px;
 }
 
-.top-56 {
-  top: 14rem;
+.top-20 {
+  top: 5rem;
 }
 
-.top-\[1300px\] {
-  top: 1300px;
+.top-60 {
+  top: 15rem;
 }
 
-.top-\[1310px\] {
-  top: 1310px;
+.top-80 {
+  top: 20rem;
+}
+
+.top-\[1200px\] {
+  top: 1200px;
+}
+
+.top-\[1210px\] {
+  top: 1210px;
 }
 
 .top-\[1390px\] {
@@ -851,28 +855,8 @@ body {
   top: 2060px;
 }
 
-.top-\[610px\] {
-  top: 610px;
-}
-
-.top-\[650px\] {
-  top: 650px;
-}
-
-.top-\[296px\] {
-  top: 296px;
-}
-
-.top-80 {
-  top: 20rem;
-}
-
-.top-20 {
-  top: 5rem;
-}
-
-.bottom-96 {
-  bottom: 24rem;
+.top-\[810px\] {
+  top: 810px;
 }
 
 .z-0 {
@@ -918,10 +902,6 @@ body {
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mt-20 {
-  margin-top: 5rem;
 }
 
 .mt-24 {
@@ -970,6 +950,10 @@ body {
 
 .h-\[155px\] {
   height: 155px;
+}
+
+.h-\[192px\] {
+  height: 192px;
 }
 
 .h-\[357px\] {
@@ -1072,6 +1056,10 @@ body {
   width: 743px;
 }
 
+.w-\[950px\] {
+  width: 950px;
+}
+
 .w-auto {
   width: auto;
 }
@@ -1087,10 +1075,6 @@ body {
 
 .max-w-\[1440px\] {
   max-width: 1440px;
-}
-
-.max-w-\[261\.581px\] {
-  max-width: 261.581px;
 }
 
 .max-w-\[377px\] {
@@ -1258,21 +1242,6 @@ body {
   background-color: transparent;
 }
 
-.bg-slate-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-}
-
-.bg-slate-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
-}
-
-.bg-purple-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(216 180 254 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\/assets\/img\/bg-section-4\.png\)\] {
   background-image: url(/assets/img/bg-section-4.png);
 }
@@ -1293,11 +1262,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1310,6 +1274,11 @@ body {
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .px-6 {
@@ -1613,10 +1582,6 @@ body {
 
   .lg\:w-\[500px\] {
     width: 500px;
-  }
-
-  .lg\:w-\[950px\] {
-    width: 950px;
   }
 
   .lg\:space-x-16 > :not([hidden]) ~ :not([hidden]) {

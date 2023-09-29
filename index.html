@@ -10,8 +10,82 @@
     <div class="page-wraper">
         <!-- header -->
         <header id="navbar" class="fixed top-0 flex justify-center w-full transition-[top] duration-500 z-50">
-            <!-- navigation -->
-            <nav role="navigation" class="navigation-menus w-full max-w-[1440px] flex items-center justify-between py-5 px-10 ">
+
+            <!-- HAMBURGER -->
+            <div class="hamburger w-full bg-nav opacity-90 p-5 lg:hidden flex items-center justify-between relative">
+                <!-- left -->
+                <div class="left flex items-center">
+                    <!-- hamburger menu -->
+                    <button id="navbarBurger" onclick="openNav()" class="navbar-burger">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-800 hover:text-gray-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                    <!-- logo -->   
+                    <div class="logo ml-4">
+                        <a href="">
+                            <img 
+                                src="/assets/img/AWE.svg"   
+                                alt="awe logo" 
+                                class="w-[116px] h-auto"
+                            >
+                        </a>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class="right">
+                    <button role="button" class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300">
+                        Order Now
+                    </button>              
+                </div>
+            </div>
+
+            <!-- NAVBAR MENU TABLET/MOBILE -->
+            <div class="navbar-menu navbar-inactive lg:hidden block">
+                <div onclick="closeNav()" id="navbarBackdrop" class="navbar-backdrop bg-gray-900 opacity-70"></div>
+                <nav id="sidenav" class="fixed -top-[100%] bottom-0 left-0 flex flex-col w-full py-6 px-10 bg-nav border-r transition-all duration-700 max-h-max">
+                    <div class="flex items-center justify-between mb-8">
+                        <a href="">
+                            <img 
+                                src="/assets/img/AWE.svg"   
+                                alt="awe logo" 
+                                class="w-[116px] h-auto"
+                            >
+                        </a>
+                        <button onclick="closeNav()" id="navbarClose" class="navbar-close">
+                            <svg class="h-8 w-8 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div>
+                        <ul>
+                            <li class="mb-1">
+                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">My tiles</a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">Data sources</a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">Backgrounds</a>
+                            </li>
+                            <li class="mb-1">
+                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="pt-6">
+                            <button role="button" class="w-full px-8 py-4 bg-black text-white rounded-full font-semibold  transition-colors duration-300 text-xl hover:bg-gray-800">
+                                Order Now
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- default navigation -->
+            <nav role="navigation" class="navigation-menus w-full max-w-[1440px] hidden lg:flex items-center justify-between py-5 px-10">
                 <!-- logo -->   
                 <div class="logo">
                     <a href="">
@@ -596,5 +670,27 @@
     }
 
     window.addEventListener("scroll", setAnimations)
+
+    // open mobile menu
+    function openNav() {
+        document.body.style.overflow = 'hidden'
+        document.getElementById("navbarBackdrop").classList.add('fixed', 'inset-0')
+        document.getElementById("sidenav").classList.remove('-top-[100%]')
+        document.getElementById("sidenav").classList.add('top-0') 
+    }
+    
+    // close mobile menu
+    function closeNav() {
+        document.getElementById("navbarBackdrop").classList.remove('fixed', 'inset-0')
+        document.getElementById("sidenav").classList.remove('top-0')
+        document.getElementById("sidenav").classList.add('-top-[100%]')
+        document.body.style.overflow = ''
+    }
+
+    // call closeNav if window is resized
+    window.addEventListener("resize", () => {
+        // console.log('close navs')
+        closeNav()
+    })
 </script>
 </html>

@@ -37,6 +37,16 @@
         background-position-y: 40%;
         /* background-attachment: fixed; */
     }
+    /* .sidenav {
+        height: 100%;
+        width: 83%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: -100%;
+        overflow-x: hidden;
+        transition: 0.5s;
+    } */
     .reveal {
         position: relative;
         opacity: 0;

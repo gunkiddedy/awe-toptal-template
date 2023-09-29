@@ -29,29 +29,6 @@
     .bg-section-two {
         background: linear-gradient(155deg, #E8B98D 15.32%, #FBF4D1 39.11%, #D1DCEA 65.47%, #DEDFDC 77.75%);
     }
-    .bg-section-two-reduce-gradient {
-        background: linear-gradient(138deg, #DB9C7E 88%, rgba(255, 221, 85, 0.18) 100%);
-    }
-    .bg-section-two-no-gradient {
-        background: linear-gradient(138deg, #DB9C7E 100%, rgba(255, 221, 85, 0.18) 100%);
-    }
-    .bg-section-three {
-        background: url("/assets/img/bg-section-3.png"), linear-gradient(107deg, #F9E6C1 0.79%, #CDDBEF 100%);
-        background-size: cover;
-        mix-blend-mode: normal;
-        background-repeat: no-repeat;
-    }
-    .bg-section-four {
-        background: url("/assets/img/bg-section-4.png");
-        background-size: cover;
-        background-repeat: no-repeat;
-    }
-    .bg-section-five {
-        background: url("/assets/img/bg-section-5.png"), linear-gradient(107deg, #CDDBEF 0.79%, #F9E6C1 100%);
-        background-size: cover;
-        mix-blend-mode: normal;
-        background-repeat: no-repeat;
-    }
     .bg-section-six {
         background: url("/assets/img/bg-section-6.png"), linear-gradient(105deg, #384B66 -0.06%, #CDDBEF 66.62%, #FFF1B7 97.12%);
         background-size: contain;
@@ -59,14 +36,6 @@
         background-repeat: no-repeat;
         background-position-y: 40%;
         /* background-attachment: fixed; */
-    }
-    .bg-parallax {
-        background: url("/assets/img/bg-parallax.png");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-position-y: 7%;
-        background-attachment: fixed;
-        background-size: cover;
     }
     .reveal {
         position: relative;
@@ -78,14 +47,6 @@
     .reveal.inactive {
         opacity: 0;
         @apply transition-all duration-300
-    }
-    .unreveal {
-        position: relative;
-        opacity: 1;
-    }
-    .unreveal.inactive {
-        opacity: 0;
-        @apply transition-all duration-[2500ms]
     }
     .inactive.fade-left-out {
         animation: fade-left-out 3s ease-in;
@@ -131,6 +92,13 @@
     .wipe-gone {
         opacity: 0;
         @apply transition-all duration-[2500ms]
+    }
+    .zoom-in-out {
+        animation: zoom-in-out 5s infinite alternate;
+        -webkit-animation: zoom-in-out 5s infinite alternate;
+        -moz-animation: zoom-in-out 5s infinite alternate;
+        -o-animation: zoom-in-out 5s infinite alternate;
+        -ms-animation: zoom-in-out 5s infinite alternate;
     }
     @keyframes fade-in-out {
         0% {
@@ -196,6 +164,17 @@
         100% {
             transform: translateX(0);
             opacity: 1;
+        }
+    }
+    @keyframes zoom-in-out {
+        0% {
+            opacity: 0;
+            transform: scale(0.5);
+            /* transform: translateY(200px); */
+        }
+        100% {
+            opacity: 1; 
+            transform: scale(1.2);
         }
     }
 }

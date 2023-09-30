@@ -75,7 +75,6 @@
     }
     .wiper {
         mix-blend-mode: darken;
-        /* background-image: url(assets/img/img-evolution1.png); */
         background-repeat: no-repeat;
         mask-image: linear-gradient(
             to left,

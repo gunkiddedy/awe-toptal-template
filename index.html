@@ -205,7 +205,7 @@
                                 id="img-placeholder"
                                 src="/assets/img/img-placeholder.png" 
                                 alt="img-placeholder" 
-                                class="placeholder-image w-[507px] h-[454px] object-cover mix-blend-darken z-0 fixed top-[15%] opacity-0"
+                                class="placeholder-image w-[507px] h-[454px] object-cover mix-blend-darken z-0 relative top-[11%] opacity-0"
                             >
                         </div>
                     </div>
@@ -609,36 +609,36 @@
         */
         const imgPlaceholder = document.getElementById('img-placeholder')
         if (window.scrollY >= 2000) {
-            // console.log('window.scrollY', window.scrollY)
+            // console.log('>= 2200')
             imgPlaceholder.classList.remove( 
+                'relative',
                 'opacity-0',
                 'transition-all',
-                'duration-300',
-                '-z-10'
+                'duration-300'
             )
             imgPlaceholder.classList.add( 
+                'fixed',
                 'opacity-100',
                 'transition-all',
                 'duration-300',
                 'transform',
-                'scale-105',
-                'z-0'
+                'scale-105'
             )
         } else {
-            // console.log('window.scrollY', window.scrollY)
-            imgPlaceholder.classList.remove( 
-                'opacity-100',
-                'transition-all',
-                'duration-300',
-                'transform',
-                'scale-105',
-                'z-0'
-            )
+            // console.log('< 2200')
             imgPlaceholder.classList.add( 
                 'opacity-0',
                 'transition-all',
                 'duration-300',
-                '-z-10'
+                'relative',
+            )
+            imgPlaceholder.classList.remove( 
+                'fixed',
+                'opacity-100',
+                'transition-all',
+                'duration-300',
+                'transform',
+                'scale-105'
             )
         }
 

@@ -915,6 +915,10 @@ body {
   top: 5%;
 }
 
+.-top-\[500\%\] {
+  top: -500%;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1095,6 +1099,10 @@ body {
 
 .h-\[690px\] {
   height: 690px;
+}
+
+.h-\[100svh\] {
+  height: 100svh;
 }
 
 .max-h-max {
@@ -1776,6 +1784,10 @@ body {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-transparent:hover {
+  background-color: transparent;
+}
+
 .hover\:font-medium:hover {
   font-weight: 500;
 }
@@ -1793,6 +1805,11 @@ body {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-black:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .focus\:font-medium:focus {
@@ -2063,6 +2080,14 @@ body {
 
   .xl\:h-screen {
     height: 100vh;
+  }
+
+  .xl\:h-\[100svh\] {
+    height: 100svh;
+  }
+
+  .xl\:h-\[100dvh\] {
+    height: 100dvh;
   }
 
   .xl\:w-\[1146px\] {

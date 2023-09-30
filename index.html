@@ -14,7 +14,7 @@
             <!-- HAMBURGER -->
             <div class="hamburger w-full bg-nav opacity-90 p-5 lg:hidden flex items-center justify-between relative">
                 <!-- left -->
-                <div class="left flex items-center">
+                <div class="left w-full flex items-center justify-between md:justify-start">
                     <!-- hamburger menu -->
                     <button id="navbarBurger" onclick="openNav()" class="navbar-burger">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-800 hover:text-gray-500">
@@ -34,7 +34,7 @@
                 </div>
                 <!-- right -->
                 <div class="right">
-                    <button role="button" class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300">
+                    <button role="button" class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 hidden md:block">
                         Order Now
                     </button>              
                 </div>
@@ -43,7 +43,7 @@
             <!-- NAVBAR MENU TABLET/MOBILE -->
             <div class="navbar-menu navbar-inactive lg:hidden block">
                 <div onclick="closeNav()" id="navbarBackdrop" class="navbar-backdrop bg-gray-900 opacity-70"></div>
-                <nav id="sidenav" class="fixed -top-[100%] bottom-0 left-0 flex flex-col w-full py-6 px-10 bg-nav border-r transition-all duration-700 max-h-max">
+                <nav id="sidenav" class="fixed -top-[120%] bottom-0 left-0 flex flex-col w-full py-6 px-10 bg-nav border-r transition-all duration-700 max-h-max">
                     <div class="flex items-center justify-between mb-8">
                         <a href="">
                             <img 
@@ -120,30 +120,41 @@
         <!-- main-content -->
         <main class="main-content w-full flex flex-col items-center">
             <!-- section 1 -->
-            <section id="section-one" class="section-one bg-section-one w-full transition-opacity duration-500">
+            <section id="section-one" class="section-one bg-section-one w-full transition-opacity duration-500 sticky top-0">
                 
+                <!-- image background -->
+                <div class="img-bg absolute w-full inset-0 lg:top-0 md:top-[5%] top-1/4">
+                    <img 
+                        src="/assets/img/bg-section-11.png" 
+                        alt="image bg section 1" 
+                        class="object-cover object-center w-full h-auto"
+                    >
+                </div>
+
                 <!-- content div -->
-                <div class="content-div relative w-full xl:h-screen h-[1129px] max-w-[1440px] mx-auto">
+                <div class="content-div relative w-full xl:h-screen md:h-[1129px] h-[690px] max-w-[1440px] mx-auto">
     
                     <!-- right content -->
-                    <div class="right-content-section-one absolute left-[60%] xl:top-[47%] lg:top-1/3 md:top-1/4">
+                    <div class="right-content-section-one lg:absolute relative xl:left-[60%] lg:left-1/2 left-0 xl:top-[47%] lg:top-1/3 top-[20%]">
 
-                        <div class="top flex flex-col space-y-4">
-                            <h1 class="font-bold text-[50px] text-black">
+                        <div class="top flex flex-col space-y-4 text-center lg:text-left">
+                            <h1 class="font-bold lg:text-[50px] md:text-6xl text-4xl text-black">
                                 AWE E-Ink Panels
                             </h1>
-                            <h2 class="capitalize text-[50px] max-w-[377px] leading-none text-black">
+                            <h2 class="capitalize lg:text-[50px] md:text-6xl text-4xl lg:max-w-[377px] leading-none text-black">
                                 Less Online, More Life
                             </h2>
-                            <p class="text-2xl capitalize">
+                            <p class="lg:text-2xl md:text-3xl text-2xl capitalize lg:px-0 px-4">
                                 AWE Panels integrate information in your physical environment.
                                 What you need, where you need it, without distractions
                             </p>
                         </div>
 
-                        <button class="w-[129px] h-[44px] bg-black text-white rounded-full capitalize mt-16">
-                            Explore
-                        </button>
+                        <div class="btn w-full flex lg:justify-start justify-center mt-16">
+                            <button class="w-[129px] h-[44px] bg-black text-white rounded-full capitalize">
+                                Explore
+                            </button>
+                        </div>
 
                     </div><!-- right content -->
 
@@ -675,7 +686,7 @@
     function openNav() {
         document.body.style.overflow = 'hidden'
         document.getElementById("navbarBackdrop").classList.add('fixed', 'inset-0')
-        document.getElementById("sidenav").classList.remove('-top-[100%]')
+        document.getElementById("sidenav").classList.remove('-top-[120%]')
         document.getElementById("sidenav").classList.add('top-0') 
     }
     
@@ -683,14 +694,25 @@
     function closeNav() {
         document.getElementById("navbarBackdrop").classList.remove('fixed', 'inset-0')
         document.getElementById("sidenav").classList.remove('top-0')
-        document.getElementById("sidenav").classList.add('-top-[100%]')
+        document.getElementById("sidenav").classList.add('-top-[120%]')
         document.body.style.overflow = ''
     }
 
     // call closeNav if window is resized
     window.addEventListener("resize", () => {
-        // console.log('close navs')
-        closeNav()
+        if (window.innerWidth >= 1023) {
+            console.log('close navbar in size', window.innerWidth)
+            closeNav()
+        }
     })
+
+    // window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+    //     const portrait = e.matches;
+    //     if (portrait) {
+    //         console.log('portrait', portrait)
+    //     } else {
+    //         console.log('portrait', portrait)
+    //     }
+    // });
 </script>
 </html>

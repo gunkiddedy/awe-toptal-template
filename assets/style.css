@@ -18,7 +18,7 @@
         background: linear-gradient(107.16deg, #CDDBEF 0.79%, #F9E6C1 100%);
     }
     .bg-section-one {
-        background: url("/assets/img/bg-section-11.png"), linear-gradient(107.16deg, #CDDBEF 0.79%, #F9E6C1 100%);
+        background: linear-gradient(107.16deg, #CDDBEF 0.79%, #F9E6C1 100%);
         /* background-size: contain; */
         background-repeat: no-repeat;
         mix-blend-mode: normal;

@@ -43,7 +43,7 @@
             <!-- NAVBAR MENU TABLET/MOBILE -->
             <div class="navbar-menu navbar-inactive lg:hidden block">
                 <div onclick="closeNav()" id="navbarBackdrop" class="navbar-backdrop bg-gray-900 opacity-70"></div>
-                <nav id="sidenav" class="fixed -top-[120%] bottom-0 left-0 flex flex-col w-full py-6 px-10 bg-nav border-r transition-all duration-700 max-h-max">
+                <nav id="sidenav" class="fixed -top-[500%] bottom-0 left-0 flex flex-col w-full py-6 px-10 bg-nav border-r transition-all duration-700 max-h-max">
                     <div class="flex items-center justify-between mb-8">
                         <a href="">
                             <img 
@@ -686,7 +686,7 @@
     function openNav() {
         document.body.style.overflow = 'hidden'
         document.getElementById("navbarBackdrop").classList.add('fixed', 'inset-0')
-        document.getElementById("sidenav").classList.remove('-top-[120%]')
+        document.getElementById("sidenav").classList.remove('-top-[500%]')
         document.getElementById("sidenav").classList.add('top-0') 
     }
     
@@ -694,7 +694,7 @@
     function closeNav() {
         document.getElementById("navbarBackdrop").classList.remove('fixed', 'inset-0')
         document.getElementById("sidenav").classList.remove('top-0')
-        document.getElementById("sidenav").classList.add('-top-[120%]')
+        document.getElementById("sidenav").classList.add('-top-[500%]')
         document.body.style.overflow = ''
     }
 

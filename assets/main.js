@@ -95,11 +95,11 @@ window.onscroll = function() {
      */ 
     const wiper1 = document.getElementById('wiper1')
     if (window.scrollY >= 1000) {
-        console.log('wiper up', window.scrollY)
+        // console.log('wiper up', window.scrollY)
         wiper1.classList.remove('wipe-gone')
         wiper1.classList.add('wipe-left')
     } else {
-        console.log('wiper down', window.scrollY)
+        // console.log('wiper down', window.scrollY)
         wiper1.classList.remove('wipe-left')
         wiper1.classList.add('wipe-gone')
     }

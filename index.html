@@ -388,20 +388,69 @@
                 </div>
             </section>
             <!-- section 3 images animation -->
-            <section class="section-3 h-[1107px] bg-section-six w-full relative pl-11 overflow-hidden">
+            <section class="section-3 h-[1107px] bg-section-six w-full relative lg:pl-11 pl-8 overflow-hidden">
                 <!-- left title -->
-                <div class="left-title text-white mt-[62px] flex flex-col space-y-5 reveal fade-left w-full h-auto max-w-[1440px] mx-auto">
-                    <p class="less-screen xl:text-[50px] lg:text-3xl capitalize">
+                <div class="left-title text-white mt-[62px] flex flex-col lg:space-y-5 space-y-1 reveal fade-left w-full h-auto max-w-[1440px] mx-auto">
+                    <p class="less-screen text-[50px] capitalize">
                         Less screen 
                     </p>
-                    <p class="more-life xl:text-[50px] lg:text-3xl capitalize ml-32">
+                    <p class="more-life text-[50px] capitalize ml-32">
                         More life
                     </p>
                 </div>
-                <!-- photos -->
-                <div class="photos absolute inset-x-0 w-full h-full max-w-[1440px] mx-auto">
+
+                <!-- photos HIDDEN on DESKTOP -->
+                <div class="img-mobile lg:hidden block w-full h-full max-w-[1440px] mx-auto mt-12">
+                    <div class="second-photos grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-6 w-full max-h-max p-8">
+                        <img
+                            id="img1" 
+                            src="/assets/img/img-section-6-1.png" 
+                            alt="img-section-6-1" 
+                            class="zoom-img object-cover w-[269px] h-auto zoom-in-out"
+                        >
+                        <img
+                            id="img2" 
+                            src="/assets/img/img-section-6-2.png" 
+                            alt="img-section-6-2" 
+                            class="zoom-img object-cover w-[119px] h-auto zoom-in-out"
+                        >
+                        <img
+                            id="img3" 
+                            src="/assets/img/img-section-6-3.png" 
+                            alt="img-section-6-1" 
+                            class="zoom-img object-contain w-[246px] h-auto zoom-in-out"
+                        >
+                        <img
+                            id="img4" 
+                            src="/assets/img/img-section-6-4.png" 
+                            alt="img-section-6-2" 
+                            class="zoom-img object-contain w-[253px] h-auto zoom-in-out"
+                        >
+                        <img
+                            id="img5" 
+                            src="/assets/img/img-section-6-5.png" 
+                            alt="img-section-6-1" 
+                            class="zoom-img object-cover w-[409px] h-auto zoom-in-out"
+                        >
+                        <img
+                            id="img6" 
+                            src="/assets/img/img-section-6-6.png" 
+                            alt="img-section-6-2" 
+                            class="zoom-img object-cover w-[238px] h-auto zoom-in-out"
+                        >
+                        <img
+                            id="img7" 
+                            src="/assets/img/img-section-6-7.png" 
+                            alt="img-section-6-2" 
+                            class="zoom-img object-cover w-[149px] h-auto zoom-in-out"
+                        >
+                    </div>
+                </div>
+
+                <!-- photos HIDDEN on TABLET/MOBILE -->
+                <div class="photos absolute hidden lg:block inset-x-0 w-full h-full max-w-[1440px] mx-auto">
                     <!-- wrap-photos-1 -->
-                    <div class="wrap-photos-1 absolute top-80 left-40">
+                    <div class="wrap-photos-1 absolute xl:top-80 top-56 xl:left-40 left-12">
                         <div class="first-photos relative max-w-max bottom-0 p-4 h-full">
                             <img
                                 id="img1" 
@@ -418,7 +467,7 @@
                         </div>
                     </div>
                     <!-- wrap-photos-2 -->
-                    <div class="wrap-photos-2 absolute top-20 right-80">
+                    <div class="wrap-photos-2 absolute top-20 xl:right-80 right-40">
                         <div class="second-photos relative max-w-max bottom-0 p-4 h-full">
                             <img
                                 id="img3" 
@@ -435,7 +484,7 @@
                         </div>
                     </div>
                     <!-- wrap-photos-3 -->
-                    <div class="wrap-photos-3 absolute bottom-96 right-80">
+                    <div class="wrap-photos-3 absolute bottom-96 xl:right-80 right-56">
                         <div class="third-photos relative max-w-max bottom-0 p-4 h-full">
                             <img
                                 id="img5" 

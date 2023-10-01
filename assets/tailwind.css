@@ -1551,6 +1551,11 @@ body {
   padding-right: 0.75rem;
 }
 
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .pb-8 {
   padding-bottom: 2rem;
 }
@@ -1597,6 +1602,10 @@ body {
 
 .pr-3 {
   padding-right: 0.75rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-center {
@@ -1902,6 +1911,10 @@ body {
     top: 5%;
   }
 
+  .md\:mt-0 {
+    margin-top: 0px;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1969,6 +1982,11 @@ body {
     padding-right: 1.5rem;
   }
 
+  .md\:py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
   .md\:pl-\[97px\] {
     padding-left: 97px;
   }
@@ -1983,6 +2001,10 @@ body {
 
   .md\:pr-8 {
     padding-right: 2rem;
+  }
+
+  .md\:pt-0 {
+    padding-top: 0px;
   }
 
   .md\:text-left {
@@ -2007,6 +2029,11 @@ body {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+
+  .md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 
   .md\:leading-\[60px\] {

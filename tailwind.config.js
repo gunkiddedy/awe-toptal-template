@@ -6,12 +6,12 @@ module.exports = {
   ],
   theme: {
     screens: {
-      'xs': '375px', //red
-      'sm': '640px', //green
-      'md': '768px', //purple
-      'lg': '1024px', //yellow
-      'xl': '1280px', //white
-      '2xl': '1536px', //blue
+      'xs': '375px', //extra small
+      'sm': '640px', //small
+      'md': '768px', //medium
+      'lg': '1024px', //large
+      'xl': '1280px', //extra large
+      '2xl': '1536px', //super large
     },
     extend: {},
   },

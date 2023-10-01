@@ -163,7 +163,7 @@
 
             </section>
             <!-- section 2 -->
-            <section id="section-two" class="section-two h-[3790px] bg-section-two relative w-full overflow-hidden">
+            <section id="section-two" class="section-two lg:h-[3790px] h-[4100px] bg-section-two relative w-full overflow-hidden">
                 <div class="wraper-section2 w-full h-full mx-auto">
                     <!-- title -->
                     <div class="title-section-two text-black text-center capitalize mt-[77px] mx-auto font-normal lg:px-0 px-2">
@@ -276,9 +276,19 @@
                             </div>
                         </div>
                     </div>
+                    <!-- placeholder image screen BOTTOM (visible only on TABLET/MOBILE) -->
+                    <div class="placeholder-screen lg:hidden absolute bottom-[800px] lg:left-0 md:left-[21%] left-0 md:w-[50%] w-full h-auto">
+                        <div class="placeholder-contents relative md:p-0 p-6">
+                            <img 
+                                src="/assets/img/img-placeholder.png" 
+                                alt="img-placeholder" 
+                                class="placeholder-image xl:w-[507px] lg:w-[410px] w-full h-auto xl:h-[454px] xl:object-cover object-contain mix-blend-darken z-0 relative xl:top-[11%] top-[8%] opacity-0 reveal fade-left"
+                            >
+                        </div>
+                    </div>
                     <!-- grid cards (Current information options) -->
                     <div class="w-full max-w-[1440px] mx-auto h-auto flex lg:justify-end justify-center xl:pr-[86px] md:pr-6">
-                        <div class="card-content xl:h-[902px] h-[800px] flex flex-col absolute md:bottom-0 bottom-8">
+                        <div class="card-content xl:h-[902px] lg:h-[800px] h-auto flex flex-col absolute lg:bottom-0 bottom-2">
                             <!-- card title -->
                             <div class="card-title max-w-[600px]">
                                 <p class="xl:text-5xl lg:text-4xl md:text-5xl text-3xl text-black leading-[55px] capitalize xl:mb-14 lg:mb-6 mb-10 md:text-start text-center">
@@ -379,7 +389,7 @@
                                 </div>
                             </div>
                             <!-- comming soon -->
-                            <div class="comming-soon flex lg:justify-end justify-center md:w-auto w-full xl:mt-0 mt-8 reveal fade-bottom">
+                            <div class="comming-soon flex lg:justify-end justify-center md:w-auto w-full xl:mt-0 lg:mt-8 mt-0 lg:mb-0 mb-4 reveal fade-bottom">
                                 <p class="text-[#4E5369] md:text-[30px] text-2xl leading-[60px] capitalize lg:text-right text-center">
                                     Much More Coming Soon...
                                 </p>

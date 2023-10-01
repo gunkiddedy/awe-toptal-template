@@ -17,7 +17,7 @@ function setAnimations() {
             reveals[i].classList.add("active")
             reveals[i].classList.remove("inactive")
         } 
-        else {
+        else { // uncomment this to stop the animations loop
             reveals[i].classList.remove("active")
             reveals[i].classList.add("inactive")
         }

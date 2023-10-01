@@ -12,7 +12,7 @@
         <header id="navbar" class="fixed top-0 flex justify-center w-full transition-[top] duration-500 z-50">
 
             <!-- HAMBURGER -->
-            <div class="hamburger w-full p-5 lg:hidden flex items-center justify-between relative">
+            <div id="hamburger" class="hamburger w-full p-5 lg:hidden flex items-center justify-between relative">
                 <!-- left -->
                 <div class="left w-full flex items-center justify-between md:justify-start">
                     <!-- logo -->   
@@ -42,6 +42,11 @@
 
             <!-- NAVBAR MENU TABLET/MOBILE -->
             <div class="navbar-menu navbar-inactive lg:hidden block">
+                <div 
+                    id="navbarBackdrop" 
+                    onclick="closeNav()" 
+                    class="navbar-backdrop bg-gray-900 opacity-75">
+                </div>
                 <nav id="sidenav" class="fixed -top-[500px] left-0 flex flex-col w-full py-6 px-5 border-r transition-all duration-700 max-h-max bg-nav-mobile">
                     <div class="flex items-center justify-between mb-8">
                         <a href="">

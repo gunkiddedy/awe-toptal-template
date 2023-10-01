@@ -27,6 +27,20 @@ function setAnimations() {
 // show/hide the image placeholder fixed/relative
 function showImagePlaceholder (type, value) {
     if (type.toLowerCase() === 'fixed') {
+        const screenWidth = window.innerWidth
+        const pageWidth = 1440
+        const leftPosition = (screenWidth / pageWidth) * (100 / 7)
+        const leftImage = leftPosition + '%'
+        
+        /**
+         * set the dinamically left position of placeholder image
+        */
+        if (screenWidth > pageWidth) {
+            imgPlaceholder.style.left = leftImage
+        } else {
+            imgPlaceholder.style.left = '7%'
+        }
+
         if (window.scrollY >= value) {
             // console.log('>= 2200')
             imgPlaceholder.classList.remove( 
@@ -80,7 +94,7 @@ window.onscroll = function() {
     setAnimations()
 
     /**
-     * if section 2 has passed the section 1 
+     * if section 2 has overflowed the section 1 
     */ 
     if ((section2.offsetTop + section2.offsetHeight) > window.scrollY) {
         section1.classList.add('sticky', 'top-0')
@@ -114,24 +128,6 @@ window.onscroll = function() {
         showImagePlaceholder('fixed', 1950)
     } else {
         showImagePlaceholder('relative', 1950)
-    }
-
-    /**
-     * set the dinamically left position of placeholder image
-    */
-    const screenWidth = window.innerWidth
-    const pageWidth = 1440
-    const leftPosition = (screenWidth / pageWidth) * (100 / 7)
-    const leftImage = leftPosition + '%'
-
-    // console.log('leftPosition', leftPosition);
-    // console.log('leftImage', leftImage);
-    // console.log('screenWidth', screenWidth);
-
-    if (screenWidth > pageWidth) {
-        imgPlaceholder.style.left = leftImage
-    } else {
-        imgPlaceholder.style.left = '7%'
     }
 
     /**

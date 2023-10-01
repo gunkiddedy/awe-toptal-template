@@ -141,7 +141,7 @@ window.onscroll = function() {
     // scroll up
     if (prevScrollpos > currentScrollPos) {
         navbar.style.top = '0'
-        navbar.classList.add('bg-nav', 'opacity-95')
+        navbar.classList.add('bg-nav')
     }  
     // scroll down
     else {
@@ -152,7 +152,7 @@ window.onscroll = function() {
      * not scrolled yet / on the top position
     */
     if (currentScrollPos === 0) {
-        navbar.classList.remove('bg-nav', 'opacity-95')
+        navbar.classList.remove('bg-nav')
     }
 
     prevScrollpos = currentScrollPos

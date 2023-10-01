@@ -24,56 +24,55 @@ function setAnimations() {
     }
 }
 
-// show/hide the image placeholder fixed
-function showImagePlaceholderFixed (value) {
-    if (window.scrollY >= value) {
-        // console.log('>= 2200')
-        imgPlaceholder.classList.remove( 
-            'relative',
-            'opacity-0',
-            'transition-all',
-            'duration-300'
-        )
-        imgPlaceholder.classList.add( 
-            'fixed',
-            'opacity-100',
-            'transition-all',
-            'duration-300',
-            'transform',
-            'scale-105'
-        )
+// show/hide the image placeholder fixed/relative
+function showImagePlaceholder (type, value) {
+    if (type.toLowerCase() === 'fixed') {
+        if (window.scrollY >= value) {
+            // console.log('>= 2200')
+            imgPlaceholder.classList.remove( 
+                'relative',
+                'opacity-0',
+                'transition-all',
+                'duration-300'
+            )
+            imgPlaceholder.classList.add( 
+                'fixed',
+                'opacity-100',
+                'transition-all',
+                'duration-300',
+                'transform',
+                'scale-105'
+            )
+        } else {
+            // console.log('< 2200')
+            imgPlaceholder.classList.add( 
+                'opacity-0',
+                'transition-all',
+                'duration-300',
+                'relative',
+            )
+            imgPlaceholder.classList.remove( 
+                'fixed',
+                'opacity-100',
+                'transition-all',
+                'duration-300',
+                'transform',
+                'scale-105'
+            )
+        }
     } else {
-        // console.log('< 2200')
-        imgPlaceholder.classList.add( 
-            'opacity-0',
-            'transition-all',
-            'duration-300',
-            'relative',
-        )
-        imgPlaceholder.classList.remove( 
-            'fixed',
-            'opacity-100',
-            'transition-all',
-            'duration-300',
-            'transform',
-            'scale-105'
-        )
-    }
-}
-
-// show/hide the image placeholder fixed
-function showImagePlaceholderRelative (value) {
-    if (window.scrollY >= value) {
-        // console.log('>= 2200')
-        imgPlaceholder.classList.add( 
-            'reveal',
-            'fade-left',
-            'active',
-            'opacity-100',
-            'transition-all',
-            'duration-300',
-            'scale-105'
-        )
+        if (window.scrollY >= value) {
+            // console.log('>= 2200')
+            imgPlaceholder.classList.add( 
+                'reveal',
+                'fade-left',
+                'active',
+                'opacity-100',
+                'transition-all',
+                'duration-300',
+                'scale-105'
+            )
+        }
     }
 }
 
@@ -109,12 +108,12 @@ window.onscroll = function() {
     */
     if (window.innerWidth >= 1280) {
         // console.log('2000')
-        showImagePlaceholderFixed(2000)
+        showImagePlaceholder('fixed', 2000)
     } else if (window.innerWidth >= 1024) {
         // console.log('1950')
-        showImagePlaceholderFixed(1950)
+        showImagePlaceholder('fixed', 1950)
     } else {
-        showImagePlaceholderRelative(1950)
+        showImagePlaceholder('relative', 1950)
     }
 
     /**

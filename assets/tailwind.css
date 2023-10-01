@@ -1019,6 +1019,10 @@ body {
   margin-top: auto;
 }
 
+.ml-28 {
+  margin-left: 7rem;
+}
+
 .block {
   display: block;
 }
@@ -1949,6 +1953,10 @@ body {
 
   .md\:mb-24 {
     margin-bottom: 6rem;
+  }
+
+  .md\:ml-32 {
+    margin-left: 8rem;
   }
 
   .md\:block {

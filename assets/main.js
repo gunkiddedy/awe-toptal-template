@@ -154,21 +154,22 @@ window.onscroll = function() {
     prevScrollpos = currentScrollPos
 }
 
-// window.addEventListener("scroll", setAnimations)
+const navbarBackdrop = document.getElementById("navbarBackdrop")
+const sidenav = document.getElementById("sidenav")
 
 // open mobile menu
 function openNav() {
     document.body.style.overflow = 'hidden'
-    document.getElementById("navbarBackdrop").classList.add('fixed', 'inset-0')
-    document.getElementById("sidenav").classList.remove('-top-[500%]')
-    document.getElementById("sidenav").classList.add('top-0') 
+    navbarBackdrop.classList.add('fixed', 'inset-0')
+    sidenav.classList.remove('-top-[500px]')
+    sidenav.classList.add('top-0') 
 }
 
 // close mobile menu
 function closeNav() {
-    document.getElementById("navbarBackdrop").classList.remove('fixed', 'inset-0')
-    document.getElementById("sidenav").classList.remove('top-0')
-    document.getElementById("sidenav").classList.add('-top-[500%]')
+    navbarBackdrop.classList.remove('fixed', 'inset-0')
+    sidenav.classList.remove('top-0')
+    sidenav.classList.add('-top-[500px]')
     document.body.style.overflow = ''
 }
 

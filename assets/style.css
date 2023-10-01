@@ -17,7 +17,7 @@
         -webkit-tap-highlight-color: transparent;
     }
     .bg-nav {
-        @apply bg-[hsla(0,0%,100%,.35)] bg-blend-multiply backdrop-blur-2xl;
+        @apply bg-[hsla(0,0%,100%,.35)] bg-blend-multiply backdrop-blur-xl;
     }
     .bg-nav-mobile {
         @apply bg-gradient-to-tr from-[#CDDBEF] to-[#F9E6C1];

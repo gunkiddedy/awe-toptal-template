@@ -20,5 +20,9 @@ Install dependencies
   npm install
 ```
 
-Start the server using live server in vscode
+Start the server 
+
+```bash
+  using live server in vscode
+```
 

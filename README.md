@@ -23,6 +23,6 @@ Install dependencies
 Start the server 
 
 ```bash
-  using live server in vscode
+ you can run this app using a live server from visual studio code
 ```
 

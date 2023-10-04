@@ -1,17 +1,33 @@
+// global variable
 let prevScrollpos = window.scrollY
-const navbar = document.getElementById('navbar')
-const section1 = document.getElementById('section-one')
-const section2 = document.getElementById('section-two')
+const wiper1 = document.getElementById('wiper1')
+
+const navbarBackdrop = document.getElementById("navbarBackdrop")
+const sidenav = document.getElementById("sidenav")
+
+const headerNavbar = document.getElementById('header-navbar')
+
 const imgPlaceholder = document.getElementById('img-placeholder')
 
-// set animations fade out from left, right or bottom
-function setAnimations() {
-    const reveals = document.querySelectorAll(".reveal")
+const reveals = document.querySelectorAll(".reveal")
 
+/**
+ * method tells the browser that you wish to perform an animation and requests that the browser calls a specified function to update an animation right before the next repaint. The method takes a callback as an argument to be invoked before the repaint.
+*/
+const windowScroll = window.requestAnimationFrame || function(callback) {
+    window.setTimeout(callback, 1000/60)
+}
+
+animationFade()
+animationWipe()
+showImagePlaceholder()
+
+// set animations fade out from left, right or bottom
+function animationFade() {
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight
         const elementTop = reveals[i].getBoundingClientRect().top
-        const elementVisible = 150
+        const elementVisible = 200
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add("active")
@@ -22,10 +38,28 @@ function setAnimations() {
             reveals[i].classList.add("inactive")
         }
     }
+    windowScroll(animationFade)
 }
 
-// show/hide the image placeholder fixed/relative
-function showImagePlaceholder (type, value) {
+/**
+ * if scroll y has reachead the minimum height value of 1000, 
+ * then run the wipe animations
+ */ 
+function animationWipe() {
+    if (window.scrollY >= 1000) {
+        // console.log('wiper up', window.scrollY)
+        wiper1.classList.remove('wipe-gone')
+        wiper1.classList.add('wipe-left')
+    } else {
+        // console.log('wiper down', window.scrollY)
+        wiper1.classList.remove('wipe-left')
+        wiper1.classList.add('wipe-gone')
+    }
+    windowScroll(animationWipe)
+}
+
+// set the image placeholder fixed/relative
+function setImagePlaceholder (type, value) {
     if (type.toLowerCase() === 'fixed') {
         const screenWidth = window.innerWidth
         const pageWidth = 1440
@@ -90,72 +124,21 @@ function showImagePlaceholder (type, value) {
     }
 }
 
-window.onscroll = function() {
-    setAnimations()
-
-    /**
-     * if section 2 has overflowed the section 1 
-    */ 
-    if ((section2.offsetTop + section2.offsetHeight) > window.scrollY) {
-        section1.classList.add('sticky', 'top-0')
-    }
-
-    // console.log(window.scrollY);
-
-    /**
-     * if scroll y has reachead the minimum height value of 1000, 
-     * then run the wipe animations
-     */ 
-    const wiper1 = document.getElementById('wiper1')
-    if (window.scrollY >= 1000) {
-        // console.log('wiper up', window.scrollY)
-        wiper1.classList.remove('wipe-gone')
-        wiper1.classList.add('wipe-left')
-    } else {
-        // console.log('wiper down', window.scrollY)
-        wiper1.classList.remove('wipe-left')
-        wiper1.classList.add('wipe-gone')
-    }
-
-    /**
-     * show/hide the image placeholder fixed or relative
-    */
+/**
+ * show/hide the image placeholder fixed or relative
+*/
+function showImagePlaceholder() {
     if (window.innerWidth >= 1280) {
         // console.log('2000')
-        showImagePlaceholder('fixed', 2000)
+        setImagePlaceholder('fixed', 2000)
     } else if (window.innerWidth >= 1024) {
         // console.log('1950')
-        showImagePlaceholder('fixed', 1950)
+        setImagePlaceholder('fixed', 1950)
     } else {
-        showImagePlaceholder('relative', 1950)
+        setImagePlaceholder('relative', 1950)
     }
-
-    /**
-     * hide or show navbar depending on page scroll
-    */
-    const currentScrollPos = window.scrollY
-    // scroll up
-    if (prevScrollpos > currentScrollPos) {
-        navbar.style.top = '0'
-        navbar.classList.add('bg-nav')
-    }  
-    // scroll down
-    else {
-        navbar.style.top = "-90px"
-    }
-
-    /**
-     * not scrolled yet / on the top position
-    */
-    if (currentScrollPos === 0) {
-        navbar.classList.remove('bg-nav')
-    }
-
-    prevScrollpos = currentScrollPos
+    windowScroll(showImagePlaceholder)
 }
-
-const navbarBackdrop = document.getElementById("navbarBackdrop")
-const sidenav = document.getElementById("sidenav")
 
 // open mobile menu
 function openNav() {
@@ -181,11 +164,27 @@ window.addEventListener("resize", () => {
     }
 })
 
-// window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-//     const portrait = e.matches;
-//     if (portrait) {
-//         console.log('portrait', portrait)
-//     } else {
-//         console.log('portrait', portrait)
-//     }
-// });
+window.onscroll = function() {
+    /**
+     * hide or show navbar depending on page scroll
+    */
+    const currentScrollPos = window.scrollY
+    // scroll up
+    if (prevScrollpos > currentScrollPos) {
+        headerNavbar.style.top = '0'
+        headerNavbar.classList.add('bg-nav')
+    }  
+    // scroll down
+    else {
+        headerNavbar.style.top = "-90px"
+    }
+
+    /**
+     * not scrolled yet / on the top position
+    */
+    if (currentScrollPos === 0) {
+        headerNavbar.classList.remove('bg-nav')
+    }
+
+    prevScrollpos = currentScrollPos
+}

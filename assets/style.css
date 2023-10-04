@@ -4,43 +4,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 @layer base {
-    html {
-        font-family: Poppins, system-ui, sans-serif;
-        scroll-behavior: smooth;
-    }
+  html {
+    font-family: Poppins, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
-    .btn {
-        -webkit-tap-highlight-color: transparent;
-    }
-    .bg-nav {
-        @apply bg-[hsla(0,0%,100%,.35)] bg-blend-multiply backdrop-blur-xl;
-    }
-    .bg-nav-mobile {
-        @apply bg-gradient-to-tr from-[#CDDBEF] to-[#F9E6C1];
-    }
-    .bg-section-one {
-        background: linear-gradient(107.16deg, #CDDBEF 0.79%, #F9E6C1 100%);
-        /* background-size: contain; */
-        background-repeat: no-repeat;
-        mix-blend-mode: normal;
-        /* background-position-y: 15%; */
-        background-position: center;
-        background-size: cover;
-    }
-    .bg-section-two {
-        background: linear-gradient(155deg, #E8B98D 15.32%, #FBF4D1 39.11%, #D1DCEA 65.47%, #DEDFDC 77.75%);
-    }
-    .bg-section-six {
-        background: url("/assets/img/bg-section-6.png"), linear-gradient(105deg, #384B66 -0.06%, #CDDBEF 66.62%, #FFF1B7 97.12%);
-        background-size: contain;
-        mix-blend-mode: normal;
-        background-repeat: no-repeat;
-        background-position-y: 40%;
-        /* background-attachment: fixed; */
-    }
-    /* .sidenav {
+  .btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bg-nav {
+    @apply bg-[hsla(0,0%,100%,.35)] bg-blend-multiply backdrop-blur-xl;
+  }
+  .bg-nav-mobile {
+    @apply bg-gradient-to-tr from-[#CDDBEF] to-[#F9E6C1];
+  }
+  .bg-section-one {
+    background: linear-gradient(107.16deg, #cddbef 0.79%, #f9e6c1 100%);
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    mix-blend-mode: normal;
+    /* background-position-y: 15%; */
+    background-position: center;
+    background-size: cover;
+  }
+  .bg-section-two {
+    background: linear-gradient(
+      155deg,
+      #e8b98d 15.32%,
+      #fbf4d1 39.11%,
+      #d1dcea 65.47%,
+      #dedfdc 77.75%
+    );
+  }
+  .bg-section-six {
+    background: url("/assets/img/bg-section-6.png"),
+      linear-gradient(105deg, #384b66 -0.06%, #cddbef 66.62%, #fff1b7 97.12%);
+    background-size: contain;
+    mix-blend-mode: normal;
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    /* background-attachment: fixed; */
+  }
+  /* .sidenav {
         height: 100%;
         width: 83%;
         position: fixed;
@@ -50,143 +57,135 @@
         overflow-x: hidden;
         transition: 0.5s;
     } */
-    .reveal {
-        position: relative;
-        opacity: 0;
+  .reveal {
+    position: relative;
+    opacity: 0;
+  }
+  .reveal.active {
+    opacity: 1;
+  }
+  .reveal.inactive {
+    opacity: 0;
+    @apply transition-all duration-300;
+  }
+  .inactive.fade-left-out {
+    animation: fade-left-out 3s ease-in;
+  }
+  .active.fade-bottom {
+    animation: fade-bottom 1s ease-in;
+  }
+  .active.fade-left {
+    animation: fade-left 1s ease-in;
+  }
+  .active.fade-in-out {
+    animation: fade-in-out 2s ease-in;
+  }
+  .active.fade-right {
+    animation: fade-right 1s ease-in;
+  }
+  .wiper {
+    mix-blend-mode: darken;
+    background-repeat: no-repeat;
+    mask-image: linear-gradient(to left, transparent 47.5%, #fff 52.5%);
+    -webkit-mask-image: linear-gradient(to left, transparent 47.5%, #fff 52.5%);
+    mask-size: 210%;
+    -webkit-mask-size: 210%;
+    mask-position: right;
+    -webkit-mask-position: right;
+    opacity: 0;
+  }
+  .wipe-left {
+    opacity: 1;
+    mask-position: left;
+    -webkit-mask-position: left;
+    transition: -webkit-mask-position 4s linear;
+  }
+  .wipe-gone {
+    opacity: 0;
+    @apply transition-all duration-[2500ms];
+  }
+  .zoom-in-out {
+    animation: zoom-in-out 5s infinite alternate;
+    -webkit-animation: zoom-in-out 5s infinite alternate;
+    -moz-animation: zoom-in-out 5s infinite alternate;
+    -o-animation: zoom-in-out 5s infinite alternate;
+    -ms-animation: zoom-in-out 5s infinite alternate;
+  }
+  @keyframes fade-in-out {
+    0% {
+      transform: scale(0);
+      opacity: 0;
     }
-    .reveal.active {
-        opacity: 1;
+    50% {
+      transform: scale(1.05);
+      opacity: 0.5;
     }
-    .reveal.inactive {
-        opacity: 0;
-        @apply transition-all duration-300
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
-    .inactive.fade-left-out {
-        animation: fade-left-out 3s ease-in;
+  }
+  @keyframes fade-bottom {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
     }
-    .active.fade-bottom {
-        animation: fade-bottom 1s ease-in;
+    50% {
+      opacity: 0.5;
     }
-    .active.fade-left {
-        animation: fade-left 1s ease-in;
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
-    .active.fade-in-out {
-        animation: fade-in-out 2s ease-in;
+  }
+  @keyframes fade-left-out {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
     }
-    .active.fade-right {
-        animation: fade-right 1s ease-in;
+    50% {
+      opacity: 0.5;
     }
-    .wiper {
-        mix-blend-mode: darken;
-        background-repeat: no-repeat;
-        mask-image: linear-gradient(
-            to left,
-            transparent 47.5%,
-            #fff 52.5%
-        );
-        -webkit-mask-image: linear-gradient(
-            to left,
-            transparent 47.5%,
-            #fff 52.5%
-        );
-        mask-size: 210%;
-        -webkit-mask-size: 210%;
-        mask-position: right;
-        -webkit-mask-position: right;
-        opacity: 0;
+    100% {
+      transform: translateX(100px);
+      opacity: 0;
     }
-    .wipe-left {
-        opacity: 1;
-        mask-position: left;
-        -webkit-mask-position: left;
-        transition: -webkit-mask-position 4s linear;
+  }
+  @keyframes fade-left {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
     }
-    .wipe-gone {
-        opacity: 0;
-        @apply transition-all duration-[2500ms]
+    50% {
+      opacity: 0.5;
     }
-    .zoom-in-out {
-        animation: zoom-in-out 5s infinite alternate;
-        -webkit-animation: zoom-in-out 5s infinite alternate;
-        -moz-animation: zoom-in-out 5s infinite alternate;
-        -o-animation: zoom-in-out 5s infinite alternate;
-        -ms-animation: zoom-in-out 5s infinite alternate;
+    100% {
+      transform: translateX(0);
+      opacity: 1;
     }
-    @keyframes fade-in-out {
-        0% {
-            transform: scale(0);
-            opacity: 0;
-        }
-        50% {
-            transform: scale(1.05);
-            opacity: 0.5;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 1;
-        }
+  }
+  @keyframes fade-right {
+    0% {
+      transform: translateX(100px);
+      opacity: 0;
     }
-    @keyframes fade-bottom {
-        0% {
-            transform: translateY(50px);
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
+    50% {
+      opacity: 0.5;
     }
-    @keyframes fade-left-out {
-        0% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        50% {
-            opacity: .5;
-        }
-        100% {
-            transform: translateX(100px);
-            opacity: 0;
-        }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
     }
-    @keyframes fade-left {
-        0% {
-            transform: translateX(-100px);
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
+  }
+  @keyframes zoom-in-out {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+      /* transform: translateY(200px); */
     }
-    @keyframes fade-right {
-        0% {
-            transform: translateX(100px);
-            opacity: 0;
-        }
-        50% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
+    100% {
+      opacity: 1;
+      transform: scale(1.2);
     }
-    @keyframes zoom-in-out {
-        0% {
-            opacity: 0;
-            transform: scale(0.5);
-            /* transform: translateY(200px); */
-        }
-        100% {
-            opacity: 1; 
-            transform: scale(1.2);
-        }
-    }
+  }
 }

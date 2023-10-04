@@ -560,7 +560,7 @@ html {
 }
 
 .bg-section-one {
-  background: linear-gradient(107.16deg, #CDDBEF 0.79%, #F9E6C1 100%);
+  background: linear-gradient(107.16deg, #cddbef 0.79%, #f9e6c1 100%);
   /* background-size: contain; */
   background-repeat: no-repeat;
   mix-blend-mode: normal;
@@ -570,11 +570,18 @@ html {
 }
 
 .bg-section-two {
-  background: linear-gradient(155deg, #E8B98D 15.32%, #FBF4D1 39.11%, #D1DCEA 65.47%, #DEDFDC 77.75%);
+  background: linear-gradient(
+      155deg,
+      #e8b98d 15.32%,
+      #fbf4d1 39.11%,
+      #d1dcea 65.47%,
+      #dedfdc 77.75%
+    );
 }
 
 .bg-section-six {
-  background: url("/assets/img/bg-section-6.png"), linear-gradient(105deg, #384B66 -0.06%, #CDDBEF 66.62%, #FFF1B7 97.12%);
+  background: url("/assets/img/bg-section-6.png"),
+      linear-gradient(105deg, #384b66 -0.06%, #cddbef 66.62%, #fff1b7 97.12%);
   background-size: contain;
   mix-blend-mode: normal;
   background-repeat: no-repeat;
@@ -606,7 +613,7 @@ html {
   opacity: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms
+  transition-duration: 300ms;
 }
 
 .inactive.fade-left-out {
@@ -632,16 +639,8 @@ html {
 .wiper {
   mix-blend-mode: darken;
   background-repeat: no-repeat;
-  mask-image: linear-gradient(
-            to left,
-            transparent 47.5%,
-            #fff 52.5%
-        );
-  -webkit-mask-image: linear-gradient(
-            to left,
-            transparent 47.5%,
-            #fff 52.5%
-        );
+  mask-image: linear-gradient(to left, transparent 47.5%, #fff 52.5%);
+  -webkit-mask-image: linear-gradient(to left, transparent 47.5%, #fff 52.5%);
   mask-size: 210%;
   -webkit-mask-size: 210%;
   mask-position: right;
@@ -660,7 +659,7 @@ html {
   opacity: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 2500ms
+  transition-duration: 2500ms;
 }
 
 .zoom-in-out {
@@ -711,7 +710,7 @@ html {
   }
 
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
 
   100% {

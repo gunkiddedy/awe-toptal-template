@@ -1,626 +1,600 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Awe Toptal</title>
-    <link href="./assets/tailwind.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awe Toptal</title>
+  <link href="./assets/tailwind.css" rel="stylesheet">
 </head>
 <body>
-    <div class="page-wraper">
-        <!-- header -->
-        <header id="header-navbar" class="fixed top-0 flex justify-center w-full transition-[top] duration-500 z-50">
+  <div class="page-wraper">
+    <!-- header -->
+    <header id="header-navbar" class="fixed top-0 flex justify-center w-full transition-[top] duration-500 z-50">
 
-            <!-- HAMBURGER -->
-            <div id="hamburger" class="hamburger w-full p-5 lg:hidden flex items-center justify-between relative">
-                <!-- left -->
-                <div class="left w-full flex items-center justify-between md:justify-start">
-                    <!-- logo -->   
-                    <div class="logo">
-                        <a href="">
-                            <img 
-                                src="/assets/img/AWE.svg"   
-                                alt="awe logo" 
-                                class="w-[116px] h-auto"
-                            >
-                        </a>
-                    </div>
-                </div>
-                <!-- right -->
-                <div class="right mr-4">
-                    <button role="button" class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 hidden md:block btn">
-                        Order Now
-                    </button>              
-                </div>
-                <!-- hamburger menu -->
-                <button id="navbarBurger" onclick="openNav()" class="navbar-burger btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-800 hover:text-gray-500">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
+      <!-- HAMBURGER -->
+      <div id="hamburger" class="hamburger w-full p-5 lg:hidden flex items-center justify-between relative">
+        <!-- left -->
+        <div class="left w-full flex items-center justify-between md:justify-start">
+          <!-- logo -->
+          <div class="logo">
+            <a href="">
+              <img src="/assets/img/AWE.svg" alt="awe logo" class="w-[116px] h-auto">
+            </a>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="right mr-4">
+          <button role="button"
+            class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 hidden md:block btn">
+            Order Now
+          </button>
+        </div>
+        <!-- hamburger menu -->
+        <button id="navbarBurger" onclick="openNav()" class="navbar-burger btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-8 h-8 text-gray-800 hover:text-gray-500">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- NAVBAR MENU TABLET/MOBILE -->
+      <div class="navbar-menu navbar-inactive lg:hidden block">
+        <div id="navbarBackdrop" onclick="closeNav()" class="navbar-backdrop bg-gray-900 opacity-75 backdrop-blur-md">
+        </div>
+        <nav id="sidenav"
+          class="fixed -top-[500px] left-0 flex flex-col w-full py-6 px-5 border-r transition-all duration-700 max-h-max bg-nav-mobile">
+          <div class="flex items-center justify-between mb-8">
+            <a href="">
+              <img src="/assets/img/AWE.svg" alt="awe logo" class="w-[116px] h-auto">
+            </a>
+            <button onclick="closeNav()" id="navbarClose" class="navbar-close btn">
+              <svg class="h-8 w-8 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">My tiles</a>
+              </li>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">Data sources</a>
+              </li>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">Backgrounds</a>
+              </li>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <div class="pt-6">
+              <button role="button"
+                class="w-full px-8 py-4 bg-gray-800 text-white rounded-full font-semibold  transition-colors duration-300 text-xl hover:bg-black btn">
+                Order Now
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- default navigation -->
+      <nav role="navigation"
+        class="navigation-menus w-full max-w-[1440px] hidden lg:flex items-center justify-between py-5 px-10">
+        <!-- logo -->
+        <div class="logo">
+          <a href="">
+            <img src="/assets/img/AWE.svg" alt="awe logo" class="w-[116px] h-auto">
+          </a>
+        </div><!-- logo -->
+        <!-- menus -->
+        <ul class="flex items-center space-x-6 text-lg">
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">My tiles</a>
+          </li>
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">Data sources</a>
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">Backgrounds</a>
+          </li>
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <button role="button"
+              class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 btn">
+              Order Now
+            </button>
+          </li>
+        </ul><!-- menus -->
+      </nav>
+    </header>
+
+    <!-- main-content -->
+    <main class="main-content w-full flex flex-col items-center">
+      <!-- section 1 -->
+      <section id="section-one" class="section-one bg-section-one w-full transition-opacity duration-500 sticky top-0">
+
+        <!-- image background -->
+        <div class="img-bg absolute w-full inset-0 lg:top-0 md:top-[5%] top-1/4">
+          <img src="/assets/img/bg-section-11.png" alt="image bg section 1"
+            class="object-cover object-center w-full h-auto pointer-events-none">
+        </div>
+
+        <!-- content div -->
+        <div class="content-div relative w-full xl:h-screen h-[1129px] max-w-[1440px] mx-auto">
+
+          <!-- right content -->
+          <div
+            class="right-content-section-one lg:absolute relative xl:left-[60%] lg:left-1/2 left-0 xl:top-[47%] lg:top-1/3 md:top-1/4 top-[20%]">
+
+            <div class="top flex flex-col space-y-4 text-center lg:text-left">
+              <h1 class="font-bold lg:text-[50px] md:text-6xl text-4xl text-black">
+                AWE E-Ink Panels
+              </h1>
+              <h2 class="capitalize lg:text-[50px] md:text-6xl text-4xl lg:max-w-[377px] leading-none text-black">
+                Less Online, More Life
+              </h2>
+              <p class="lg:text-2xl md:text-3xl text-xl capitalize lg:px-0 px-4 md:font-normal font-medium">
+                AWE Panels integrate information in your physical environment.
+                What you need, where you need it, without distractions
+              </p>
             </div>
 
-            <!-- NAVBAR MENU TABLET/MOBILE -->
-            <div class="navbar-menu navbar-inactive lg:hidden block">
-                <div 
-                    id="navbarBackdrop" 
-                    onclick="closeNav()" 
-                    class="navbar-backdrop bg-gray-900 opacity-75 backdrop-blur-md">
-                </div>
-                <nav id="sidenav" class="fixed -top-[500px] left-0 flex flex-col w-full py-6 px-5 border-r transition-all duration-700 max-h-max bg-nav-mobile">
-                    <div class="flex items-center justify-between mb-8">
-                        <a href="">
-                            <img 
-                                src="/assets/img/AWE.svg"   
-                                alt="awe logo" 
-                                class="w-[116px] h-auto"
-                            >
-                        </a>
-                        <button onclick="closeNav()" id="navbarClose" class="navbar-close btn">
-                            <svg class="h-8 w-8 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <div>
-                        <ul>
-                            <li class="mb-1">
-                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">My tiles</a>
-                            </li>
-                            <li class="mb-1">
-                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">Data sources</a>
-                            </li>
-                            <li class="mb-1">
-                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">Backgrounds</a>
-                            </li>
-                            <li class="mb-1">
-                                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mt-auto">
-                        <div class="pt-6">
-                            <button role="button" class="w-full px-8 py-4 bg-gray-800 text-white rounded-full font-semibold  transition-colors duration-300 text-xl hover:bg-black btn">
-                                Order Now
-                            </button>
-                        </div>
-                    </div>
-                </nav>
+            <div class="btn w-full flex lg:justify-start justify-center mt-16 md:px-0 px-4">
+              <button
+                class="md:w-[129px] w-auto md:h-[44px] h-auto md:py-0 py-3 md:px-0 px-12 border border-black bg-black text-white md:text-base text-xl rounded-full capitalize hover:bg-transparent hover:text-black transition-colors duration-300 btn">
+                Explore
+              </button>
             </div>
 
-            <!-- default navigation -->
-            <nav role="navigation" class="navigation-menus w-full max-w-[1440px] hidden lg:flex items-center justify-between py-5 px-10">
-                <!-- logo -->   
-                <div class="logo">
-                    <a href="">
-                        <img 
-                            src="/assets/img/AWE.svg"   
-                            alt="awe logo" 
-                            class="w-[116px] h-auto"
-                        >
-                    </a>
-                </div><!-- logo -->
-                <!-- menus -->
-                <ul class="flex items-center space-x-6 text-lg">
-                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
-                        <a href="#">My tiles</a>
-                    </li>
-                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
-                        <a href="#">Data sources</a> 
-                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
-                        <a href="#">Backgrounds</a>
-                    </li>
-                    <li class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <button role="button" class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 btn">
-                            Order Now
-                        </button>
-                    </li>
-                </ul><!-- menus -->
-            </nav>
-        </header>
+          </div><!-- right content -->
 
-        <!-- main-content -->
-        <main class="main-content w-full flex flex-col items-center">
-            <!-- section 1 -->
-            <section id="section-one" class="section-one bg-section-one w-full transition-opacity duration-500 sticky top-0">
-                
-                <!-- image background -->
-                <div class="img-bg absolute w-full inset-0 lg:top-0 md:top-[5%] top-1/4">
-                    <img 
-                        src="/assets/img/bg-section-11.png" 
-                        alt="image bg section 1" 
-                        class="object-cover object-center w-full h-auto pointer-events-none"
-                    >
+        </div><!-- content div -->
+
+      </section>
+      <!-- section 2 -->
+      <section id="section-two"
+        class="section-two lg:h-[3790px] h-[4100px] bg-section-two relative w-full overflow-hidden">
+        <div class="wraper-section2 w-full h-full mx-auto">
+          <!-- title -->
+          <div class="title-section-two text-black text-center capitalize mt-[77px] mx-auto font-normal lg:px-0 px-2">
+            <h2 class="lg:text-[50px] md:text-5xl text-3xl lg:leading-[60px] leading-tight reveal fade-left">
+              escape the internet
+              <br />
+              stay in touch with your environment
+            </h2>
+          </div>
+          <!-- white arrow -->
+          <svg class="xl:mt-0 mt-28" width="100%" viewBox="0 0 1440  504" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M180.4 80.0186C127.12 42.0678 25 95.8315 -19.4 127.457L-49 389.851C4.77333 305.845 114.096 135.759 121.2 127.457C130.08 117.08 187.8 69.6413 180.4 240.123C173 410.606 215.92 453.631 249.96 462.525C284 471.42 358.503 462.525 474.92 357.237C627.36 219.369 716.16 194.167 1049.16 240.123C1315.56 276.888 1513.39 431.36 1579 504L1573.08 252.724L1567.16 1.44855C1462.57 -3.49296 1175.55 1.44856 864.16 60.7467C474.92 134.869 452.72 306.834 374.28 332.036C295.84 357.237 276.6 266.808 264.76 240.123C252.92 213.439 247 127.457 180.4 80.0186Z"
+              fill="#FDFEFE" fill-opacity="0.89" />
+          </svg>
+          <!-- white arrow blur -->
+          <svg class="absolute top-[1390px]" xmlns="http://www.w3.org/2000/svg" width="1440" height="1048"
+            viewBox="0 0 1440 1048" fill="none">
+            <path
+              d="M1335.88 681.623C1405.05 672.858 1481.93 763.953 1511.72 810.597L1425.32 1047.51C1409.36 952.038 1376.62 758.538 1373.28 748.31C1369.1 735.526 1333.16 669.494 1265.37 818.179C1197.58 966.864 1136.37 984.547 1098.93 977.053C1061.5 969.56 992.054 928.968 923.789 787.592C834.4 602.471 758.06 541.637 409.926 433.312C131.418 346.653 -131.403 390.765 -228 423.654L4.97331 0.265562C110.133 42.3835 390.579 173.751 671.084 362.276C1021.72 597.932 967.846 754.438 1033.99 810.682C1100.12 866.926 1158.89 798.321 1182.3 780.807C1205.71 763.293 1249.41 692.58 1335.88 681.623Z"
+              fill="white" fill-opacity="0.3" />
+          </svg>
+          <!-- image evolution -->
+          <div class="img-evolution h-auto absolute xl:top-56 lg:top-80 md:top-96 top-80 inset-x-0 w-full mx-auto">
+            <div class="h-[357px]">
+              <img id="wiper1" src="/assets/img/img-evolution.png" alt="img-evolution1"
+                class="w-full h-auto mix-blend-darkenl wiper object-cover pointer-events-none">
+            </div>
+          </div>
+          <!-- description -->
+          <div
+            class="desc-section-two absolute xl:top-[810px] md:top-[720px] top-[500px] inset-x-0 flex flex-col justify-between lg:text-[26px] md:text-2xl text-xl text-center lg:w-[950px] w-auto lg:h-[192px] h-auto capitalize reveal fade-left mx-auto lg:px-0 px-4">
+            <p class="leading-tight">
+              Our phone and computer contain much of what you care about but also emails
+              from work, rage inducing twitter feeds, envy inducing Instagram posts,
+              endless distractions, numbing addictions, and sleep destroying stress
+            </p>
+            <p class="leading-tight lg:mt-0 mt-8">
+              With AWE panels you choose the information you need and nothing else. so you
+              can enjoy off-line peace without wondering whether it will rain today
+            </p>
+          </div>
+          <!-- placeholder image screen TOP -->
+          <div
+            class="placeholder-screen absolute lg:left-0 md:left-[21%] left-0 xl:top-[1210px] lg:top-[1110px] md:top-[1090px] top-[900px] md:w-[50%] w-full h-auto">
+            <div class="placeholder-contents relative md:p-0 p-6">
+              <img id="img-placeholder" src="/assets/img/img-placeholder.png" alt="img-placeholder"
+                class="placeholder-image xl:w-[507px] lg:w-[410px] w-full h-auto xl:h-[454px] xl:object-cover object-contain mix-blend-darken z-0 relative xl:top-[11%] top-[8%] opacity-0 pointer-events-none">
+            </div>
+          </div>
+          <!-- Beautiful, simple distinctive panels -->
+          <div
+            class="w-full max-w-[1440px] mx-auto h-auto flex lg:justify-end justify-center xl:pr-[86px] lg:pr-10 pr-0">
+            <div
+              class="flex flex-col justify-between lg:h-[600px] md:h-[450px] h-[550px] absolute xl:top-[1200px] lg:top-[1100px] md:top-[1520px] top-[1300px] md:p-0 p-6">
+              <!-- top content -->
+              <div
+                class="top-content-three flex flex-col space-y-6 xl:w-[541px] md:w-[400px] w-[335px] reveal fade-right">
+                <h1 class="xl:text-[60px] md:text-5xl text-3xl xl:leading-[60px] leading-tight capitalize text-black">
+                  Beautiful, simple distinctive panels
+                </h1>
+                <p class="xl:text-[26px] md:text-2xl text-xl capitalize text-black leading-normal">
+                  Every panel removes a reason to go online. escape in the real world
+                </p>
+              </div><!-- top content -->
+
+              <!-- bottom content -->
+              <div
+                class="bottom-content-three flex items-center md:justify-start justify-between xl:space-x-10 md:space-x-6 space-x-1 reveal fade-right">
+                <div class="left-content flex flex-col">
+                  <p class="title text-lg capitalize text-black leading-normal">
+                    Placement
+                  </p>
+                  <p class="desc md:text-[26px] text-xl capitalize text-black leading-normal">
+                    Anywhere
+                  </p>
                 </div>
-
-                <!-- content div -->
-                <div class="content-div relative w-full xl:h-screen h-[1129px] max-w-[1440px] mx-auto">
-    
-                    <!-- right content -->
-                    <div class="right-content-section-one lg:absolute relative xl:left-[60%] lg:left-1/2 left-0 xl:top-[47%] lg:top-1/3 md:top-1/4 top-[20%]">
-
-                        <div class="top flex flex-col space-y-4 text-center lg:text-left">
-                            <h1 class="font-bold lg:text-[50px] md:text-6xl text-4xl text-black">
-                                AWE E-Ink Panels
-                            </h1>
-                            <h2 class="capitalize lg:text-[50px] md:text-6xl text-4xl lg:max-w-[377px] leading-none text-black">
-                                Less Online, More Life
-                            </h2>
-                            <p class="lg:text-2xl md:text-3xl text-xl capitalize lg:px-0 px-4 md:font-normal font-medium">
-                                AWE Panels integrate information in your physical environment.
-                                What you need, where you need it, without distractions
-                            </p>
-                        </div>
-
-                        <div class="btn w-full flex lg:justify-start justify-center mt-16 md:px-0 px-4">
-                            <button class="md:w-[129px] w-auto md:h-[44px] h-auto md:py-0 py-3 md:px-0 px-12 border border-black bg-black text-white md:text-base text-xl rounded-full capitalize hover:bg-transparent hover:text-black transition-colors duration-300 btn">
-                                Explore
-                            </button>
-                        </div>
-
-                    </div><!-- right content -->
-
-                </div><!-- content div -->
-
-            </section>
-            <!-- section 2 -->
-            <section id="section-two" class="section-two lg:h-[3790px] h-[4100px] bg-section-two relative w-full overflow-hidden">
-                <div class="wraper-section2 w-full h-full mx-auto">
-                    <!-- title -->
-                    <div class="title-section-two text-black text-center capitalize mt-[77px] mx-auto font-normal lg:px-0 px-2">
-                        <h2 class="lg:text-[50px] md:text-5xl text-3xl lg:leading-[60px] leading-tight reveal fade-left">
-                          escape the internet
-                          <br/>
-                          stay in touch with your environment
-                        </h2>
+                <div class="left-content flex flex-col">
+                  <p class="title text-lg capitalize text-black leading-normal">
+                    Set-up
+                  </p>
+                  <p class="desc md:text-[26px] text-xl capitalize text-black leading-normal">
+                    3 minutes
+                  </p>
+                </div>
+                <div class="left-content flex flex-col">
+                  <p class="title text-lg capitalize text-black leading-normal">
+                    Posibilities
+                  </p>
+                  <p class="desc md:text-[26px] text-xl capitalize text-black leading-normal">
+                    Endless
+                  </p>
+                </div>
+              </div><!-- bottom content -->
+            </div>
+          </div>
+          <!-- eye background (parallax)-->
+          <div
+            class="section-four h-[776px] bg-[url(/assets/img/bg-section-4.png)] bg-no-repeat bg-fixed bg-center bg-cover w-full absolute top-[2060px]">
+            <!-- content-section -->
+            <div
+              class="content-section-4 flex flex-col items-center mt-24 capitalize mx-auto font-normal text-white text-center">
+              <!-- title -->
+              <div class="title-section-four md:mb-24 mb-8 capitalize md:w-[743px] w-auto">
+                <h2 class="md:text-[50px] text-3xl md:leading-[60px] leading-tight reveal fade-bottom">
+                  use your spatial memory and end Compulsive checking
+                </h2>
+              </div>
+              <!-- description -->
+              <div
+                class="desc-section-four flex flex-col space-y-6 md:text-[26px] text-xl max-w-[767px] md:h-[155px] h-auto md:px-6 px-3 capitalize leading-tight">
+                <p class="reveal fade-bottom">
+                  The Average American Checks their phone 96 times a day, every 10 to 12 minutes. And forgets it
+                  immediately
+                </p>
+                <p class="reveal fade-bottom">
+                  Use your physical environment to support your memory by <br>placing AWE’s cordless panels only where
+                  you need it. <br>The weather info where you dress. your day agenda in the kitchen. Financial
+                  information near your desk
+                </p>
+                <p class="reveal fade-bottom">
+                  Help you memory, protect your sanity
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- placeholder image screen BOTTOM (visible only on TABLET/MOBILE) -->
+          <div
+            class="placeholder-screen lg:hidden absolute bottom-[800px] lg:left-0 md:left-[21%] left-0 md:w-[50%] w-full h-auto">
+            <div class="placeholder-contents relative md:p-0 p-6">
+              <img src="/assets/img/img-placeholder.png" alt="img-placeholder"
+                class="placeholder-image xl:w-[507px] lg:w-[410px] w-full h-auto xl:h-[454px] xl:object-cover object-contain mix-blend-darken z-0 relative xl:top-[11%] top-[8%] opacity-0 reveal fade-left pointer-events-none">
+            </div>
+          </div>
+          <!-- grid cards (Current information options) -->
+          <div class="w-full max-w-[1440px] mx-auto h-auto flex lg:justify-end justify-center xl:pr-[86px] md:pr-6">
+            <div class="card-content xl:h-[902px] lg:h-[800px] h-auto flex flex-col absolute lg:bottom-0 bottom-2">
+              <!-- card title -->
+              <div class="card-title max-w-[600px]">
+                <p
+                  class="xl:text-5xl lg:text-4xl md:text-5xl text-3xl text-black leading-[55px] capitalize xl:mb-14 lg:mb-6 mb-10 md:text-start text-center">
+                  Current Display options
+                </p>
+              </div>
+              <!-- grid cards -->
+              <div
+                class="cards grid grid-cols-2 xl:gap-x-8 lg:gap-x-4 md:gap-x-6 gap-x-2 xl:gap-y-12 lg:gap-y-6 gap-y-8 xl:pb-14 lg:pb-3 pb-8 xl:w-[1146px] md:max-w-max max-w-full md:px-0 px-3">
+                <!-- card -->
+                <div
+                  class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
+                  <div class="content-card flex flex-col items-center justify-between">
+                    <div class="title-card">
+                      <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
+                        AIR QUALITY
+                      </h3>
                     </div>
-                    <!-- white arrow -->
-                    <svg class="xl:mt-0 mt-28" width="100%" viewBox="0 0 1440  504" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M180.4 80.0186C127.12 42.0678 25 95.8315 -19.4 127.457L-49 389.851C4.77333 305.845 114.096 135.759 121.2 127.457C130.08 117.08 187.8 69.6413 180.4 240.123C173 410.606 215.92 453.631 249.96 462.525C284 471.42 358.503 462.525 474.92 357.237C627.36 219.369 716.16 194.167 1049.16 240.123C1315.56 276.888 1513.39 431.36 1579 504L1573.08 252.724L1567.16 1.44855C1462.57 -3.49296 1175.55 1.44856 864.16 60.7467C474.92 134.869 452.72 306.834 374.28 332.036C295.84 357.237 276.6 266.808 264.76 240.123C252.92 213.439 247 127.457 180.4 80.0186Z" fill="#FDFEFE" fill-opacity="0.89"/>
-                    </svg>
-                    <!-- white arrow blur -->
-                    <svg class="absolute top-[1390px]" xmlns="http://www.w3.org/2000/svg" width="1440" height="1048" viewBox="0 0 1440 1048" fill="none">
-                        <path d="M1335.88 681.623C1405.05 672.858 1481.93 763.953 1511.72 810.597L1425.32 1047.51C1409.36 952.038 1376.62 758.538 1373.28 748.31C1369.1 735.526 1333.16 669.494 1265.37 818.179C1197.58 966.864 1136.37 984.547 1098.93 977.053C1061.5 969.56 992.054 928.968 923.789 787.592C834.4 602.471 758.06 541.637 409.926 433.312C131.418 346.653 -131.403 390.765 -228 423.654L4.97331 0.265562C110.133 42.3835 390.579 173.751 671.084 362.276C1021.72 597.932 967.846 754.438 1033.99 810.682C1100.12 866.926 1158.89 798.321 1182.3 780.807C1205.71 763.293 1249.41 692.58 1335.88 681.623Z" fill="white" fill-opacity="0.3"/>
-                    </svg>
-                    <!-- image evolution -->
-                    <div class="img-evolution h-auto absolute xl:top-56 lg:top-80 md:top-96 top-80 inset-x-0 w-full mx-auto">
-                        <div class="h-[357px]">
-                            <img id="wiper1" src="/assets/img/img-evolution.png" alt="img-evolution1" class="w-full h-auto mix-blend-darkenl wiper object-cover pointer-events-none">
-                        </div>
-                    </div>
-                    <!-- description -->
-                    <div class="desc-section-two absolute xl:top-[810px] md:top-[720px] top-[500px] inset-x-0 flex flex-col justify-between lg:text-[26px] md:text-2xl text-xl text-center lg:w-[950px] w-auto lg:h-[192px] h-auto capitalize reveal fade-left mx-auto lg:px-0 px-4">
-                        <p class="leading-tight">
-                            Our phone and computer contain much of what you care about but also emails
-                            from work, rage inducing twitter feeds, envy inducing Instagram posts,
-                            endless distractions, numbing addictions, and sleep destroying stress
-                        </p>
-                        <p class="leading-tight lg:mt-0 mt-8">
-                            With AWE panels you choose the information you need and nothing else. so you 
-                            can enjoy off-line peace without wondering whether it will rain today
-                        </p>
-                    </div>
-                    <!-- placeholder image screen TOP -->
-                    <div class="placeholder-screen absolute lg:left-0 md:left-[21%] left-0 xl:top-[1210px] lg:top-[1110px] md:top-[1090px] top-[900px] md:w-[50%] w-full h-auto">
-                        <div class="placeholder-contents relative md:p-0 p-6">
-                            <img 
-                                id="img-placeholder"
-                                src="/assets/img/img-placeholder.png" 
-                                alt="img-placeholder" 
-                                class="placeholder-image xl:w-[507px] lg:w-[410px] w-full h-auto xl:h-[454px] xl:object-cover object-contain mix-blend-darken z-0 relative xl:top-[11%] top-[8%] opacity-0 pointer-events-none"
-                            >
-                        </div>
-                    </div>
-                    <!-- Beautiful, simple distinctive panels -->
-                    <div class="w-full max-w-[1440px] mx-auto h-auto flex lg:justify-end justify-center xl:pr-[86px] lg:pr-10 pr-0">
-                        <div class="flex flex-col justify-between lg:h-[600px] md:h-[450px] h-[550px] absolute xl:top-[1200px] lg:top-[1100px] md:top-[1520px] top-[1300px] md:p-0 p-6">
-                            <!-- top content -->
-                            <div class="top-content-three flex flex-col space-y-6 xl:w-[541px] md:w-[400px] w-[335px] reveal fade-right">
-                                <h1 class="xl:text-[60px] md:text-5xl text-3xl xl:leading-[60px] leading-tight capitalize text-black">
-                                    Beautiful, simple distinctive panels
-                                </h1>
-                                <p class="xl:text-[26px] md:text-2xl text-xl capitalize text-black leading-normal">
-                                    Every panel removes a reason to go online. escape in the real world
-                                </p>
-                            </div><!-- top content -->
-            
-                            <!-- bottom content -->
-                            <div class="bottom-content-three flex items-center md:justify-start justify-between xl:space-x-10 md:space-x-6 space-x-1 reveal fade-right">
-                                <div class="left-content flex flex-col">
-                                    <p class="title text-lg capitalize text-black leading-normal">
-                                        Placement
-                                    </p>
-                                    <p class="desc md:text-[26px] text-xl capitalize text-black leading-normal">
-                                        Anywhere
-                                    </p>
-                                </div>
-                                <div class="left-content flex flex-col">
-                                    <p class="title text-lg capitalize text-black leading-normal">
-                                        Set-up
-                                    </p>
-                                    <p class="desc md:text-[26px] text-xl capitalize text-black leading-normal">
-                                        3 minutes
-                                    </p>
-                                </div>
-                                <div class="left-content flex flex-col">
-                                    <p class="title text-lg capitalize text-black leading-normal">
-                                        Posibilities
-                                    </p>
-                                    <p class="desc md:text-[26px] text-xl capitalize text-black leading-normal">
-                                        Endless
-                                    </p>
-                                </div>
-                            </div><!-- bottom content -->
-                        </div>
-                    </div>
-                    <!-- eye background (parallax)-->
-                    <div class="section-four h-[776px] bg-[url(/assets/img/bg-section-4.png)] bg-no-repeat bg-fixed bg-center bg-cover w-full absolute top-[2060px]">
-                        <!-- content-section -->
-                        <div class="content-section-4 flex flex-col items-center mt-24 capitalize mx-auto font-normal text-white text-center">
-                            <!-- title -->
-                            <div class="title-section-four md:mb-24 mb-8 capitalize md:w-[743px] w-auto">
-                                <h2 class="md:text-[50px] text-3xl md:leading-[60px] leading-tight reveal fade-bottom">
-                                    use your spatial memory and end Compulsive checking
-                                </h2>
-                            </div>
-                            <!-- description -->
-                            <div class="desc-section-four flex flex-col space-y-6 md:text-[26px] text-xl max-w-[767px] md:h-[155px] h-auto md:px-6 px-3 capitalize leading-tight">
-                                <p class="reveal fade-bottom">
-                                    The Average American Checks their phone 96 times a day, every 10 to 12 minutes. And forgets it immediately
-                                </p>
-                                <p class="reveal fade-bottom">
-                                    Use your physical environment to support your memory by <br>placing AWE’s cordless panels only where you need it. <br>The weather info where you dress. your day agenda in the kitchen. Financial information near your desk
-                                </p>
-                                <p class="reveal fade-bottom">
-                                    Help you memory, protect your sanity
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- placeholder image screen BOTTOM (visible only on TABLET/MOBILE) -->
-                    <div class="placeholder-screen lg:hidden absolute bottom-[800px] lg:left-0 md:left-[21%] left-0 md:w-[50%] w-full h-auto">
-                        <div class="placeholder-contents relative md:p-0 p-6">
-                            <img 
-                                src="/assets/img/img-placeholder.png" 
-                                alt="img-placeholder" 
-                                class="placeholder-image xl:w-[507px] lg:w-[410px] w-full h-auto xl:h-[454px] xl:object-cover object-contain mix-blend-darken z-0 relative xl:top-[11%] top-[8%] opacity-0 reveal fade-left pointer-events-none"
-                            >
-                        </div>
-                    </div>
-                    <!-- grid cards (Current information options) -->
-                    <div class="w-full max-w-[1440px] mx-auto h-auto flex lg:justify-end justify-center xl:pr-[86px] md:pr-6">
-                        <div class="card-content xl:h-[902px] lg:h-[800px] h-auto flex flex-col absolute lg:bottom-0 bottom-2">
-                            <!-- card title -->
-                            <div class="card-title max-w-[600px]">
-                                <p class="xl:text-5xl lg:text-4xl md:text-5xl text-3xl text-black leading-[55px] capitalize xl:mb-14 lg:mb-6 mb-10 md:text-start text-center">
-                                    Current Display options
-                                </p>
-                            </div>
-                            <!-- grid cards -->
-                            <div class="cards grid grid-cols-2 xl:gap-x-8 lg:gap-x-4 md:gap-x-6 gap-x-2 xl:gap-y-12 lg:gap-y-6 gap-y-8 xl:pb-14 lg:pb-3 pb-8 xl:w-[1146px] md:max-w-max max-w-full md:px-0 px-3">
-                                <!-- card -->
-                                <div class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
-                                    <div class="content-card flex flex-col items-center justify-between">
-                                        <div class="title-card">
-                                            <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
-                                                AIR QUALITY
-                                            </h3>
-                                        </div>
-                                        <!-- <div class="desc-card px-4 h-[74.966px]">
+                    <!-- <div class="desc-card px-4 h-[74.966px]">
                                             <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
                                                 Current and <br> expected particle <br> pollution
                                             </p>
                                         </div> -->
-                                    </div>
-                                </div>
-                                <!-- card -->
-                                <div class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
-                                    <div class="content-card flex flex-col items-center justify-between">
-                                        <div class="title-card">
-                                            <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
-                                                POLLEN
-                                            </h3>
-                                        </div>
-                                        <!-- <div class="desc-card px-4 h-[74.966px]">
+                  </div>
+                </div>
+                <!-- card -->
+                <div
+                  class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
+                  <div class="content-card flex flex-col items-center justify-between">
+                    <div class="title-card">
+                      <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
+                        POLLEN
+                      </h3>
+                    </div>
+                    <!-- <div class="desc-card px-4 h-[74.966px]">
                                             <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
                                                 Current and expected <br>pollen pollution
                                             </p>
                                         </div> -->
-                                    </div>
-                                </div>
-                                <!-- card -->
-                                <div class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
-                                    <div class="content-card flex flex-col items-center justify-between">
-                                        <div class="title-card">
-                                            <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
-                                                WEATHER
-                                            </h3>
-                                        </div>
-                                        <!-- <div class="desc-card px-4 h-[74.966px]">
+                  </div>
+                </div>
+                <!-- card -->
+                <div
+                  class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
+                  <div class="content-card flex flex-col items-center justify-between">
+                    <div class="title-card">
+                      <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
+                        WEATHER
+                      </h3>
+                    </div>
+                    <!-- <div class="desc-card px-4 h-[74.966px]">
                                             <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
                                                 Current and expected weather: Rain, Temperatures
                                             </p>
                                         </div> -->
-                                    </div>
-                                </div>
-                                <!-- card -->
-                                <div class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center py-3 reveal fade-right">
-                                    <div class="content-card flex flex-col items-center justify-between">
-                                        <div class="title-card">
-                                            <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
-                                                CALENDAR
-                                            </h3>
-                                        </div>
-                                        <!-- <div class="desc-card px-4 h-[74.966px]">
+                  </div>
+                </div>
+                <!-- card -->
+                <div
+                  class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center py-3 reveal fade-right">
+                  <div class="content-card flex flex-col items-center justify-between">
+                    <div class="title-card">
+                      <h3 class="title-card text-black md:text-[30px] text-2xl leading-[60px] text-center">
+                        CALENDAR
+                      </h3>
+                    </div>
+                    <!-- <div class="desc-card px-4 h-[74.966px]">
                                             <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
                                                 Your outlook or gmail <br>calender for the day
                                             </p>
                                         </div> -->
-                                    </div>
-                                </div>
-                                <!-- card -->
-                                <div class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
-                                    <div class="content-card flex flex-col items-center justify-between h-[134px]">
-                                        <div class="title-card">
-                                            <h3 class="title-card text-black md:text-[30px] text-2xl leading-none text-center">
-                                                FINANCIAL
-                                            </h3>
-                                        </div>
-                                        <div class="desc-card px-4 h-[74.966px]">
-                                            <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
-                                                stocks, Indices, Currencies, etc.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- card -->
-                                <div class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
-                                    <div class="content-card flex flex-col items-center justify-between h-[134px]">
-                                        <div class="title-card">
-                                            <h3 class="title-card text-black md:text-[30px] text-2xl leading-none text-center">
-                                                NOTES
-                                            </h3>
-                                        </div>
-                                        <div class="desc-card px-4 h-[74.966px]">
-                                            <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
-                                                your own notes, reminders, scribbles
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- comming soon -->
-                            <div class="comming-soon flex lg:justify-end justify-center md:w-auto w-full xl:mt-0 lg:mt-8 mt-0 lg:mb-0 mb-4 reveal fade-bottom">
-                                <p class="text-[#4E5369] md:text-[30px] text-2xl leading-[60px] capitalize lg:text-right text-center">
-                                    Much More Coming Soon...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </section>
-            <!-- section 3 images animation -->
-            <section class="section-3 h-[1107px] bg-section-six w-full relative lg:pl-11 pl-8 overflow-hidden">
-                <!-- left title -->
-                <div class="left-title text-white mt-[62px] flex flex-col lg:space-y-5 space-y-1 reveal fade-left w-full h-auto max-w-[1440px] mx-auto">
-                    <p class="less-screen md:text-[50px] text-5xl capitalize">
-                        Less screen 
-                    </p>
-                    <p class="more-life md:text-[50px] text-5xl capitalize md:ml-32 ml-28">
-                        More life
-                    </p>
+                <!-- card -->
+                <div
+                  class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
+                  <div class="content-card flex flex-col items-center justify-between h-[134px]">
+                    <div class="title-card">
+                      <h3 class="title-card text-black md:text-[30px] text-2xl leading-none text-center">
+                        FINANCIAL
+                      </h3>
+                    </div>
+                    <div class="desc-card px-4 h-[74.966px]">
+                      <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
+                        stocks, Indices, Currencies, etc.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-
-                <!-- photos HIDDEN on DESKTOP -->
-                <div class="img-mobile lg:hidden block w-full h-full max-w-[1440px] mx-auto mt-12">
-                    <div class="second-photos grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-6 w-full max-h-max p-8">
-                        <img
-                            id="img1" 
-                            src="/assets/img/img-section-6-1.png" 
-                            alt="img-section-6-1" 
-                            class="zoom-img object-cover w-[269px] h-auto zoom-in-out pointer-events-none"
-                        >
-                        <img
-                            id="img2" 
-                            src="/assets/img/img-section-6-2.png" 
-                            alt="img-section-6-2" 
-                            class="zoom-img object-cover w-[119px] h-auto zoom-in-out pointer-events-none"
-                        >
-                        <img
-                            id="img3" 
-                            src="/assets/img/img-section-6-3.png" 
-                            alt="img-section-6-1" 
-                            class="zoom-img object-contain w-[246px] h-auto zoom-in-out pointer-events-none"
-                        >
-                        <img
-                            id="img4" 
-                            src="/assets/img/img-section-6-4.png" 
-                            alt="img-section-6-2" 
-                            class="zoom-img object-contain w-[253px] h-auto zoom-in-out pointer-events-none"
-                        >
-                        <img
-                            id="img5" 
-                            src="/assets/img/img-section-6-5.png" 
-                            alt="img-section-6-1" 
-                            class="zoom-img object-cover w-[409px] h-auto zoom-in-out pointer-events-none"
-                        >
-                        <img
-                            id="img6" 
-                            src="/assets/img/img-section-6-6.png" 
-                            alt="img-section-6-2" 
-                            class="zoom-img object-cover w-[238px] h-auto zoom-in-out pointer-events-none"
-                        >
-                        <img
-                            id="img7" 
-                            src="/assets/img/img-section-6-7.png" 
-                            alt="img-section-6-2" 
-                            class="zoom-img object-cover w-[149px] h-auto zoom-in-out pointer-events-none"
-                        >
+                <!-- card -->
+                <div
+                  class="card xl:w-[284.936px] lg:w-[230px] md:w-64 w-auto xl:h-[164.348px] h-[150px] shrink-0 rounded-[15px] bg-[#F2F4F6] border-[3px] border-[#60709A00] flex items-center justify-center reveal fade-right">
+                  <div class="content-card flex flex-col items-center justify-between h-[134px]">
+                    <div class="title-card">
+                      <h3 class="title-card text-black md:text-[30px] text-2xl leading-none text-center">
+                        NOTES
+                      </h3>
                     </div>
+                    <div class="desc-card px-4 h-[74.966px]">
+                      <p class="desc-card text-black md:text-[22px] text-base capitalize text-center leading-tight">
+                        your own notes, reminders, scribbles
+                      </p>
+                    </div>
+                  </div>
                 </div>
-
-                <!-- photos HIDDEN on TABLET/MOBILE -->
-                <div class="photos absolute hidden lg:block inset-x-0 w-full h-full max-w-[1440px] mx-auto">
-                    <!-- wrap-photos-1 -->
-                    <div class="wrap-photos-1 absolute xl:top-80 top-56 xl:left-40 left-12">
-                        <div class="first-photos relative max-w-max bottom-0 p-4 h-full">
-                            <img
-                                id="img1" 
-                                src="/assets/img/img-section-6-1.png" 
-                                alt="img-section-6-1" 
-                                class="zoom-img object-cover w-[339px] h-auto zoom-in-out pointer-events-none"
-                            >
-                            <img
-                                id="img2" 
-                                src="/assets/img/img-section-6-2.png" 
-                                alt="img-section-6-2" 
-                                class="zoom-img object-cover w-[289px] h-auto absolute -top-[230px] -right-40 zoom-in-out pointer-events-none"
-                            >
-                        </div>
-                    </div>
-                    <!-- wrap-photos-2 -->
-                    <div class="wrap-photos-2 absolute top-20 xl:right-80 right-40">
-                        <div class="second-photos relative max-w-max bottom-0 p-4 h-full">
-                            <img
-                                id="img3" 
-                                src="/assets/img/img-section-6-3.png" 
-                                alt="img-section-6-1" 
-                                class="zoom-img object-contain w-[316px] h-auto z-20 relative zoom-in-out pointer-events-none"
-                            >
-                            <img
-                                id="img4" 
-                                src="/assets/img/img-section-6-4.png" 
-                                alt="img-section-6-2" 
-                                class="zoom-img object-contain w-[323px] h-auto absolute -top-48 -right-[230px] z-10 zoom-in-out pointer-events-none"
-                            >
-                        </div>
-                    </div>
-                    <!-- wrap-photos-3 -->
-                    <div class="wrap-photos-3 absolute bottom-96 xl:right-80 right-56">
-                        <div class="third-photos relative max-w-max bottom-0 p-4 h-full">
-                            <img
-                                id="img5" 
-                                src="/assets/img/img-section-6-5.png" 
-                                alt="img-section-6-1" 
-                                class="zoom-img object-cover w-[479px] h-auto zoom-in-out pointer-events-none"
-                            >
-                            <img
-                                id="img6" 
-                                src="/assets/img/img-section-6-6.png" 
-                                alt="img-section-6-2" 
-                                class="zoom-img object-cover w-[308px] h-auto absolute -bottom-[104px] -right-60 zoom-in-out pointer-events-none"
-                            >
-                            <img
-                                id="img7" 
-                                src="/assets/img/img-section-6-7.png" 
-                                alt="img-section-6-2" 
-                                class="zoom-img object-cover w-[219px] h-auto absolute -right-80 bottom-20 zoom-in-out pointer-events-none"
-                            >
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- footer -->
-        <footer class="section-footer relative bg-[#1D1D1D]">
-            <div class="wrap-footer max-w-[1440px] mx-auto">
-                <!-- big footer -->
-                <section class="big-footer bg-[#1D1D1D] w-full h-[500px] relative overflow-hidden">
-                    <!-- gray arrow -->
-                    <svg class="absolute -bottom-[105px] left-[150px] w-max h-auto z-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg" width="935" height="604" viewBox="0 0 935 604" fill="none">
-                        <path d="M14.0933 -34.1134C-38.2111 -133.521 78.0516 -265.635 142.721 -319.266L282.864 -347.841C294.673 -265.495 358.738 -109.821 520.524 -145.893C722.756 -190.984 846.908 -189.768 881.292 -58.1493C915.676 73.4693 595.241 242.038 570.945 258.768C546.65 275.497 453.633 331.822 455.417 467.109C456.844 575.339 587.757 629.79 653.035 643.487L934.407 768.454L575.971 839.46C449.905 829.129 196.692 740.995 192.368 471.101C186.963 133.734 603.706 49.6159 644.062 35.5458C684.418 21.4757 800.649 2.44063 772.913 -51.3133C745.176 -105.067 625.973 -30.3114 403.104 64.1499C180.235 158.611 79.4739 90.146 14.0933 -34.1134Z" fill="rgba(255, 255, 255, 0.30)" fill-opacity="0.3"/>
-                    </svg>
-                    <!-- content-section-seven -->
-                    <div class="content-section-seven w-full md:pl-[97px] pl-3 md:pr-[112px] pr-3 lg:mt-[171px] mt-28 h-auto flex lg:flex-row flex-col items-start justify-between z-20">
-                        <!-- left -->
-                        <div class="left-side flex flex-col justify-between lg:mb-0 mb-12 xl:w-auto w-full">
-                            <!-- Enter your mail -->
-                            <div class="email-field relative flex items-center mt-2 w-full">
-                                <input 
-                                    type="email" 
-                                    name="email"
-                                    autocomplete="on"
-                                    class="xl:w-[623px] w-full xl:h-[76px] lg:h-[60px] shrink-0 text-gray-300 xl:text-[30px] lg:text-[24px] font-normal capitalize leading-[60px] pl-8 border border-white bg-[#1D1D1D] placeholder-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300" 
-                                    placeholder="Enter your mail"
-                                >
-                                <button class="absolute right-[30px] text-white uppercase md:text-lg text-base font-normal leading-[39.538px] focus:outline-none focus:font-medium hover:font-medium btn">
-                                    SUBSCRIBE
-                                </button>
-                            </div>
-                        </div>
-                        <!-- right -->
-                        <div class="right-side flex md:justify-start justify-between xl:space-x-36 lg:space-x-16 space-x-8 xl:pl-0 lg:pl-12 md:w-fit w-full md:px-0 px-3">
-                            <!-- company -->
-                            <div class="company">
-                                <ul class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] text-[20px] leading-none capitalize">
-                                    <li class="font-semibold">
-                                        <a href="">Company</a>
-                                    </li>
-                                    <li>
-                                        <a href="">About us</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Careers</a>
-                                    </li>
-                                    <li>
-                                        <a href=""> Resources</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- support -->
-                            <div class="support">
-                                <ul class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] text-[20px] leading-none capitalize">
-                                    <li class="font-semibold">
-                                        <a href="">Support</a>
-                                    </li>
-                                    <li>
-                                        <a href="">My Account</a>
-                                    </li>
-                                    <li>
-                                        <a href="">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Help</a>
-                                    </li>
-                                    <li>
-                                        <a href=""> Contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- small footer -->
-                <div class="small-footer md:h-[103px] h-full flex md:flex-row flex-col-reverse md:space-y-0 space-y-3 md:items-center justify-between lg:pl-[97px] pl-8 lg:pr-[71px] pr-8 overflow-x-hidden md:pt-0 pt-8">
-
-                    <div class="left-side-footer text-white capitalize leading-[60px] lg:text-lg text-base text-opacity-70 md:mt-0 mt-5">
-                        © 2023 AWE, All rights Reserved 
-                    </div>
-                    
-                    <nav role="navigation" class="h-full flex items-center">
-                        <ul class="menus flex md:flex-row flex-col md:items-center xl:space-x-[65px] lg:space-x-6 md:space-x-2 space-x-0 md:space-y-0 space-y-4 text-white capitalize md:leading-[60px] leading-normal xl:text-lg lg:text-base md:text-sm text-base text-opacity-70">
-                            <li>
-                                <a href="">Terms of Service</a>
-                            </li>
-                            <li>
-                                <a href="">Privacy policy</a>
-                            </li>
-                            <li>
-                                <a href="">Regulatory Notice</a>
-                            </li>
-                            <li>
-                                <a href="">Security</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+              </div>
+              <!-- comming soon -->
+              <div
+                class="comming-soon flex lg:justify-end justify-center md:w-auto w-full xl:mt-0 lg:mt-8 mt-0 lg:mb-0 mb-4 reveal fade-bottom">
+                <p class="text-[#4E5369] md:text-[30px] text-2xl leading-[60px] capitalize lg:text-right text-center">
+                  Much More Coming Soon...
+                </p>
+              </div>
             </div>
-        </footer>
-    </div>
-    <script src="assets/scroll.js"></script>
+          </div>
+        </div>
+      </section>
+      <!-- section 3 images animation -->
+      <section class="section-3 h-[1107px] bg-section-six w-full relative lg:pl-11 pl-8 overflow-hidden">
+        <!-- left title -->
+        <div
+          class="left-title text-white mt-[62px] flex flex-col lg:space-y-5 space-y-1 reveal fade-left w-full h-auto max-w-[1440px] mx-auto">
+          <p class="less-screen md:text-[50px] text-5xl capitalize">
+            Less screen
+          </p>
+          <p class="more-life md:text-[50px] text-5xl capitalize md:ml-32 ml-28">
+            More life
+          </p>
+        </div>
+
+        <!-- photos HIDDEN on DESKTOP -->
+        <div class="img-mobile lg:hidden block w-full h-full max-w-[1440px] mx-auto mt-12">
+          <div class="second-photos grid md:grid-cols-3 grid-cols-2 md:gap-20 gap-6 w-full max-h-max p-8">
+            <img id="img1" src="/assets/img/img-section-6-1.png" alt="img-section-6-1"
+              class="zoom-img object-cover w-[269px] h-auto zoom-in-out pointer-events-none">
+            <img id="img2" src="/assets/img/img-section-6-2.png" alt="img-section-6-2"
+              class="zoom-img object-cover w-[119px] h-auto zoom-in-out pointer-events-none">
+            <img id="img3" src="/assets/img/img-section-6-3.png" alt="img-section-6-1"
+              class="zoom-img object-contain w-[246px] h-auto zoom-in-out pointer-events-none">
+            <img id="img4" src="/assets/img/img-section-6-4.png" alt="img-section-6-2"
+              class="zoom-img object-contain w-[253px] h-auto zoom-in-out pointer-events-none">
+            <img id="img5" src="/assets/img/img-section-6-5.png" alt="img-section-6-1"
+              class="zoom-img object-cover w-[409px] h-auto zoom-in-out pointer-events-none">
+            <img id="img6" src="/assets/img/img-section-6-6.png" alt="img-section-6-2"
+              class="zoom-img object-cover w-[238px] h-auto zoom-in-out pointer-events-none">
+            <img id="img7" src="/assets/img/img-section-6-7.png" alt="img-section-6-2"
+              class="zoom-img object-cover w-[149px] h-auto zoom-in-out pointer-events-none">
+          </div>
+        </div>
+
+        <!-- photos HIDDEN on TABLET/MOBILE -->
+        <div class="photos absolute hidden lg:block inset-x-0 w-full h-full max-w-[1440px] mx-auto">
+          <!-- wrap-photos-1 -->
+          <div class="wrap-photos-1 absolute xl:top-80 top-56 xl:left-40 left-12">
+            <div class="first-photos relative max-w-max bottom-0 p-4 h-full">
+              <img id="img1" src="/assets/img/img-section-6-1.png" alt="img-section-6-1"
+                class="zoom-img object-cover w-[339px] h-auto zoom-in-out pointer-events-none">
+              <img id="img2" src="/assets/img/img-section-6-2.png" alt="img-section-6-2"
+                class="zoom-img object-cover w-[289px] h-auto absolute -top-[230px] -right-40 zoom-in-out pointer-events-none">
+            </div>
+          </div>
+          <!-- wrap-photos-2 -->
+          <div class="wrap-photos-2 absolute top-20 xl:right-80 right-40">
+            <div class="second-photos relative max-w-max bottom-0 p-4 h-full">
+              <img id="img3" src="/assets/img/img-section-6-3.png" alt="img-section-6-1"
+                class="zoom-img object-contain w-[316px] h-auto z-20 relative zoom-in-out pointer-events-none">
+              <img id="img4" src="/assets/img/img-section-6-4.png" alt="img-section-6-2"
+                class="zoom-img object-contain w-[323px] h-auto absolute -top-48 -right-[230px] z-10 zoom-in-out pointer-events-none">
+            </div>
+          </div>
+          <!-- wrap-photos-3 -->
+          <div class="wrap-photos-3 absolute bottom-96 xl:right-80 right-56">
+            <div class="third-photos relative max-w-max bottom-0 p-4 h-full">
+              <img id="img5" src="/assets/img/img-section-6-5.png" alt="img-section-6-1"
+                class="zoom-img object-cover w-[479px] h-auto zoom-in-out pointer-events-none">
+              <img id="img6" src="/assets/img/img-section-6-6.png" alt="img-section-6-2"
+                class="zoom-img object-cover w-[308px] h-auto absolute -bottom-[104px] -right-60 zoom-in-out pointer-events-none">
+              <img id="img7" src="/assets/img/img-section-6-7.png" alt="img-section-6-2"
+                class="zoom-img object-cover w-[219px] h-auto absolute -right-80 bottom-20 zoom-in-out pointer-events-none">
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="section-footer relative bg-[#1D1D1D]">
+      <div class="wrap-footer max-w-[1440px] mx-auto">
+        <!-- big footer -->
+        <section class="big-footer bg-[#1D1D1D] w-full h-[500px] relative overflow-hidden">
+          <!-- gray arrow -->
+          <svg class="absolute -bottom-[105px] left-[150px] w-max h-auto z-10 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg" width="935" height="604" viewBox="0 0 935 604" fill="none">
+            <path
+              d="M14.0933 -34.1134C-38.2111 -133.521 78.0516 -265.635 142.721 -319.266L282.864 -347.841C294.673 -265.495 358.738 -109.821 520.524 -145.893C722.756 -190.984 846.908 -189.768 881.292 -58.1493C915.676 73.4693 595.241 242.038 570.945 258.768C546.65 275.497 453.633 331.822 455.417 467.109C456.844 575.339 587.757 629.79 653.035 643.487L934.407 768.454L575.971 839.46C449.905 829.129 196.692 740.995 192.368 471.101C186.963 133.734 603.706 49.6159 644.062 35.5458C684.418 21.4757 800.649 2.44063 772.913 -51.3133C745.176 -105.067 625.973 -30.3114 403.104 64.1499C180.235 158.611 79.4739 90.146 14.0933 -34.1134Z"
+              fill="rgba(255, 255, 255, 0.30)" fill-opacity="0.3" />
+          </svg>
+          <!-- content-section-seven -->
+          <div
+            class="content-section-seven w-full md:pl-[97px] pl-3 md:pr-[112px] pr-3 lg:mt-[171px] mt-28 h-auto flex lg:flex-row flex-col items-start justify-between z-20">
+            <!-- left -->
+            <div class="left-side flex flex-col justify-between lg:mb-0 mb-12 xl:w-auto w-full">
+              <!-- Enter your mail -->
+              <div class="email-field relative flex items-center mt-2 w-full">
+                <input type="email" name="email" autocomplete="on"
+                  class="xl:w-[623px] w-full xl:h-[76px] lg:h-[60px] shrink-0 text-gray-300 xl:text-[30px] lg:text-[24px] font-normal capitalize leading-[60px] pl-8 border border-white bg-[#1D1D1D] placeholder-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+                  placeholder="Enter your mail">
+                <button
+                  class="absolute right-[30px] text-white uppercase md:text-lg text-base font-normal leading-[39.538px] focus:outline-none focus:font-medium hover:font-medium btn">
+                  SUBSCRIBE
+                </button>
+              </div>
+            </div>
+            <!-- right -->
+            <div
+              class="right-side flex md:justify-start justify-between xl:space-x-36 lg:space-x-16 space-x-8 xl:pl-0 lg:pl-12 md:w-fit w-full md:px-0 px-3">
+              <!-- company -->
+              <div class="company">
+                <ul
+                  class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] text-[20px] leading-none capitalize">
+                  <li class="font-semibold">
+                    <a href="">Company</a>
+                  </li>
+                  <li>
+                    <a href="">About us</a>
+                  </li>
+                  <li>
+                    <a href="">Careers</a>
+                  </li>
+                  <li>
+                    <a href=""> Resources</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- support -->
+              <div class="support">
+                <ul
+                  class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] text-[20px] leading-none capitalize">
+                  <li class="font-semibold">
+                    <a href="">Support</a>
+                  </li>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="">Help</a>
+                  </li>
+                  <li>
+                    <a href=""> Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- small footer -->
+        <div
+          class="small-footer md:h-[103px] h-full flex md:flex-row flex-col-reverse md:space-y-0 space-y-3 md:items-center justify-between lg:pl-[97px] pl-8 lg:pr-[71px] pr-8 overflow-x-hidden md:pt-0 pt-8">
+
+          <div
+            class="left-side-footer text-white capitalize leading-[60px] lg:text-lg text-base text-opacity-70 md:mt-0 mt-5">
+            © 2023 AWE, All rights Reserved
+          </div>
+
+          <nav role="navigation" class="h-full flex items-center">
+            <ul
+              class="menus flex md:flex-row flex-col md:items-center xl:space-x-[65px] lg:space-x-6 md:space-x-2 space-x-0 md:space-y-0 space-y-4 text-white capitalize md:leading-[60px] leading-normal xl:text-lg lg:text-base md:text-sm text-base text-opacity-70">
+              <li>
+                <a href="">Terms of Service</a>
+              </li>
+              <li>
+                <a href="">Privacy policy</a>
+              </li>
+              <li>
+                <a href="">Regulatory Notice</a>
+              </li>
+              <li>
+                <a href="">Security</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+  </div>
+  </footer>
+  </div>
+  <script src="assets/scroll.js"></script>
 </body>
 </html>

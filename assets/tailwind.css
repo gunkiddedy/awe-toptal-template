@@ -1763,6 +1763,20 @@ html {
   transition-duration: 700ms;
 }
 
+.animate-opacity {
+  animation: opacity 2s;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .hover\:border-\[\#60709A\]:hover {
   --tw-border-opacity: 1;
   border-color: rgb(96 112 154 / var(--tw-border-opacity));

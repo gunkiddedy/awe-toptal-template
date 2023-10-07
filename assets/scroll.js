@@ -1,28 +1,26 @@
 // global variable
 let prevScrollpos = window.scrollY;
-const wiper1 = document.getElementById("wiper1");
-
-const navbarBackdrop = document.getElementById("navbarBackdrop");
-const sidenav = document.getElementById("sidenav");
 
 const headerNavbar = document.getElementById("header-navbar");
-
+const imgPlaceholderClass = document.querySelectorAll(".img-placeholder");
 const imgPlaceholder = document.getElementById("img-placeholder");
 
 const reveals = document.querySelectorAll(".reveal");
+const imgEvo = document.querySelectorAll(".img-evo");
 
 /**
  * method tells the browser that you wish to perform an animation and requests that the browser calls a specified function to update an animation right before the next repaint. The method takes a callback as an argument to be invoked before the repaint.
- */
+*/
 const windowScroll =
-  window.requestAnimationFrame ||
-  function (callback) {
-    window.setTimeout(callback, 1000 / 60);
-  };
+window.requestAnimationFrame ||
+function (callback, el, height) {
+  window.setTimeout(callback, 1000 / 60);
+};
 
-animationFade();
-animationWipe();
-showImagePlaceholder();
+animationFade(); // all animations that used the reveal class
+imageEvolutioWipe(); // animation for image evolution
+imagePlaceholderWipe(); // animation for image placeholder
+showImagePlaceholder(); // func to set the image placeholder fixed on scrolling
 
 // set animations fade out from left, right or bottom
 function animationFade() {
@@ -43,128 +41,63 @@ function animationFade() {
   windowScroll(animationFade);
 }
 
-/**
- * if scroll y has reachead the minimum height value of 1000,
- * then run the wipe animations
- */
-function animationWipe() {
-  if (window.scrollY >= 1000) {
-    // console.log('wiper up', window.scrollY)
-    wiper1.classList.remove("wipe-gone");
-    wiper1.classList.add("wipe-left");
-  } else {
-    // console.log('wiper down', window.scrollY)
-    wiper1.classList.remove("wipe-left");
-    wiper1.classList.add("wipe-gone");
+function imageEvolutioWipe() {
+  for (let i = 0; i < imgEvo.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = imgEvo[i].getBoundingClientRect().top;
+    const elementVisible = 275;
+
+    if (elementTop < windowHeight - elementVisible) {
+      imgEvo[i].classList.remove("wipe-gone");
+      imgEvo[i].classList.add("wipe-left");
+    } else {
+      // uncomment this to stop the animations loop
+      imgEvo[i].classList.remove("wipe-left");
+      imgEvo[i].classList.add("wipe-gone");
+    }
   }
-  windowScroll(animationWipe);
+  windowScroll(imageEvolutioWipe);
 }
 
-// set the image placeholder fixed/relative
-function setImagePlaceholder(type, value) {
-  if (type.toLowerCase() === "fixed") {
-    const screenWidth = window.innerWidth;
-    const pageWidth = 1440;
-    const leftPosition = (screenWidth / pageWidth) * (100 / 7);
-    const leftImage = leftPosition + "%";
+function imagePlaceholderWipe() {
+  for (let i = 0; i < imgPlaceholderClass.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = imgPlaceholderClass[i].getBoundingClientRect().top;
+    const elementVisible = 300;
 
-    /**
-     * set the dinamically left position of placeholder image
-     */
-    if (screenWidth > pageWidth) {
-      imgPlaceholder.style.left = leftImage;
+    if (elementTop < windowHeight - elementVisible) {
+      imgPlaceholderClass[i].classList.remove("wipe-gone");
+      imgPlaceholderClass[i].classList.add("wipe-left");
     } else {
-      imgPlaceholder.style.left = "7%";
+      // uncomment this to stop the animations loop
+      imgPlaceholderClass[i].classList.remove("wipe-left");
+      imgPlaceholderClass[i].classList.add("wipe-gone");
     }
+  }
+  windowScroll(imagePlaceholderWipe);
+}
 
-    if (window.scrollY >= value) {
-      // console.log('>= 2200')
-      imgPlaceholder.classList.remove(
-        "relative",
-        "opacity-0",
-        "transition-all",
-        "duration-300"
-      );
-      imgPlaceholder.classList.add(
-        "fixed",
-        "opacity-100",
-        "transition-all",
-        "duration-300",
-        "transform",
-        "scale-105"
-      );
-    } else {
-      // console.log('< 2200')
-      imgPlaceholder.classList.add(
-        "opacity-0",
-        "transition-all",
-        "duration-300",
-        "relative"
-      );
-      imgPlaceholder.classList.remove(
-        "fixed",
-        "opacity-100",
-        "transition-all",
-        "duration-300",
-        "transform",
-        "scale-105"
-      );
-    }
+function setImagePlaceholder(value) {
+  if (window.scrollY >= value) {
+    imgPlaceholder.classList.add(
+      "fixed",
+    );
   } else {
-    if (window.scrollY >= value) {
-      // console.log('>= 2200')
-      imgPlaceholder.classList.add(
-        "reveal",
-        "fade-left",
-        "active",
-        "opacity-100",
-        "transition-all",
-        "duration-300",
-        "scale-105"
-      );
-    }
+    imgPlaceholder.classList.remove(
+      "fixed",
+    );
   }
 }
 
-/**
- * show/hide the image placeholder fixed or relative
- */
 function showImagePlaceholder() {
   if (window.innerWidth >= 1280) {
-    // console.log('2000')
-    setImagePlaceholder("fixed", 2000);
-  } else if (window.innerWidth >= 1024) {
-    // console.log('1950')
-    setImagePlaceholder("fixed", 1950);
-  } else {
-    setImagePlaceholder("relative", 1950);
+    setImagePlaceholder(2000);
   }
+  if (window.innerWidth >= 1024) {
+    setImagePlaceholder(1950);
+  } 
   windowScroll(showImagePlaceholder);
 }
-
-// open mobile menu
-function openNav() {
-  document.body.style.overflow = "hidden";
-  navbarBackdrop.classList.add("fixed", "inset-0", "h-[100vh]");
-  sidenav.classList.remove("-top-[500px]");
-  sidenav.classList.add("top-0");
-}
-
-// close mobile menu
-function closeNav() {
-  navbarBackdrop.classList.remove("fixed", "inset-0", "h-[100vh]");
-  sidenav.classList.remove("top-0");
-  sidenav.classList.add("-top-[500px]");
-  document.body.style.overflow = "";
-}
-
-// call closeNav if window is resized
-window.addEventListener("resize", () => {
-  if (window.innerWidth >= 1023) {
-    console.log("close navbar in size", window.innerWidth);
-    closeNav();
-  }
-});
 
 window.onscroll = function () {
   /**

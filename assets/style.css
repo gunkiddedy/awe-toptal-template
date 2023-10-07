@@ -108,11 +108,23 @@
     -webkit-mask-position: right;
     opacity: 0;
   }
-  .wipe-left {
+  .wiper[data-speed="slow"].wipe-left {
     opacity: 1;
     mask-position: left;
     -webkit-mask-position: left;
     transition: -webkit-mask-position 4s linear;
+  }
+  .wiper[data-speed="medium"].wipe-left {
+    opacity: 1;
+    mask-position: left;
+    -webkit-mask-position: left;
+    transition: -webkit-mask-position 2s linear;
+  }
+  .wiper[data-speed="fast"].wipe-left {
+    opacity: 1;
+    mask-position: left;
+    -webkit-mask-position: left;
+    transition: -webkit-mask-position 1s linear;
   }
   .wipe-gone {
     opacity: 0;

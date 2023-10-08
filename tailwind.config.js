@@ -6,6 +6,7 @@ module.exports = {
     "./resources.html",
     "./term.html",
     "./privacy.html",
+    "./cookie.html",
     "./assets/**/*.js"
   ],
   theme: {

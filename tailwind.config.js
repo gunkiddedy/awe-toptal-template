@@ -5,6 +5,7 @@ module.exports = {
     "./our-mission.html",
     "./resources.html",
     "./term.html",
+    "./privacy.html",
     "./assets/**/*.js"
   ],
   theme: {

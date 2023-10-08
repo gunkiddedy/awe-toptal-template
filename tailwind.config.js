@@ -2,6 +2,8 @@
 module.exports = {
   content: [
     "./index.html",
+    "./our-mission.html",
+    "./our-mission2.html",
     "./assets/**/*.js"
   ],
   theme: {

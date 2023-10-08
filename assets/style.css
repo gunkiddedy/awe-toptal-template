@@ -61,6 +61,35 @@
     background-position-y: 40%;
     /* background-attachment: fixed; */
   }
+  .bg-our-mission {
+    background: linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+  }
+  .bg-our-mission-img-top-btm {
+    background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png");
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    background-position: center top -200px, center bottom -200px;
+  }
+  .bg-our-mission-with-img {
+    background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: contain;
+    background-position: 
+      center top 0, 
+      center bottom 0,
+      center;
+  }
+  @media (min-width: 1280px) { 
+    .bg-our-mission-with-img {
+      background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+      background-repeat: no-repeat, no-repeat, repeat;
+      background-size: contain;
+      background-position: 
+        center top -700px, 
+        center bottom -700px,
+        center;
+    }
+  }
   /* .sidenav {
         height: 100%;
         width: 83%;

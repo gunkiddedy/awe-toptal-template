@@ -3,6 +3,8 @@ module.exports = {
   content: [
     "./index.html",
     "./our-mission.html",
+    "./resources.html",
+    "./term.html",
     "./assets/**/*.js"
   ],
   theme: {

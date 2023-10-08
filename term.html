@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awe Toptal</title>
+  <link href="./assets/tailwind.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page-wraper">
+    <!-- header -->
+    <header id="header-navbar" class="fixed top-0 flex justify-center w-full transition-[top] duration-500 z-50 animate-opacity">
+
+      <!-- HAMBURGER -->
+      <div id="hamburger" class="hamburger w-full p-5 lg:hidden flex items-center justify-between relative">
+        <!-- left -->
+        <div class="left w-full flex items-center justify-between md:justify-start">
+          <!-- logo -->
+          <div class="logo">
+            <a href="">
+              <img src="/assets/img/AWE.svg" alt="awe logo" class="w-[116px] h-auto">
+            </a>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="right mr-4">
+          <button role="button"
+            class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 hidden md:block btn">
+            Order Now
+          </button>
+        </div>
+        <!-- hamburger menu -->
+        <button id="navbarBurger" onclick="openNav()" class="navbar-burger btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-8 h-8 text-gray-800 hover:text-gray-500">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- NAVBAR MENU TABLET/MOBILE -->
+      <div class="navbar-menu navbar-inactive lg:hidden block">
+        <div id="navbarBackdrop" onclick="closeNav()" class="navbar-backdrop bg-gray-900 opacity-75 backdrop-blur-md">
+        </div>
+        <nav id="sidenav"
+          class="fixed -top-[500px] left-0 flex flex-col w-full py-6 px-5 border-r transition-all duration-700 max-h-max bg-nav-mobile">
+          <div class="flex items-center justify-between mb-8">
+            <a href="">
+              <img src="/assets/img/AWE.svg" alt="awe logo" class="w-[116px] h-auto">
+            </a>
+            <button onclick="closeNav()" id="navbarClose" class="navbar-close btn">
+              <svg class="h-8 w-8 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">My tiles</a>
+              </li>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">Data sources</a>
+              </li>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">Backgrounds</a>
+              </li>
+              <li class="mb-1">
+                <a class="block p-4 text-lg font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-600 rounded transition-colors duration-300"
+                  href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-auto">
+            <div class="pt-6">
+              <button role="button"
+                class="w-full px-8 py-4 bg-gray-800 text-white rounded-full font-semibold  transition-colors duration-300 text-xl hover:bg-black btn">
+                Order Now
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- default navigation -->
+      <nav role="navigation"
+        class="navigation-menus w-full max-w-[1440px] hidden lg:flex items-center justify-between py-5 px-10">
+        <!-- logo -->
+        <div class="logo">
+          <a href="">
+            <img src="/assets/img/AWE.svg" alt="awe logo" class="w-[116px] h-auto">
+          </a>
+        </div><!-- logo -->
+        <!-- menus -->
+        <ul class="flex items-center space-x-6 text-lg">
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">My tiles</a>
+          </li>
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">Data sources</a>
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">Backgrounds</a>
+          </li>
+          <li
+            class="border border-transparent transition-[border] duration-300 hover:border-[#60709A] rounded-full px-6 py-1">
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <button role="button"
+              class="w-[165px] h-[44px] border border-black bg-transparent text-[#000] rounded-full font-semibold hover:bg-black hover:text-white transition-colors duration-300 btn">
+              Order Now
+            </button>
+          </li>
+        </ul><!-- menus -->
+      </nav>
+    </header>
+
+    <!-- prevent the js error -->
+    <span class="hidden" id="img-placeholder"></span>
+
+    <section class="term w-full">
+      <div class="container-div w-full min-h-screen max-w-[1440px] mx-auto pb-24 pt-28 px-12 animate-opacity bg-[linear-gradient(159deg, #D2D1D1 0%, #FBFDFF 100.85%)] text-base text-[#101010]">
+        
+        <!-- TERMS OF SERVICE -->
+        <p class="term font-bold mb-3">
+            TERMS OF SERVICE
+        </p>
+
+        <p class="effective mb-5">
+            Effective Date: September 23, 2023
+        </p>
+
+        <!-- 1. Introduction -->
+        <div class="intro mb-5">
+            <p class="title font-bold mb-0">
+                1. Introduction
+            </p>
+            <p class="desc">
+                Welcome to AWE Elements (the "Company"). The Company provides a variety of products and services, including our eink panel screens (tiles), and access to various data and services to be displayed on the tiles. These Terms of Service (the "ToS") govern your access and use of the Company's products and services. By accessing or using the Company's products and services, you agree to be bound by these ToS. If you do not agree to these ToS, you may not access or use the Company's products and services.
+            </p>
+        </div>
+
+        <!-- 2. Definitions -->
+        <div class="definitions mb-5">
+            <p class="title font-bold">
+                2. Definitions
+            </p>
+            <div class="desc">
+                In these ToS:
+                <ul class="list-disc list-inside">
+                    <li>
+                        "Account" means the account that you create in order to access and use the Company's products and services.
+                    </li>
+                    <li>
+                        "Content" means any text, images, videos, audio files, or other material that you post or upload to the Company's products and services.
+                    </li>
+                    <li>
+                        "Products and Services" means the Company's website, eink screen, mobile apps, and other products and services that are subject to these ToS.
+                    </li>
+                    <li>
+                        "User" means any person or entity that accesses or uses the Company's products and services.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Scope of Agreement -->
+        <div class="scope-agreement mb-5">
+            <p class="title font-bold">
+                3. Scope of Agreement
+            </p>
+            <p class="desc">
+                These ToS govern your access and use of the Company's products and services. They also govern your relationship with the Company.
+            </p>
+        </div>
+
+        <!-- 4. Access and Use -->
+        <div class="access-and-use mb-5">
+            <p class="title font-bold">
+                4. Access and Use
+            </p>
+            <p class="desc">
+                Company grants you a limited license to access and use the Products and Services subject to the terms of this Agreement. You agree to use the Products and Services in a responsible and respectful manner. You will not:
+            </p>
+            <ul class="list-disc list-inside">
+                <li>
+                    Copy, modify, or create derivative works of the Products and Services, or reverse engineer, disassemble, decompile, decode, adapt, or otherwise attempt to derive or gain access to any of the Products and Services other than through the regular website and device user interface.
+                </li>
+                <li>
+                    Resell any Products and Services that you purchase from the Company.
+                </li>
+                <li>
+                    Post or upload any Content that is illegal.
+                </li>
+                <li>
+                    Impersonate any person or entity, or falsely state or misrepresent your affiliation with any person or entity.
+                </li>
+                <li>
+                    Transmit or spread any virus, worm, or other malicious code.
+                </li>
+                <li>
+                    Interfere with the operation of the Company's products and services or use the Company's products and services to disrupt or interfere with the use and enjoyment of the Company's products and services by others.
+                </li>
+                <li>
+                    Violate any applicable law or regulation.The Products and Services may be unavailable at times due to equipment malfunctions, maintenance, or other reasons beyond Company's control.
+                </li>
+            </ul>
+            <p class="desc mt-3">
+                Company may suspend your access to the Products and Services for security reasons, to prevent illegal activity, or if you violate this Agreement or the Privacy Policy. Company may use third-party service providers to deliver the Products and Services. You must abide by the terms of service and other requirements of those third-party service providers.
+            </p>
+        </div>
+
+        <!-- 5. Subscriptions -->
+        <div class="subscriptions mb-5">
+            <p class="title font-bold">
+                5. Subscriptions
+            </p>
+            <p class="desc mb-1">
+                Certain Paid Services are subscription-based purchases, to which the following terms apply: Your Subscription term may vary as a continuous, monthly, or annual term (“Subscription Term(s)”), as described in the course of purchasing the Paid Services. Your Subscription will auto-renew for additional Subscription Terms until your Subscription is cancelled by you, or suspended or terminated by Company. Unless otherwise indicated by us, your designated payment method will be charged prior to, or at the beginning of, each Subscription Term for the Subscription fee plus any applicable taxes and other charges.
+            </p>
+            <p class="desc mb-1">
+                We may change the Subscription fees for our Paid Services, or any features or parts of our Paid Services, at any time. You acknowledge that we may change the Subscription fees for Paid Services at any time. In the event of such a change, we will provide notice to you via the email address associated with your account at least thirty (30) days in advance of the effective date of the change. Your continued use of the Services indicates your acceptance of any changes to the Subscription fees.
+            </p>
+            <p class="desc mb-1">
+                You may cancel your Subscription at any time. Your cancellation will take effect at the end of the current Subscription Term. To cancel your subscription and automatic payment, click on the “Cancel Account” button from your My Account screen. Cancellation does not entitle you to the refund of any previously paid Fees and you will not receive a prorated refund for the remainder of the Subscription Term. In the event you cancel your Subscription, note that we may still send you promotional communications, unless you opt out of receiving those communications by following the unsubscribe instructions provided in the communications.
+            </p>
+            <p class="desc mb-1">
+                If you reside outside the United States and change your mind about your purchase, you may be entitled to receive a full refund within fourteen (14) days (the “Cooling-Off Period”), provided that you have not logged in or otherwise redeemed or started to use the Services as a subscriber during the Cooling-Off Period. You are solely responsible for all applicable taxes and will be charged for taxes when required by law.
+            </p>
+        </div>
+
+        <!-- 6. Privacy Policy -->
+        <div class="privacy mb-5">
+            <p class="title font-bold">
+                6. Privacy Policy
+            </p>
+            <p class="desc">
+                The Company's privacy policy (the "Privacy Policy") explains how the Company collects, uses, and shares your data. The Privacy Policy is incorporated into these ToS by reference.
+            </p>
+        </div>
+
+        <!-- 7. Intellectual Property -->
+        <div class="intellectual mb-5">
+            <p class="title font-bold">
+                7. Intellectual Property
+            </p>
+            <p class="desc">
+                The Company owns all right, title, and interest in and to the Company's products and services, including all intellectual property rights therein.
+            </p>
+        </div>
+
+        <!-- 8. Disclaimer of Warranties -->
+        <div class="disclaimer mb-5">
+            <p class="title font-bold">
+                8. Disclaimer of Warranties
+            </p>
+            <p class="desc">
+                THE COMPANY'S PRODUCTS AND SERVICES ARE PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND. THE COMPANY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.THE COMPANY DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS IN THE SERVICES WILL BE CORRECTED, OR THAT THE FUNCTIONS CONTAINED IN THE SERVICES WILL FUNCTION WITH OTHER APPS OR HARDWARE, OR WITHIN A SYSTEM. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY THE COMPANY OR A COMPANY AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION MAY NOT APPLY. NOTWITHSTANDING THE FOREGOING, THE COMPANY WARRANTS TO THE ORIGINAL END USER PURCHASER THAT THE PRODUCT IS FREE FROM DEFECTS IN MATERIAL AND WORKMANSHIP FOR ONE (1) YEAR FROM THE DATE OF PURCHASE.
+            </p>
+            <p class="desc">
+                If your local law in effect at the time of purchase requires a warranty period longer than one (1) year, this warranty shall be extended to the extent required by such law. Within the warranty period, the Company shall repair or replace at no charge to you any components of the Product that fail the limited warranty provided. You shall be responsible for any related transportation charges. Replacement products may be new or refurbished at the Company's discretion.
+            </p>
+            <p class="desc">
+                This limited warranty does not apply to (i) normal wear and tear, including scratches and dents; (ii) consumable parts included in the Product, such as batteries, unless product damage has occurred due to a defect in materials or workmanship; (iii) damage resulting from your failure to use the Product in accordance with the instructions accompanying the Company Product or available at the website; (iv) damage resulting from an accident, flood, fire, misuse, or abuse; (v) damage resulting from service performed, or damage resulting from tampering with or alterations to the Product, by anyone not authorized by the Company; or (vi) use of the Product with any application or software other than the software provided on the Company’s website.
+            </p>
+            <p class="desc">
+                The Company retains the exclusive right to repair or replace the Product, or offer a full refund, at its sole discretion. Such remedy shall be your sole and exclusive remedy for any breach of this limited warranty. Warranty repairs and replacements have a new warranty which is the longer of ninety (90) days or the balance of the original one (1) year warranty.
+            </p>
+        </div>
+
+        <!-- 9. Limitation of Liability -->
+        <div class="limitation mb-5">
+            <p class="title font-bold">
+                9. Limitation of Liability
+            </p>
+            <p class="desc">
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COMPANY, ITS SUBSIDIARIES, AFFILIATES, OFFICERS, DIRECTORS, EMPLOYEES, REPRESENTATIVES, AGENTS, PARTNERS, AND LICENSORS SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING OUT OF OR IN CONNECTION WITH YOUR ACCESS OR USE OF, OR INABILITY TO ACCESS OR USE, THE COMPANY'S PRODUCTS AND SERVICES, INCLUDING ANY DAMAGES FOR PERSONAL INJURY, PAIN AND SUFFERING, EMOTIONAL DISTRESS, LOSS OF REVENUE, LOSS OF PROFITS, LOSS OF BUSINESS OR ANTICIPATED SAVINGS, LOSS OF BUSINESS OPPORTUNITY, BUSINESS INTERRUPTION, LOSS OF USE, LOSS OF GOODWILL, LOSS OF DATA, WHETHER CAUSED BY TORT (INCLUDING NEGLIGENCE), BREACH OF CONTRACT, OR OTHERWISE, EVEN IF FORESEEABLE.
+            </p>
+            <p class="desc">
+                THE FOREGOING DOES NOT AFFECT ANY LIABILITY WHICH CANNOT BE EXCLUDED OR LIMITED UNDER APPLICABLE LAW. TO THE EXTENT LIABILITY CANNOT BE EXCLUDED OR LIMITED AS SET FORTH ABOVE, IN NO EVENT SHALL THE COMPANY BE LIABLE FOR ANY CLAIM, WHETHER IN CONTRACT, TORT, OR UNDER ANY OTHER THEORY OF LIABILITY, IN EXCESS OF $60.
+            </p>
+        </div>
+
+        <!-- 10. Dispute Resolution -->
+        <div class="dispute mb-5">
+            <p class="title font-bold">
+                10. Dispute Resolution
+            </p>
+            <p class="desc">
+                Any dispute, claim, or controversy arising out of or relating to this Agreement or the breach, termination, or enforcement thereof, shall be finally and exclusively resolved by binding arbitration in accordance with the Delaware Rapid Arbitration Act ("DRAA") and the rules of the American Arbitration Association ("AAA"). The arbitration shall be held in Wilmington, Delaware, and the arbitrator's award shall be final and binding on the parties and enforceable in any court of competent jurisdiction.
+            </p>
+        </div>
+
+        <!-- 11. Governing Law -->
+        <div class="governing mb-5">
+            <p class="title font-bold">
+                11. Governing Law
+            </p>
+            <p class="desc">
+                These ToS shall be governed by and construed in accordance with the laws of the State of Delaware.
+            </p>
+        </div>
+
+        <!-- 12. Changes to the ToS -->
+        <div class="tos mb-5">
+            <p class="title font-bold">
+                12. Changes to the ToS
+            </p>
+            <p class="desc">
+                The Company reserves the right to modify these ToS at any time. If the Company makes any changes to these ToS, the Company will post the revised ToS on its website. The revised ToS will take effect immediately upon posting.
+            </p>
+        </div>
+
+        <!-- 13. Contact Us -->
+        <div class="contact-us mb-5">
+            <p class="title font-bold">
+                13. Contact Us
+            </p>
+            <p class="desc">
+                If you have any questions about these ToS, please contact us at info@awe-elements.
+            </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="section-footer relative bg-[#1D1D1D]">
+      <div class="wrap-footer max-w-[1440px] mx-auto">
+        <!-- big footer -->
+        <section class="big-footer bg-[#1D1D1D] w-full h-[500px] relative overflow-hidden">
+          <!-- gray arrow -->
+          <svg class="absolute -bottom-[105px] left-[150px] w-max h-auto z-10 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg" width="935" height="604" viewBox="0 0 935 604" fill="none">
+            <path
+              d="M14.0933 -34.1134C-38.2111 -133.521 78.0516 -265.635 142.721 -319.266L282.864 -347.841C294.673 -265.495 358.738 -109.821 520.524 -145.893C722.756 -190.984 846.908 -189.768 881.292 -58.1493C915.676 73.4693 595.241 242.038 570.945 258.768C546.65 275.497 453.633 331.822 455.417 467.109C456.844 575.339 587.757 629.79 653.035 643.487L934.407 768.454L575.971 839.46C449.905 829.129 196.692 740.995 192.368 471.101C186.963 133.734 603.706 49.6159 644.062 35.5458C684.418 21.4757 800.649 2.44063 772.913 -51.3133C745.176 -105.067 625.973 -30.3114 403.104 64.1499C180.235 158.611 79.4739 90.146 14.0933 -34.1134Z"
+              fill="rgba(255, 255, 255, 0.30)" fill-opacity="0.3" />
+          </svg>
+          <!-- content-section-seven -->
+          <div
+            class="content-section-seven w-full md:pl-[97px] pl-3 md:pr-[112px] pr-3 lg:mt-[171px] mt-28 h-auto flex lg:flex-row flex-col items-start justify-between z-20">
+            <!-- left -->
+            <div class="left-side flex flex-col justify-between lg:mb-0 mb-12 xl:w-auto w-full">
+              <!-- Enter your mail -->
+              <div class="email-field relative flex items-center mt-2 w-full">
+                <input type="email" name="email" autocomplete="on"
+                  class="xl:w-[623px] w-full xl:h-[76px] lg:h-[60px] shrink-0 text-gray-300 xl:text-[30px] lg:text-[24px] font-normal capitalize leading-[60px] pl-8 border border-white bg-[#1D1D1D] placeholder-white focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-300"
+                  placeholder="Enter your mail">
+                <button
+                  class="absolute right-[30px] text-white uppercase md:text-lg text-base font-normal leading-[39.538px] focus:outline-none focus:font-medium hover:font-medium btn">
+                  SUBSCRIBE
+                </button>
+              </div>
+            </div>
+            <!-- right -->
+            <div
+              class="right-side flex md:justify-start justify-between xl:space-x-36 lg:space-x-16 space-x-8 xl:pl-0 lg:pl-12 md:w-fit w-full md:px-0 px-3">
+              <!-- company -->
+              <div class="company">
+                <ul
+                  class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] text-[20px] leading-none capitalize">
+                  <li class="font-semibold">
+                    <a href="">Company</a>
+                  </li>
+                  <li>
+                    <a href="">About us</a>
+                  </li>
+                  <li>
+                    <a href="">Careers</a>
+                  </li>
+                  <li>
+                    <a href=""> Resources</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- support -->
+              <div class="support">
+                <ul
+                  class="right-menus flex flex-col space-y-8 text-white xl:text-[30px] text-[20px] leading-none capitalize">
+                  <li class="font-semibold">
+                    <a href="">Support</a>
+                  </li>
+                  <li>
+                    <a href="">My Account</a>
+                  </li>
+                  <li>
+                    <a href="">FAQ</a>
+                  </li>
+                  <li>
+                    <a href="">Help</a>
+                  </li>
+                  <li>
+                    <a href=""> Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- small footer -->
+        <div
+          class="small-footer md:h-[103px] h-full flex md:flex-row flex-col-reverse md:space-y-0 space-y-3 md:items-center justify-between lg:pl-[97px] pl-8 lg:pr-[71px] pr-8 overflow-x-hidden md:pt-0 pt-8">
+
+          <div
+            class="left-side-footer text-white capitalize leading-[60px] lg:text-lg text-base text-opacity-70 md:mt-0 mt-5">
+            © 2023 AWE, All rights Reserved
+          </div>
+
+          <nav role="navigation" class="h-full flex items-center">
+            <ul
+              class="menus flex md:flex-row flex-col md:items-center xl:space-x-[65px] lg:space-x-6 md:space-x-2 space-x-0 md:space-y-0 space-y-4 text-white capitalize md:leading-[60px] leading-normal xl:text-lg lg:text-base md:text-sm text-base text-opacity-70">
+              <li>
+                <a href="">Terms of Service</a>
+              </li>
+              <li>
+                <a href="">Privacy policy</a>
+              </li>
+              <li>
+                <a href="">Regulatory Notice</a>
+              </li>
+              <li>
+                <a href="">Security</a>
+              </li>
+            </ul>
+        </div>
+      </div>
+  </div>
+  </footer>
+  </div>
+  <script src="assets/scroll.js"></script>
+  <script src="assets/main_nav_controller.js"></script>
+</body>
+</html>

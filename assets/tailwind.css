@@ -589,17 +589,6 @@ html {
   /* background-attachment: fixed; */
 }
 
-.bg-our-mission {
-  background: linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
-}
-
-.bg-our-mission-img-top-btm {
-  background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png");
-  background-repeat: no-repeat, no-repeat;
-  background-size: contain;
-  background-position: center top -200px, center bottom -200px;
-}
-
 .bg-our-mission-with-img {
   background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
   background-repeat: no-repeat, no-repeat, repeat;
@@ -908,6 +897,10 @@ html {
   left: 3rem;
 }
 
+.left-8 {
+  left: 2rem;
+}
+
 .left-\[150px\] {
   left: 150px;
 }
@@ -930,6 +923,10 @@ html {
 
 .top-1\/4 {
   top: 25%;
+}
+
+.top-12 {
+  top: 3rem;
 }
 
 .top-20 {
@@ -1249,10 +1246,6 @@ html {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.max-w-6xl {
-  max-width: 72rem;
 }
 
 .max-w-\[1440px\] {

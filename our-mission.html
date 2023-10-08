@@ -122,16 +122,8 @@
       </nav>
     </header>
 
-    <section class="w-full bg-our-mission">
-
-      <!-- <img 
-        src="/assets/img/our-mission-bg-top.png" 
-        alt="" 
-        class="w-full max-w-6xl h-auto absolute top-0 pointer-events-none mx-auto inset-x-0"
-      > -->
-
-      <div class="container-div w-full min-h-screen max-w-[1440px] mx-auto pb-24 pt-28 px-12 animate-opacity bg-our-mission-img-top-btm">
-
+    <section class="w-full bg-our-mission-with-img">
+      <div class="container-div w-full min-h-screen max-w-[1440px] mx-auto pb-24 pt-28 px-12 animate-opacity">
         <!-- Our Mission: Stay Longer Off-line -->
         <div class="our-mission leading-snug">
           <p class="title mb-4 text-3xl">Our Mission: Stay Longer Off-line</p>
@@ -144,11 +136,16 @@
         </div>
 
         <!-- img -->
-        <img 
-          src="/assets/img/img-our-mission.png" 
-          alt="" 
-          class="w-[523px] h-auto object-cover py-7 mx-auto"
-        >
+        <div class="img-unplug w-[523px] h-auto relative py-7 mx-auto">
+          <span class="text text-white text-3xl absolute left-8 top-12">
+            Ready to <br>unplug?
+          </span>
+          <img 
+            src="/assets/img/img-our-mission.png" 
+            alt="" 
+            class="w-full h-auto object-cover"
+          >
+        </div>
         <!-- Online life is not life -->
         <div class="online-life leading-snug">
           <p class="title mb-6 text-3xl">
@@ -228,12 +225,6 @@
           </p>
         </div>
       </div>
-
-      <!-- <img 
-        src="/assets/img/our-mission-bg-bottom.png" 
-        alt="" 
-        class="w-full max-w-6xl h-auto absolute bottom-0 pointer-events-none mx-auto inset-x-0"
-      > -->
     </section>
 
     <!-- footer -->

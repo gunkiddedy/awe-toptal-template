@@ -91,9 +91,10 @@
     }
   }
   .bg-resources {
-    background: url("/assets/img/resources-bg.png"), lightgray -1390px -1017.335px / 445.474% 287.582% no-repeat;
+    background: url("/assets/img/resources-bg.png"), linear-gradient(151deg, #99383F 7.46%, #343848 83.32%);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
   }
   .reveal {
     position: relative;

@@ -1869,6 +1869,14 @@ html {
   opacity: 0.75;
 }
 
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.mix-blend-screen {
+  mix-blend-mode: screen;
+}
+
 .mix-blend-darken {
   mix-blend-mode: darken;
 }
@@ -1945,6 +1953,11 @@ html {
   border-color: rgb(96 112 154 / var(--tw-border-opacity));
 }
 
+.hover\:border-white:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1957,6 +1970,11 @@ html {
 
 .hover\:bg-transparent:hover {
   background-color: transparent;
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:font-medium:hover {

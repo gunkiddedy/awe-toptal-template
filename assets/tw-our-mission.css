@@ -559,218 +559,25 @@ html {
   --tw-gradient-to: #F9E6C1 var(--tw-gradient-to-position);
 }
 
-.bg-section-one {
-  background: linear-gradient(107.16deg, #cddbef 0.79%, #f9e6c1 100%);
-  /* background-size: contain; */
-  background-repeat: no-repeat;
-  mix-blend-mode: normal;
-  /* background-position-y: 15%; */
-  background-position: center;
-  background-size: cover;
-}
-
-.bg-section-two {
-  background: linear-gradient(
-      155deg,
-      #e8b98d 15.32%,
-      #fbf4d1 39.11%,
-      #d1dcea 65.47%,
-      #dedfdc 77.75%
-    );
-}
-
-.bg-section-six {
-  background: url("/assets/img/bg-section-6.png"),
-      linear-gradient(105deg, #384b66 -0.06%, #cddbef 66.62%, #fff1b7 97.12%);
+.bg-our-mission-with-img {
+  background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+  background-repeat: no-repeat, no-repeat, repeat;
   background-size: contain;
-  mix-blend-mode: normal;
-  background-repeat: no-repeat;
-  background-position-y: 40%;
-  /* background-attachment: fixed; */
+  background-position: 
+      center top 0, 
+      center bottom 0,
+      center;
 }
 
-.bg-resources {
-  background: url("/assets/img/resources-bg.png"), linear-gradient(151deg, #99383F 7.46%, #343848 83.32%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.reveal {
-  position: relative;
-  opacity: 0;
-}
-
-.reveal.active {
-  opacity: 1;
-}
-
-.reveal.inactive {
-  opacity: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-}
-
-.inactive.fade-left-out {
-  animation: fade-left-out 3s ease-in;
-}
-
-.active.fade-bottom {
-  animation: fade-bottom 1s ease-in;
-}
-
-.active.fade-left {
-  animation: fade-left 1s ease-in;
-}
-
-.active.fade-in-out {
-  animation: fade-in-out 2s ease-in;
-}
-
-.active.fade-right {
-  animation: fade-right 1s ease-in;
-}
-
-.wiper {
-  mix-blend-mode: darken;
-  background-repeat: no-repeat;
-  mask-image: linear-gradient(to left, transparent 47.5%, #fff 52.5%);
-  -webkit-mask-image: linear-gradient(to left, transparent 47.5%, #fff 52.5%);
-  mask-size: 210%;
-  -webkit-mask-size: 210%;
-  mask-position: right;
-  -webkit-mask-position: right;
-  opacity: 0;
-}
-
-.wiper[data-speed="slow"].wipe-left {
-  opacity: 1;
-  mask-position: left;
-  -webkit-mask-position: left;
-  transition: -webkit-mask-position 4s linear;
-}
-
-.wiper[data-speed="medium"].wipe-left {
-  opacity: 1;
-  mask-position: left;
-  -webkit-mask-position: left;
-  transition: -webkit-mask-position 2s linear;
-}
-
-.wiper[data-speed="fast"].wipe-left {
-  opacity: 1;
-  mask-position: left;
-  -webkit-mask-position: left;
-  transition: -webkit-mask-position 1s linear;
-}
-
-.wipe-gone {
-  opacity: 0;
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 2500ms;
-}
-
-.zoom-in-out {
-  animation: zoom-in-out 5s infinite alternate;
-  -webkit-animation: zoom-in-out 5s infinite alternate;
-  -moz-animation: zoom-in-out 5s infinite alternate;
-  -o-animation: zoom-in-out 5s infinite alternate;
-  -ms-animation: zoom-in-out 5s infinite alternate;
-}
-
-@keyframes fade-in-out {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  50% {
-    transform: scale(1.05);
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-bottom {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-left-out {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-}
-
-@keyframes fade-left {
-  0% {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fade-right {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes zoom-in-out {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-    /* transform: translateY(200px); */
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1.2);
+@media (min-width: 1280px) {
+  .bg-our-mission-with-img {
+    background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: contain;
+    background-position: 
+        center top -700px, 
+        center bottom -700px,
+        center;
   }
 }
 

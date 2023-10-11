@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Poppins, system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-opacity {
+      animation: opacity 2s;
+  }
+  @keyframes opacity {
+      0% {
+          @apply opacity-0;
+      }
+      100% {
+          @apply opacity-100;
+      }
+  }
+}
+
+@layer components {
+  .btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .bg-nav {
+    @apply bg-[hsla(0,0%,100%,.35)] bg-blend-multiply backdrop-blur-xl;
+  }
+  .bg-nav-mobile {
+    @apply bg-gradient-to-tr from-[#CDDBEF] to-[#F9E6C1];
+  }
+  .bg-our-mission-with-img {
+    background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+    background-repeat: no-repeat, no-repeat, repeat;
+    background-size: contain;
+    background-position: 
+      center top 0, 
+      center bottom 0,
+      center;
+  }
+  @media (min-width: 1280px) { 
+    .bg-our-mission-with-img {
+      background-image: url("/assets/img/our-mission-bg-top.png"), url("/assets/img/our-mission-bg-bottom.png"), linear-gradient(155deg, #F9E6C1 7.54%, #97979F 58.45%, #DB9C7E 95.12%);
+      background-repeat: no-repeat, no-repeat, repeat;
+      background-size: contain;
+      background-position: 
+        center top -700px, 
+        center bottom -700px,
+        center;
+    }
+  }
+}
